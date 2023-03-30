@@ -1,0 +1,77 @@
+query01:
+    host: ${{host()}}
+    url: /home/daxue/ajax
+    method: POST
+    headers:
+        user-agent: Chrome
+    content_type: "application/x-www-form-urlencoded"
+    requestType: DATA
+    title: "真实大学-四川轻化工大学"
+    data:
+        type: "name"
+        keyword: "四川轻化工大学"
+    assert_data:
+        # 断言接口状态码
+        errorCode:
+            jsonpath: $.status
+            type: ==
+            value: 1
+            AssertType:
+        # 断言接口返回的username
+        username:
+            jsonpath: $.info
+            type: ==
+            value: '查询成功！'
+            AssertType:
+
+query02:
+    host: ${{host()}}
+    url: /home/daxue/ajax
+    method: POST
+    headers:
+        user-agent: Chrome
+    content_type: "application/x-www-form-urlencoded"
+    requestType: DATA
+    title: "真实大学-厦门大学"
+    data:
+        type: "name"
+        keyword: "厦门大学"
+    assert_data:
+        # 断言接口状态码
+        errorCode:
+            jsonpath: $.status
+            type: ==
+            value: 1
+            AssertType:
+        # 断言接口返回的username
+        username:
+            jsonpath: $.info
+            type: ==
+            value: '查询成功！'
+            AssertType:
+
+query03:
+    host: ${{host()}}
+    url: /home/daxue/ajax
+    method: POST
+    headers:
+        user-agent: Chrome
+    content_type: "application/x-www-form-urlencoded"
+    requestType: DATA
+    title: "不存在-测试大学"
+    data:
+        type: "name"
+        keyword: "测试大学"
+    assert_data:
+        # 断言接口状态码
+        errorCode:
+            jsonpath: $.status
+            type: ==
+            value: 1
+            AssertType:
+        # 断言接口返回的username
+        username:
+            jsonpath: $.info
+            type: ==
+            value: '没有找到相关信息！'
+            AssertType:

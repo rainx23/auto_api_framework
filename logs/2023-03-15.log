@@ -1,0 +1,17 @@
+[2023-03-15  17:19:47.694] F:\auto_test_framework\cases\daxue.py:20 [INFO]: 2023-03-15 17:19:47 >>>>>> 开始执行：
+[2023-03-15  17:19:47.726] F:\auto_test_framework\base_api.py:65 [INFO]: 请求数据：{'url': 'https://www.iamwawa.cn/home/daxue/ajax', 'method': 'POST', 'headers': {'user-agent': 'Chrome'}, 'data': {'type': 'name', 'keyword': '四川轻化工大学'}}
+[2023-03-15  17:19:47.802] F:\auto_test_framework\base_api.py:69 [DEBUG]: 响应数据：{'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+[2023-03-15  17:19:47.805] F:\auto_test_framework\base_api.py:75 [INFO]: 实际结果：status=1，预期结果：status=1
+[2023-03-15  17:19:47.807] F:\auto_test_framework\base_api.py:75 [INFO]: 实际结果：info=查询成功！，预期结果：info=查询成功！
+[2023-03-15  17:19:47.846] F:\auto_test_framework\cases\daxue.py:23 [INFO]: 2023-03-15 17:19:47 >>>>>> 执行结束！
+[2023-03-15  17:19:47.955] F:\auto_test_framework\cases\daxue.py:20 [INFO]: 2023-03-15 17:19:47 >>>>>> 开始执行：
+[2023-03-15  17:19:47.973] F:\auto_test_framework\base_api.py:65 [INFO]: 请求数据：{'url': 'https://www.iamwawa.cn/home/daxue/ajax', 'method': 'POST', 'headers': {'user-agent': 'Chrome'}, 'data': {'type': 'name', 'keyword': '厦门大学'}}
+[2023-03-15  17:19:48.054] F:\auto_test_framework\base_api.py:69 [DEBUG]: 响应数据：{'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+[2023-03-15  17:19:48.057] F:\auto_test_framework\base_api.py:75 [INFO]: 实际结果：status=1，预期结果：status=1
+[2023-03-15  17:19:48.059] F:\auto_test_framework\base_api.py:75 [INFO]: 实际结果：info=查询成功！，预期结果：info=查询成功！
+[2023-03-15  17:19:48.097] F:\auto_test_framework\cases\daxue.py:23 [INFO]: 2023-03-15 17:19:47 >>>>>> 执行结束！
+[2023-03-15  17:19:48.205] F:\auto_test_framework\cases\daxue.py:20 [INFO]: 2023-03-15 17:19:47 >>>>>> 开始执行：
+[2023-03-15  17:19:48.227] F:\auto_test_framework\base_api.py:65 [INFO]: 请求数据：{'url': 'https://www.iamwawa.cn/home/daxue/ajax', 'method': 'POST', 'headers': {'user-agent': 'Chrome'}, 'data': {'type': 'name', 'keyword': '测试大学'}}
+[2023-03-15  17:19:48.307] F:\auto_test_framework\base_api.py:69 [DEBUG]: 响应数据：{'status': 0, 'info': '没有找到相关信息！'}
+[2023-03-15  17:19:48.310] F:\auto_test_framework\base_api.py:75 [INFO]: 实际结果：status=0，预期结果：status=1
+[2023-03-15  17:19:48.493] F:\auto_test_framework\cases\daxue.py:23 [INFO]: 2023-03-15 17:19:47 >>>>>> 执行结束！

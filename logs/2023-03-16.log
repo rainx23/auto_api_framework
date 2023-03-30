@@ -1,0 +1,5 @@
+[2023-03-16  18:04:39.041] F:\auto_test_framework\utils\get_logger.py:80 [DEBUG]: 调试
+[2023-03-16  18:04:39.044] F:\auto_test_framework\utils\get_logger.py:81 [INFO]: 信息
+[2023-03-16  18:04:39.044] F:\auto_test_framework\utils\get_logger.py:82 [WARNING]: 警告
+[2023-03-16  18:04:39.044] F:\auto_test_framework\utils\get_logger.py:83 [ERROR]: 报错
+[2023-03-16  18:04:39.045] F:\auto_test_framework\utils\get_logger.py:84 [CRITICAL]: 严重
