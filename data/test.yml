@@ -5,7 +5,7 @@ query01:
     headers:
         user-agent: Chrome
     content_type: "application/x-www-form-urlencoded"
-    requestType: DATA
+    requestType: data
     title: "真实大学-四川轻化工大学"
     data:
         type: "name"
@@ -31,7 +31,7 @@ query02:
     headers:
         user-agent: Chrome
     content_type: "application/x-www-form-urlencoded"
-    requestType: DATA
+    requestType: data
     title: "真实大学-厦门大学"
     data:
         type: "name"
@@ -57,7 +57,7 @@ query03:
     headers:
         user-agent: Chrome
     content_type: "application/x-www-form-urlencoded"
-    requestType: DATA
+    requestType: data
     title: "不存在-测试大学"
     data:
         type: "name"

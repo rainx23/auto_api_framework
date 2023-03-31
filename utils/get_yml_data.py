@@ -56,7 +56,7 @@ class GetYmlData:
                     'url': self.get_host,
                     'method': self.case_data.get(TestCaseEnum.METHOD.value[0]),
                     'headers': self.case_data.get(TestCaseEnum.HEADERS.value[0]),
-                    'requestType': self.case_data.get(TestCaseEnum.REQUEST_TYPE.value[0]),
+                    'requestType': self.case_data.get(TestCaseEnum.REQUEST_TYPE.value[0]).upper(),
                     'data': self.case_data.get(TestCaseEnum.DATA.value[0]),
                     "assert_data": self.case_data.get(TestCaseEnum.ASSERT_DATA.value[0]),
                     "title": self.case_data.get(TestCaseEnum.TITLE.value[0]),
@@ -94,5 +94,5 @@ if __name__ == '__main__':
     # for i in range(len(data)):
     #     # print(data[i])
     #     print(data[i]['req']['url'])
-    data = GetYmlData().get_yml_data('data/test.yaml')
+    data = GetYmlData().get_yml_data('data/test.yml')
     print(data)

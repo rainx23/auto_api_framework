@@ -34,10 +34,9 @@ class TestCaseDaXue:
     def test_query(self, data):
 
         allure.dynamic.title(data['title'])
-        print(TestData)
+        print(data)
         print("@@@@@@@")
         res = RequestControl(data).http_request()
-        # print(res.body, res.response_data, res.status_code)
         print(Assert(assert_data=data['assert_data'],
              request_data=res.body,
              response_data=res.response_data,
