@@ -1,77 +1,79 @@
-query01:
+
+query_college_01:
     host: ${{host()}}
     url: /home/daxue/ajax
     method: POST
+    detail: çœŸå®å¤§å­¦-å››å·è½»åŒ–å·¥å¤§å­¦
     headers:
         user-agent: Chrome
-    content_type: "application/x-www-form-urlencoded"
-    requestType: DATA
-    title: "ÕæÊµ´óÑ§-ËÄ´¨Çá»¯¹¤´óÑ§"
+        Content-Type: multipart/form-data;
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data
+    requestType: data
     data:
         type: "name"
-        keyword: "ËÄ´¨Çá»¯¹¤´óÑ§"
-    assert_data:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
-        errorCode:
+        keyword: "å››å·è½»åŒ–å·¥å¤§å­¦"
+    assert:
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
+        errorStatus:
             jsonpath: $.status
             type: ==
             value: 1
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄusername
-        username:
+        # æ–­è¨€æ¥å£è¿”å›çš„username
+        errorInfo:
             jsonpath: $.info
             type: ==
-            value: '²éÑ¯³É¹¦£¡'
+            value: 'æŸ¥è¯¢æˆåŠŸï¼'
             AssertType:
 
-query02:
+query_college_02:
     host: ${{host()}}
     url: /home/daxue/ajax
     method: POST
+    detail: çœŸå®å¤§å­¦-å¦é—¨å¤§å­¦
     headers:
         user-agent: Chrome
-    content_type: "application/x-www-form-urlencoded"
-    requestType: DATA
-    title: "ÕæÊµ´óÑ§-ÏÃÃÅ´óÑ§"
+        Content-Type: multipart/form-data;
+    requestType: data
     data:
         type: "name"
-        keyword: "ÏÃÃÅ´óÑ§"
-    assert_data:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
-        errorCode:
+        keyword: "å¦é—¨å¤§å­¦"
+    assert:
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
+        errorStatus:
             jsonpath: $.status
             type: ==
             value: 1
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄusername
-        username:
+        # æ–­è¨€æ¥å£è¿”å›çš„username
+        errorInfo:
             jsonpath: $.info
             type: ==
-            value: '²éÑ¯³É¹¦£¡'
+            value: 'æŸ¥è¯¢æˆåŠŸï¼'
             AssertType:
 
-query03:
+query_college_03:
     host: ${{host()}}
     url: /home/daxue/ajax
+    detail: ä¸å­˜åœ¨-æµ‹è¯•å¤§å­¦
     method: POST
     headers:
         user-agent: Chrome
-    content_type: "application/x-www-form-urlencoded"
-    requestType: DATA
-    title: "²»´æÔÚ-²âÊÔ´óÑ§"
+        Content-Type: multipart/form-data;
+    requestType: data
     data:
         type: "name"
-        keyword: "²âÊÔ´óÑ§"
-    assert_data:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
-        errorCode:
+        keyword: "æµ‹è¯•å¤§å­¦"
+    assert:
+        # æ–­è¨€æ¥å£è¿”å›çš„status
+        errorStatus:
             jsonpath: $.status
             type: ==
             value: 1
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄusername
-        username:
+        # æ–­è¨€æ¥å£è¿”å›çš„info
+        errorInfo:
             jsonpath: $.info
             type: ==
-            value: 'Ã»ÓĞÕÒµ½Ïà¹ØĞÅÏ¢£¡'
+            value: 'æ²¡æœ‰æ‰¾åˆ°ç›¸å…³ä¿¡æ¯ï¼'
             AssertType:

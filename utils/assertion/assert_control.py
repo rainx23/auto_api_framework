@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2022/3/28 14:18
-# @Author : 余少琪
+# @Time   : 2022/4/2
+# @Author : Rainx
 """
 断言类型封装，支持json响应断言、数据库断言
 """
@@ -19,9 +19,6 @@ class AssertUtil:
         self.response_data = response_data
         self.assert_data = assert_data
         self.request_data = request_data
-        print("******************")
-        print(self.get_assert_data.get('jsonpath'))
-        print("====================")
         self.status_code = status_code
 
     @property
@@ -68,7 +65,6 @@ class AssertUtil:
     @property
     def _assert_resp_data(self):
         resp_data = jsonpath(self.response_data, self.get_jsonpath)
-        print(resp_data)
         assert resp_data is not False, (
             f"jsonpath数据提取失败，提取对象: {self.response_data} , 当前语法: {self.get_jsonpath}"
         )
@@ -102,8 +98,7 @@ class Assert(AssertUtil):
                 assert self.status_code == v, "响应状态码断言失败"
             else:
                 assert_list.append(v)
-        print("~~~~~~~~~~~~")
-        print(assert_list)
+
         return assert_list
 
     def assert_type_handle(self):

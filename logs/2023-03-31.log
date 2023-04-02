@@ -1,0 +1,79 @@
+[2023-03-31  20:59:54.863] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 20:59:54 >>>>>> 开始执行：
+[2023-03-31  20:59:55.165] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 20:59:54 >>>>>> 执行结束！
+[2023-03-31  20:59:55.168] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 20:59:54 >>>>>> 开始执行：
+[2023-03-31  20:59:55.284] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 20:59:54 >>>>>> 执行结束！
+[2023-03-31  20:59:55.285] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 20:59:54 >>>>>> 开始执行：
+[2023-03-31  20:59:55.406] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 20:59:54 >>>>>> 执行结束！
+[2023-03-31  21:01:13.361] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 21:01:13 >>>>>> 开始执行：
+[2023-03-31  21:01:13.500] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 21:01:13 >>>>>> 执行结束！
+[2023-03-31  21:01:13.503] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 21:01:13 >>>>>> 开始执行：
+[2023-03-31  21:01:13.608] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 21:01:13 >>>>>> 执行结束！
+[2023-03-31  21:01:13.608] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 21:01:13 >>>>>> 开始执行：
+[2023-03-31  21:01:13.721] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 21:01:13 >>>>>> 执行结束！
+[2023-03-31  21:31:53.648] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 21:31:53 >>>>>> 开始执行：
+[2023-03-31  21:31:53.851] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 21:31:53 >>>>>> 执行结束！
+[2023-03-31  21:31:53.852] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 21:31:53 >>>>>> 开始执行：
+[2023-03-31  21:31:53.978] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 21:31:53 >>>>>> 执行结束！
+[2023-03-31  21:31:53.979] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 21:31:53 >>>>>> 开始执行：
+[2023-03-31  21:31:54.116] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 21:31:53 >>>>>> 执行结束！
+[2023-03-31  22:04:36.520] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:04:36 >>>>>> 开始执行：
+[2023-03-31  22:04:36.712] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:04:36 >>>>>> 执行结束！
+[2023-03-31  22:04:36.714] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:04:36 >>>>>> 开始执行：
+[2023-03-31  22:04:36.805] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:04:36 >>>>>> 执行结束！
+[2023-03-31  22:04:36.806] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:04:36 >>>>>> 开始执行：
+[2023-03-31  22:04:36.910] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:04:36 >>>>>> 执行结束！
+[2023-03-31  22:08:02.789] G:\auto_api1_framework\utils\get_yml_data.py:69 [ERROR]: 1 validation error for TestCase
+title
+  field required (type=value_error.missing)
+[2023-03-31  22:08:13.773] G:\auto_api1_framework\utils\get_yml_data.py:69 [ERROR]: 1 validation error for TestCase
+title
+  field required (type=value_error.missing)
+[2023-03-31  22:08:31.557] G:\auto_api1_framework\utils\get_yml_data.py:69 [ERROR]: 1 validation error for TestCase
+title
+  field required (type=value_error.missing)
+[2023-03-31  22:09:02.181] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:09:02 >>>>>> 开始执行：
+[2023-03-31  22:09:02.374] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:09:02 >>>>>> 执行结束！
+[2023-03-31  22:09:02.377] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:09:02 >>>>>> 开始执行：
+[2023-03-31  22:09:02.482] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:09:02 >>>>>> 执行结束！
+[2023-03-31  22:09:02.484] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:09:02 >>>>>> 开始执行：
+[2023-03-31  22:09:02.590] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:09:02 >>>>>> 执行结束！
+[2023-03-31  22:09:45.158] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:09:45 >>>>>> 开始执行：
+[2023-03-31  22:09:45.286] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:09:45 >>>>>> 执行结束！
+[2023-03-31  22:09:45.288] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:09:45 >>>>>> 开始执行：
+[2023-03-31  22:09:45.437] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:09:45 >>>>>> 执行结束！
+[2023-03-31  22:09:45.438] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:09:45 >>>>>> 开始执行：
+[2023-03-31  22:09:45.601] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:09:45 >>>>>> 执行结束！
+[2023-03-31  22:10:50.432] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:10:50 >>>>>> 开始执行：
+[2023-03-31  22:10:50.612] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:10:50 >>>>>> 执行结束！
+[2023-03-31  22:10:50.613] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:10:50 >>>>>> 开始执行：
+[2023-03-31  22:10:50.746] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:10:50 >>>>>> 执行结束！
+[2023-03-31  22:10:50.747] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:10:50 >>>>>> 开始执行：
+[2023-03-31  22:10:50.878] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:10:50 >>>>>> 执行结束！
+[2023-03-31  22:15:38.106] G:\auto_api1_framework\utils\get_yml_data.py:69 [ERROR]: 1 validation error for TestCase
+content_type
+  none is not an allowed value (type=type_error.none.not_allowed)
+[2023-03-31  22:16:09.252] G:\auto_api1_framework\utils\get_yml_data.py:69 [ERROR]: CONTENT_TYPE
+[2023-03-31  22:16:30.094] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:16:30 >>>>>> 开始执行：
+[2023-03-31  22:16:30.436] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:16:30 >>>>>> 执行结束！
+[2023-03-31  22:16:30.438] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:16:30 >>>>>> 开始执行：
+[2023-03-31  22:16:30.567] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:16:30 >>>>>> 执行结束！
+[2023-03-31  22:16:30.568] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:16:30 >>>>>> 开始执行：
+[2023-03-31  22:16:30.688] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:16:30 >>>>>> 执行结束！
+[2023-03-31  22:17:21.956] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:17:21 >>>>>> 开始执行：
+[2023-03-31  22:17:22.094] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:17:21 >>>>>> 执行结束！
+[2023-03-31  22:17:22.096] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:17:21 >>>>>> 开始执行：
+[2023-03-31  22:17:22.297] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:17:21 >>>>>> 执行结束！
+[2023-03-31  22:17:22.298] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:17:21 >>>>>> 开始执行：
+[2023-03-31  22:17:22.409] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:17:21 >>>>>> 执行结束！
+[2023-03-31  22:17:40.894] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:17:40 >>>>>> 开始执行：
+[2023-03-31  22:17:41.022] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:17:40 >>>>>> 执行结束！
+[2023-03-31  22:17:41.024] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:17:40 >>>>>> 开始执行：
+[2023-03-31  22:17:41.124] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:17:40 >>>>>> 执行结束！
+[2023-03-31  22:17:41.125] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:17:40 >>>>>> 开始执行：
+[2023-03-31  22:17:41.219] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:17:40 >>>>>> 执行结束！
+[2023-03-31  22:22:01.434] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:22:01 >>>>>> 开始执行：
+[2023-03-31  22:22:01.564] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:22:01 >>>>>> 执行结束！
+[2023-03-31  22:22:01.565] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:22:01 >>>>>> 开始执行：
+[2023-03-31  22:22:01.783] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:22:01 >>>>>> 执行结束！
+[2023-03-31  22:22:01.784] G:\auto_api1_framework\cases\daxue.py:28 [INFO]: 2023-03-31 22:22:01 >>>>>> 开始执行：
+[2023-03-31  22:22:01.901] G:\auto_api1_framework\cases\daxue.py:31 [INFO]: 2023-03-31 22:22:01 >>>>>> 执行结束！

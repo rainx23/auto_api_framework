@@ -6,10 +6,10 @@
 """
 
 import requests
-from base_api import BaseApi
 from utils.get_yml_data import GetYmlData
 from utils.models import TestCase, ResponseData, RequestType
 from typing import Tuple, Dict, Union, Text
+from utils.allure_data.allure_tools import allure_step, allure_step_no, allure_attach
 
 
 class RequestControl:
@@ -18,27 +18,42 @@ class RequestControl:
     def __init__(self, yaml_case):
         self.__yaml_case = TestCase(**yaml_case)
 
+    @classmethod
+    def check_headers_str_null(
+            cls,
+            headers: Dict) -> Dict:
+        """
+        兼容用户未填写headers或者header值为int
+        @return:
+        """
+        if headers is None:
+            headers = {"headers": None}
+        else:
+            for key, value in headers.items():
+                if not isinstance(value, str):
+                    headers[key] = str(value)
+        return headers
+
     def request_type_for_json(
             self,
             headers: Dict,
             method: Text,
             **kwargs):
         """ 判断请求类型为json格式 """
-        # _headers = self.__yaml_case.headers
-        # _data = self.__yaml_case.data
-        # _url = self.__yaml_case.url
-        # res = requests.request(
-        #     method=method,
-        #     url=cache_regular(str(_url)),
-        #     json=ast.literal_eval(cache_regular(str(_data))),
-        #     data={},
-        #     headers=_headers,
-        #     verify=False,
-        #     params=None,
-        #     **kwargs
-        # )
-        # return res
-        pass
+        _headers = self.__yaml_case.headers
+        _data = self.__yaml_case.data
+        _url = self.__yaml_case.url
+        res = requests.request(
+            method=method,
+            url=_url,
+            json=_data,
+            data={},
+            headers=_headers,
+            verify=False,
+            params=None,
+            **kwargs
+        )
+        return res
 
     def request_type_for_none(
             self,
@@ -66,27 +81,27 @@ class RequestControl:
             **kwargs):
 
         """处理 requestType 为 params """
-        # _data = self.__yaml_case.data
-        # url = self.__yaml_case.url
-        # if _data is not None:
-        #     # url 拼接的方式传参
-        #     params_data = "?"
-        #     for key, value in _data.items():
-        #         if value is None or value == '':
-        #             params_data += (key + "&")
-        #         else:
-        #             params_data += (key + "=" + str(value) + "&")
-        #     url = self.__yaml_case.url + params_data[:-1]
-        # _headers = self.check_headers_str_null(headers)
-        # res = requests.request(
-        #     method=method,
-        #     url=cache_regular(url),
-        #     headers=_headers,
-        #     verify=False,
-        #     data={},
-        #     params=None,
-        #     **kwargs)
-        # return res
+        _data = self.__yaml_case.data
+        url = self.__yaml_case.url
+        if _data is not None:
+            # url 拼接的方式传参
+            params_data = "?"
+            for key, value in _data.items():
+                if value is None or value == '':
+                    params_data += (key + "&")
+                else:
+                    params_data += (key + "=" + str(value) + "&")
+            url = self.__yaml_case.url + params_data[:-1]
+        _headers = self.check_headers_str_null(headers)
+        res = requests.request(
+            method=method,
+            url=url,
+            headers=_headers,
+            verify=False,
+            data={},
+            params=None,
+            **kwargs)
+        return res
         pass
 
     def request_type_for_file(
@@ -144,7 +159,7 @@ class RequestControl:
         _data = {
             "url": res.url,
             "is_run": None,
-            "detail": None,
+            "detail": yaml_data.detail,
             "response_data": res.json(),
             # 这个用于日志专用，判断如果是get请求，直接打印url
             "request_body": None,
@@ -162,6 +177,28 @@ class RequestControl:
         }
         # 抽离出通用模块，判断 http_request 方法中的一些数据校验
         return ResponseData(**_data)
+
+    @classmethod
+    def api_allure_step(
+            cls,
+            *,
+            url: Text,
+            headers: Text,
+            method: Text,
+            data: Text,
+            assert_data: Text,
+            res_time: Text,
+            res: Text
+    ) -> None:
+        """ 在allure中记录请求数据 """
+        allure_step_no(f"请求URL: {url}")
+        allure_step_no(f"请求方式: {method}")
+        allure_step("请求头: ", headers)
+        allure_step("请求数据: ", data)
+        allure_step("预期数据: ", assert_data)
+        _res_time = res_time
+        allure_step_no(f"响应耗时(ms): {str(_res_time)}")
+        allure_step("响应结果: ", res)
 
     def http_request(self, **kwargs):
 
@@ -183,5 +220,15 @@ class RequestControl:
         _res_data = self._check_params(
             res=res,
             yaml_data=self.__yaml_case)
+
+        self.api_allure_step(
+            url=_res_data.url,
+            headers=str(_res_data.headers),
+            method=_res_data.method,
+            data=str(_res_data.body),
+            assert_data=str(_res_data.assert_data),
+            res_time=str(_res_data.res_time),
+            res=_res_data.response_data
+        )
 
         return _res_data

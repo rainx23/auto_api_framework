@@ -23,7 +23,7 @@ class TestCase:
     def teardown(self):
         self.logger.info(self.time + " >>>>>> 执行结束！")
 
-    @pytest.mark.parametrize("info", GetYmlData().get_yml_data('data/test.yml'))
+    @pytest.mark.parametrize("info", GetYmlData().get_yml_data('data/test.yaml'))
     def test1(self, info):
         print(info)
         allure.dynamic.title(info['req']['title'])

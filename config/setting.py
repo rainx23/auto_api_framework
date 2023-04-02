@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2021/11/25 13:07
-# @Author : 余少琪
+# @Time    : 2023/4/1
+# @Author  : Rainxs
+# @Function: 读取路径
 
 import os
 from typing import Text

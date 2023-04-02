@@ -11,6 +11,7 @@ from utils.get_path_info import GetPathInfo
 from typing import Union, Text, Dict, List
 from utils.models import TestCaseEnum, TestCase
 from utils.read_files_tools import yaml_control
+from config.setting import ensure_path_sep
 
 
 class GetYmlData:
@@ -55,12 +56,11 @@ class GetYmlData:
                 case_date = {
                     'url': self.get_host,
                     'method': self.case_data.get(TestCaseEnum.METHOD.value[0]),
+                    "detail": self.case_data.get(TestCaseEnum.DETAIL.value[0]),
                     'headers': self.case_data.get(TestCaseEnum.HEADERS.value[0]),
                     'requestType': self.case_data.get(TestCaseEnum.REQUEST_TYPE.value[0]).upper(),
                     'data': self.case_data.get(TestCaseEnum.DATA.value[0]),
                     "assert_data": self.case_data.get(TestCaseEnum.ASSERT_DATA.value[0]),
-                    "title": self.case_data.get(TestCaseEnum.TITLE.value[0]),
-                    "content_type": self.case_data.get(TestCaseEnum.CONTENT_TYPE.value[0])
                 }
                 case_list.append(TestCase(**case_date).dict())
 
@@ -84,15 +84,6 @@ class GetYmlData:
 
 
 if __name__ == '__main__':
-    # data = GetYmlData().get_yml_data("data/req.yml")
-    # print(data)
-    # # print(GetYmlData().read_yaml("data/req.yml"))
-    # # print(data['req']['url'])
-    # # print(data['header'])
-    # # print(data['req']['type'])
-    # print(len(data))
-    # for i in range(len(data)):
-    #     # print(data[i])
-    #     print(data[i]['req']['url'])
-    data = GetYmlData().get_yml_data('data/test.yml')
+    # data = GetYmlData().get_yml_data('data/test.yaml')
+    data = ensure_path_sep('\\data\\test.yaml')
     print(data)

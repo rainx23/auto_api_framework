@@ -27,6 +27,6 @@ class DaXue(BaseApi):
 
 
 if __name__ == '__main__':
-    data = GetYmlData().get_yml_data('data/test.yml')
+    data = GetYmlData().get_yml_data('data/test.yaml')
 
 
