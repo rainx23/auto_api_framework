@@ -8,11 +8,9 @@ import re
 import datetime
 import random
 from faker import Faker
-from utils.get_logger import GetLogger
+from utils.logging_tools.log_control import INFO, ERROR
 from datetime import date, timedelta, datetime
 from jsonpath import jsonpath
-
-logger = GetLogger().get_logger()
 
 
 class Context:
@@ -142,14 +140,14 @@ def regular(target):
         return target
 
     except AttributeError:
-        logger.error("未找到对应的替换的数据, 请检查数据是否正确 %s", target)
+        ERROR.logger.error("未找到对应的替换的数据, 请检查数据是否正确 %s", target)
         raise
     except IndexError:
-        logger.error("yaml中的 ${{}} 函数方法不正确，正确语法实例：${{get_time()}}")
+        ERROR.logger.error("yaml中的 ${{}} 函数方法不正确，正确语法实例：${{get_time()}}")
         raise
 
 
 if __name__ == '__main__':
     a = "${{host()}} aaa"
     b = regular(a)
-    # print(b)
+

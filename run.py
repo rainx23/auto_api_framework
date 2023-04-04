@@ -11,7 +11,7 @@ class Run:
     @staticmethod
     def run_default():
         # 测试用例
-        case = "cases/daxue.py"
+        case = "test_case/test_query_college_info.py"
 
         # allure-json存放路径
         allure_json = "reports/"

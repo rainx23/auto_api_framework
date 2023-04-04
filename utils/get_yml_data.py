@@ -6,7 +6,7 @@
 
 import yaml
 from string import Template
-from utils.get_logger import GetLogger
+from utils.logging_tools.log_control import INFO, ERROR
 from utils.get_path_info import GetPathInfo
 from typing import Union, Text, Dict, List
 from utils.models import TestCaseEnum, TestCase
@@ -16,7 +16,6 @@ from config.setting import ensure_path_sep
 
 class GetYmlData:
     def __init__(self):
-        self.logger = GetLogger().get_logger()
         self.case_data = None
         self.case_id = None
 
@@ -66,7 +65,7 @@ class GetYmlData:
 
             return case_list
         except Exception as e:
-            self.logger.error(e)
+            ERROR.logger.error(e)
 
     def read_yaml(self, data_path, value=None):
         try:
@@ -80,7 +79,7 @@ class GetYmlData:
                 return value
 
         except Exception as e:
-            self.logger.error(e)
+            ERROR.logger.error(e)
 
 
 if __name__ == '__main__':

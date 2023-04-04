@@ -10,6 +10,7 @@ from utils.get_yml_data import GetYmlData
 from utils.models import TestCase, ResponseData, RequestType
 from typing import Tuple, Dict, Union, Text
 from utils.allure_data.allure_tools import allure_step, allure_step_no, allure_attach
+from utils.logging_tools.log_decorator import log_decorator
 
 
 class RequestControl:
@@ -33,6 +34,16 @@ class RequestControl:
                 if not isinstance(value, str):
                     headers[key] = str(value)
         return headers
+
+    @classmethod
+    def response_elapsed_total_seconds(
+            cls,
+            res) -> float:
+        """获取接口响应时长"""
+        try:
+            return round(res.elapsed.total_seconds() * 1000, 2)
+        except AttributeError:
+            return 0.00
 
     def request_type_for_json(
             self,
@@ -169,7 +180,7 @@ class RequestControl:
             "headers": res.request.headers,
             "cookie": res.cookies,
             "assert_data": yaml_data.assert_data,
-            "res_time": None,
+            "res_time": self.response_elapsed_total_seconds(res),
             "status_code": res.status_code,
             "teardown": None,
             "teardown_sql": None,
@@ -200,6 +211,7 @@ class RequestControl:
         allure_step_no(f"响应耗时(ms): {str(_res_time)}")
         allure_step("响应结果: ", res)
 
+    @log_decorator(True)
     def http_request(self, **kwargs):
 
         requests_type_mapping = {

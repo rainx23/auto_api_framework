@@ -6,7 +6,6 @@ query_college_01:
     detail: 真实大学-四川轻化工大学
     headers:
         user-agent: Chrome
-        Content-Type: multipart/form-data;
     # 请求的数据，是 params 还是 json、或者 data
     requestType: data
     data:
@@ -33,7 +32,6 @@ query_college_02:
     detail: 真实大学-厦门大学
     headers:
         user-agent: Chrome
-        Content-Type: multipart/form-data;
     requestType: data
     data:
         type: "name"
@@ -59,7 +57,6 @@ query_college_03:
     method: POST
     headers:
         user-agent: Chrome
-        Content-Type: multipart/form-data;
     requestType: data
     data:
         type: "name"

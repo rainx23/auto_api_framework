@@ -6,7 +6,7 @@
 import csv
 from faker import Faker
 from utils.get_path_info import GetPathInfo
-from utils.get_logger import GetLogger
+from utils.logging_tools.log_control import INFO, ERROR, DEBUG
 
 
 class CreateData:
@@ -15,7 +15,6 @@ class CreateData:
         :param filename:写入csv文件名
         :param number:生成数据总数
         """
-        self.logger = GetLogger().get_logger()
         self.filename = filename
         self.number = number
 
@@ -29,7 +28,7 @@ class CreateData:
             pystr = f.pystr()
             row_content = address, pystr
             data.append(row_content)
-        self.logger.debug(f"content: {data}")
+        DEBUG.logger.debug(f"content: {data}")
         return data
 
     def save_csv_data(self, head_name):
@@ -39,7 +38,7 @@ class CreateData:
         """
         # 表头
         header = head_name
-        self.logger.info(f"header： {header}")
+        INFO.logger.info(f"header： {header}")
         save_path_dir = GetPathInfo().get_project_path() + '/data/' + self.filename
         if len(header) == 1:
             store_info = zip(self.create_range_data())  # zip防止写入单个数据有逗号

@@ -5,7 +5,7 @@
 
 import xlrd
 from utils.get_path_info import GetPathInfo
-from utils.get_logger import GetLogger
+from utils.logging_tools.log_control import INFO, ERROR, WARNING
 
 
 class GetExcelData:
@@ -15,7 +15,6 @@ class GetExcelData:
         :param data_path:excel文件相对路径
         :param sheet_name:excel访问的sheet名 默认为Sheet1
         """
-        self.logger = GetLogger().get_logger()
         self.excel_path = GetPathInfo().get_project_path() + "/" + data_path
         self.workbook = xlrd.open_workbook(self.excel_path)
         self.table = self.workbook.sheet_by_name(sheet_name=sheet_name)
@@ -28,7 +27,7 @@ class GetExcelData:
         """
         try:
             if self.row <= 1:
-                self.logger.warning('总行数小于1，请添加内容')
+                WARNING.logger.warning('总行数小于1，请添加内容')
             else:
                 keys = self.table.row_values(0)     # 获取第一行作为key值
                 print(keys)
@@ -53,7 +52,7 @@ class GetExcelData:
                 return data_list
 
         except Exception as e:
-            self.logger.error(e)
+            ERROR.logger.error(e)
 
 
 if __name__ == '__main__':
