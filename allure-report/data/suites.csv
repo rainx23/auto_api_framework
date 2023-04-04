@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:06 CST 2023","113","cases","daxue","TestCaseDaXue","","","真实大学-厦门大学",""
+"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:07 CST 2023","88","cases","daxue","TestCaseDaXue","","","不存在-测试大学",""
+"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:06 CST 2023","123","cases","daxue","TestCaseDaXue","","","真实大学-四川轻化工大学",""
