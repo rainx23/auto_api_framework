@@ -6,10 +6,9 @@
 """
 
 import requests
-from utils.get_yml_data import GetYmlData
-from utils.models import TestCase, ResponseData, RequestType
-from typing import Tuple, Dict, Union, Text
-from utils.allure_data.allure_tools import allure_step, allure_step_no, allure_attach
+from utils.other_tools.models import TestCase, ResponseData, RequestType
+from typing import Dict, Text
+from utils.allure_data.allure_tools import allure_step, allure_step_no
 from utils.logging_tools.log_decorator import log_decorator
 
 

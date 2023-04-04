@@ -5,11 +5,10 @@
 
 import requests
 import traceback
-import jsonpath
 
 from utils.get_logger import GetLogger
-from utils.get_time import GetTime
-from utils.get_yml_data import GetYmlData
+from utils.other_tools.get_time import GetTime
+from utils.read_files_tools.get_yml_data import GetYmlData
 
 
 class BaseApi:

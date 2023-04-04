@@ -2,10 +2,9 @@
 # 作者：Rainx
 # 时间：2022/3/14  15:03
 # 功能：将http请求封装成Python方法
-import requests
 from base_api import BaseApi
-from utils.get_yml_data import GetYmlData
-from utils.models import TestCase
+from utils.read_files_tools.get_yml_data import GetYmlData
+from utils.other_tools.models import TestCase
 
 
 class DaXue(BaseApi):

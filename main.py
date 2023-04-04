@@ -4,13 +4,11 @@
 # 功能：测试用例
 
 import pytest
-import requests
 import allure
 from utils.get_logger import GetLogger
-from utils.get_time import GetTime
+from utils.other_tools.get_time import GetTime
 from api.daxue import DaXue
-from utils.get_yml_data import GetYmlData
-from base_api import BaseApi
+from utils.read_files_tools.get_yml_data import GetYmlData
 
 
 class TestCase:

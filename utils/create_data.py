@@ -5,8 +5,8 @@
 
 import csv
 from faker import Faker
-from utils.get_path_info import GetPathInfo
 from utils.logging_tools.log_control import INFO, ERROR, DEBUG
+from config.setting import root_path
 
 
 class CreateData:
@@ -39,7 +39,7 @@ class CreateData:
         # 表头
         header = head_name
         INFO.logger.info(f"header： {header}")
-        save_path_dir = GetPathInfo().get_project_path() + '/data/' + self.filename
+        save_path_dir = root_path() + '/data/' + self.filename
         if len(header) == 1:
             store_info = zip(self.create_range_data())  # zip防止写入单个数据有逗号
         else:

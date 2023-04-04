@@ -8,12 +8,11 @@
 import allure
 import pytest
 from utils.read_files_tools.get_yaml_data_analysis import CaseData
-from utils.get_time import GetTime
+from utils.other_tools.get_time import GetTime
 from utils.requests_tool.request_control import RequestControl
 from utils.assertion.assert_control import Assert
 from utils.regular_control import regular
-from utils.logging_tools.log_control import INFO, ERROR
-
+from utils.logging_tools.log_control import INFO
 
 TestData = CaseData('\\data\\test.yaml').get_yaml_data()
 re_data = regular(str(TestData))

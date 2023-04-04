@@ -6,11 +6,11 @@
 """
 
 import os
-from typing import Union, Text, Dict, List
-from utils.models import TestCaseEnum, TestCase
+from typing import Text
+from utils.other_tools.models import TestCaseEnum, TestCase
 from utils.read_files_tools.yaml_control import GetYamlData
 from config.setting import ensure_path_sep
-from utils.models import Method, RequestType
+from utils.other_tools.models import Method, RequestType
 
 
 class CaseDataCheck:

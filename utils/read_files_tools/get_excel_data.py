@@ -4,8 +4,8 @@
 # 功能：读取excel文件 封装
 
 import xlrd
-from utils.get_path_info import GetPathInfo
 from utils.logging_tools.log_control import INFO, ERROR, WARNING
+from config.setting import ensure_path_sep
 
 
 class GetExcelData:
@@ -15,7 +15,7 @@ class GetExcelData:
         :param data_path:excel文件相对路径
         :param sheet_name:excel访问的sheet名 默认为Sheet1
         """
-        self.excel_path = GetPathInfo().get_project_path() + "/" + data_path
+        self.excel_path = ensure_path_sep(data_path)
         self.workbook = xlrd.open_workbook(self.excel_path)
         self.table = self.workbook.sheet_by_name(sheet_name=sheet_name)
         self.row = self.table.nrows     # 获取总行数
@@ -56,7 +56,7 @@ class GetExcelData:
 
 
 if __name__ == '__main__':
-    data = GetExcelData("data/test_datas.xls", 'test').get_excel_data()
+    data = GetExcelData("\\data\\test_datas.xls", 'test').get_excel_data()
     print(data)
 
 

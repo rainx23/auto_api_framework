@@ -1,16 +1,14 @@
 # -*- coding:utf-8 -*-
-# 作者：IT小学生蔡坨坨
-# 时间：2021/11/5 23:09
+# 作者：Rainx
+# 时间：2021/4/4
 # 功能：读取yml文件 封装
 
 
 import yaml
 from string import Template
-from utils.logging_tools.log_control import INFO, ERROR
-from utils.get_path_info import GetPathInfo
-from typing import Union, Text, Dict, List
-from utils.models import TestCaseEnum, TestCase
-from utils.read_files_tools import yaml_control
+from utils.logging_tools.log_control import ERROR
+from typing import Text
+from utils.other_tools.models import TestCaseEnum, TestCase
 from config.setting import ensure_path_sep
 
 
@@ -36,10 +34,8 @@ class GetYmlData:
         """
 
         try:
-            # 项目根目录
-            project_path = GetPathInfo().get_project_path()
             # 根目录 + 相对路径 = 绝对路径
-            yml_path = project_path + "/" + data_path
+            yml_path = ensure_path_sep(data_path)
             case_list = []
             with open(yml_path, mode='r', encoding="utf-8") as f:
                 text = f.read()
@@ -69,10 +65,8 @@ class GetYmlData:
 
     def read_yaml(self, data_path, value=None):
         try:
-            # 项目根目录
-            project_path = GetPathInfo().get_project_path()
             # 根目录 + 相对路径 = 绝对路径
-            yml_path = project_path + "/" + data_path
+            yml_path = ensure_path_sep(data_path)
 
             with open(yml_path, mode='r', encoding='utf-8') as f:
                 value = yaml.load(stream=f, Loader=yaml.FullLoader)
