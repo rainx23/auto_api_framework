@@ -77,6 +77,6 @@ class GetYmlData:
 
 
 if __name__ == '__main__':
-    # data = GetYmlData().get_yml_data('data/test.yaml')
-    data = ensure_path_sep('\\data\\test.yaml')
+    # data = GetYmlData().get_yml_data('data/query_college_info.yaml')
+    data = ensure_path_sep('\\data\\query_college_info.yaml')
     print(data)

@@ -74,16 +74,19 @@ class CaseData(CaseDataCheck):
             if key != 'case_common':
                 self.case_data = values
                 self.case_id = key
-            case_date = {
-                'url': self.get_host,
-                'method': self.get_method,
-                "detail": self.case_data.get(TestCaseEnum.DETAIL.value[0]),
-                'headers': self.case_data.get(TestCaseEnum.HEADERS.value[0]),
-                'requestType': self.get_request_type,
-                'data': self.case_data.get(TestCaseEnum.DATA.value[0]),
-                "assert_data": self.assert_data,
-            }
-            case_list.append(TestCase(**case_date).dict())
+                case_date = {
+                    'url': self.get_host,
+                    'method': self.get_method,
+                    "detail": self.case_data.get(TestCaseEnum.DETAIL.value[0]),
+                    'headers': self.case_data.get(TestCaseEnum.HEADERS.value[0]),
+                    'requestType': self.get_request_type,
+                    'data': self.case_data.get(TestCaseEnum.DATA.value[0]),
+                    "assert_data": self.assert_data,
+                }
+                case_list.append(TestCase(**case_date).dict())
 
         return case_list
 
+
+if __name__ == '__main__':
+    print(CaseData('\\data\\query_college_info.yaml').get_yaml_data())

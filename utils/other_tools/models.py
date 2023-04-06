@@ -73,8 +73,11 @@ class ResponseData(BaseModel):
 
 
 class Config(BaseModel):
+    project_name: Text
+    env: Text
+    tester_name: Text
     host: Text
-
+    real_time_update_test_cases: bool = False
 
 @unique
 class AllureAttachmentType(Enum):

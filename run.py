@@ -11,7 +11,7 @@ class Run:
     @staticmethod
     def run_default():
         # 测试用例
-        case = "test_case/test_query_college_info.py"
+        case = "test_case/Query/test_query_college_info.py"
 
         # allure-json存放路径
         allure_json = "reports/"
@@ -19,7 +19,8 @@ class Run:
             os.makedirs(allure_json)
 
         # 定义PyTest运行参数
-        param_list = [case, "-s", "-v", "-rA", "--alluredir={}".format(allure_json)]
+        param_list = [case, "-s", "-v", "-rA",
+                      "--alluredir={}".format(allure_json)]
 
         # 执行用例，并生成测试报告
         pytest.main(param_list)

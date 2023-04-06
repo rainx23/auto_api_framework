@@ -1,4 +1,19 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:06 CST 2023","113","cases","daxue","TestCaseDaXue","","","真实大学-厦门大学",""
-"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:07 CST 2023","88","cases","daxue","TestCaseDaXue","","","不存在-测试大学",""
 "passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:06 CST 2023","123","cases","daxue","TestCaseDaXue","","","真实大学-四川轻化工大学",""
+"passed","Thu Apr 06 11:33:55 CST 2023","Thu Apr 06 11:33:55 CST 2023","94","test_case","test_query_college_info","TestQueryCollegeInfo","","","真实大学-厦门大学",""
+"passed","Thu Apr 06 16:48:24 CST 2023","Thu Apr 06 16:48:24 CST 2023","94","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","不存在-测试大学","
+        :param :
+        :return:
+        "
+"passed","Thu Apr 06 16:48:24 CST 2023","Thu Apr 06 16:48:24 CST 2023","99","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","真实大学-四川轻化工大学","
+        :param :
+        :return:
+        "
+"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:07 CST 2023","88","cases","daxue","TestCaseDaXue","","","不存在-测试大学",""
+"passed","Thu Apr 06 11:33:55 CST 2023","Thu Apr 06 11:33:55 CST 2023","84","test_case","test_query_college_info","TestQueryCollegeInfo","","","不存在-测试大学",""
+"passed","Thu Apr 06 11:33:55 CST 2023","Thu Apr 06 11:33:55 CST 2023","142","test_case","test_query_college_info","TestQueryCollegeInfo","","","真实大学-四川轻化工大学",""
+"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:06 CST 2023","113","cases","daxue","TestCaseDaXue","","","真实大学-厦门大学",""
+"passed","Thu Apr 06 16:48:24 CST 2023","Thu Apr 06 16:48:24 CST 2023","90","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","真实大学-厦门大学","
+        :param :
+        :return:
+        "

@@ -6,10 +6,13 @@
 """
 
 import requests
+import random
 from utils.other_tools.models import TestCase, ResponseData, RequestType
-from typing import Dict, Text
-from utils.allure_data.allure_tools import allure_step, allure_step_no
+from typing import Dict, Text, Tuple
+from utils.allure_data.allure_tools import allure_step, allure_step_no, allure_attach
 from utils.logging_tools.log_decorator import log_decorator
+from config.setting import ensure_path_sep
+from requests_toolbelt import MultipartEncoder
 
 
 class RequestControl:
@@ -43,6 +46,64 @@ class RequestControl:
             return round(res.elapsed.total_seconds() * 1000, 2)
         except AttributeError:
             return 0.00
+
+    @classmethod
+    def multipart_data(
+            cls,
+            file_data: Dict):
+        """ 处理上传文件数据 """
+        multipart = MultipartEncoder(
+            fields=file_data,  # 字典格式
+            boundary='-----------------------------' + str(random.randint(int(1e28), int(1e29 - 1)))
+        )
+        return multipart
+
+    def file_prams_exit(self) -> Dict:
+        """判断上传文件接口，文件参数是否存在"""
+        try:
+            params = self.__yaml_case.data['params']
+        except KeyError:
+            params = None
+        return params
+
+    def file_data_exit(
+            self,
+            file_data) -> None:
+        """判断上传文件时，data参数是否存在"""
+        # 兼容又要上传文件，又要上传其他类型参数
+        try:
+            _data = self.__yaml_case.data
+            for key, value in _data['data'].items():
+                if "multipart/form-data" in str(self.__yaml_case.headers.values()):
+                    file_data[key] = str(value)
+                else:
+                    file_data[key] = value
+        except KeyError:
+            ...
+
+    def upload_file(
+            self) -> Tuple:
+        """
+        判断处理上传文件
+        :return:
+        """
+        # 处理上传多个文件的情况
+        _files = []
+        file_data = {}
+        # 兼容又要上传文件，又要上传其他类型参数
+        self.file_data_exit(file_data)
+        _data = self.__yaml_case.data
+        for key, value in _data['file'].items():
+            file_path = ensure_path_sep("\\Files\\" + value)
+            file_data[key] = (value, open(file_path, 'rb'), 'application/octet-stream')
+            _files.append(file_data)
+            # allure中展示该附件
+            allure_attach(source=file_path, name=value, extension=value)
+        multipart = self.multipart_data(file_data)
+        # ast.literal_eval(cache_regular(str(_headers)))['Content-Type'] = multipart.content_type
+        self.__yaml_case.headers['Content-Type'] = multipart.content_type
+        params_data = str(self.file_prams_exit())
+        return multipart, params_data, self.__yaml_case
 
     def request_type_for_json(
             self,
@@ -120,21 +181,20 @@ class RequestControl:
             headers,
             **kwargs):
         """处理 requestType 为 file 类型"""
-        # multipart = self.upload_file()
-        # yaml_data = multipart[2]
-        # _headers = multipart[2].headers
-        # _headers = self.check_headers_str_null(_headers)
-        # res = requests.request(
-        #     method=method,
-        #     url=cache_regular(yaml_data.url),
-        #     data=multipart[0],
-        #     params=multipart[1],
-        #     headers=ast.literal_eval(cache_regular(str(_headers))),
-        #     verify=False,
-        #     **kwargs
-        # )
-        # return res
-        pass
+        multipart = self.upload_file()
+        yaml_data = multipart[2]
+        _headers = multipart[2].headers
+        _headers = self.check_headers_str_null(_headers)
+        res = requests.request(
+            method=method,
+            url=yaml_data.url,
+            data=multipart[0],
+            params=multipart[1],
+            headers=str(_headers),
+            verify=False,
+            **kwargs
+        )
+        return res
 
     def request_type_for_data(
             self,

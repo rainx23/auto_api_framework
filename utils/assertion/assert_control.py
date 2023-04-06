@@ -5,12 +5,9 @@
 """
 断言类型封装，支持json响应断言、数据库断言
 """
-import ast
-import json
-from typing import Text, Dict, Any, Union
 from jsonpath import jsonpath
 # from utils.other_tools.models import AssertMethod
-from utils.exceptions import AssertTypeError
+from utils.other_tools.exceptions import AssertTypeError
 
 
 class AssertUtil:

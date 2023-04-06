@@ -1,0 +1,1 @@
+"{'errorStatus': {'jsonpath': '$.status', 'type': '==', 'value': 1, 'AssertType': None}, 'errorInfo': {'jsonpath': '$.info', 'type': '==', 'value': '没有找到相关信息！', 'AssertType': None}}"

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 2023/4/1
-# @Author  : Rainxs
+# @Author  : Rainx
 # @Function: 读取路径
 
 import os
