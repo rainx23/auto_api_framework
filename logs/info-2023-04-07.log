@@ -1,0 +1,312 @@
+INFO    2023-04-07 13:59:20,834E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 13:59:20 >>>>>> 开始执行：
+INFO    2023-04-07 13:59:20,965E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 126 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 13:59:20,968E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 13:59:20 >>>>>> 执行结束！
+INFO    2023-04-07 13:59:20,970E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 13:59:20 >>>>>> 开始执行：
+INFO    2023-04-07 13:59:21,056E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 82 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 13:59:21,058E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 13:59:20 >>>>>> 执行结束！
+INFO    2023-04-07 13:59:21,060E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 13:59:20 >>>>>> 开始执行：
+INFO    2023-04-07 13:59:21,145E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 83 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 13:59:21,147E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 13:59:20 >>>>>> 执行结束！
+INFO    2023-04-07 14:00:04,888E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:00:04 >>>>>> 开始执行：
+INFO    2023-04-07 14:00:05,005E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 112 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:00:05,008E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:00:04 >>>>>> 执行结束！
+INFO    2023-04-07 14:00:05,012E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:00:04 >>>>>> 开始执行：
+INFO    2023-04-07 14:00:05,098E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 82 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:00:05,101E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:00:04 >>>>>> 执行结束！
+INFO    2023-04-07 14:00:05,105E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:00:04 >>>>>> 开始执行：
+INFO    2023-04-07 14:00:05,189E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 80 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:00:05,191E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:00:04 >>>>>> 执行结束！
+INFO    2023-04-07 14:04:42,946E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:04:42 >>>>>> 开始执行：
+INFO    2023-04-07 14:04:43,084E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'token': '$cache{token}', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 133 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:04:43,087E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:04:42 >>>>>> 执行结束！
+INFO    2023-04-07 14:04:43,092E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:04:42 >>>>>> 开始执行：
+INFO    2023-04-07 14:04:43,182E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 85 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:04:43,184E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:04:42 >>>>>> 执行结束！
+INFO    2023-04-07 14:04:43,185E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:04:42 >>>>>> 开始执行：
+INFO    2023-04-07 14:04:43,272E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 82 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:04:43,274E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:04:42 >>>>>> 执行结束！
+INFO    2023-04-07 14:48:41,665E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:48:41 >>>>>> 开始执行：
+INFO    2023-04-07 14:48:41,798E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '$cache{token}', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 128 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:48:41,800E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:48:41 >>>>>> 执行结束！
+INFO    2023-04-07 14:48:41,803E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:48:41 >>>>>> 开始执行：
+INFO    2023-04-07 14:48:41,887E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 79 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:48:41,889E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:48:41 >>>>>> 执行结束！
+INFO    2023-04-07 14:48:41,891E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:48:41 >>>>>> 开始执行：
+INFO    2023-04-07 14:48:41,978E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 83 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:48:41,980E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:48:41 >>>>>> 执行结束！
+INFO    2023-04-07 14:54:37,531E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:54:37 >>>>>> 开始执行：
+INFO    2023-04-07 14:54:37,662E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '$cache{token}', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 125 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:54:37,664E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:54:37 >>>>>> 执行结束！
+INFO    2023-04-07 14:54:37,666E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:54:37 >>>>>> 开始执行：
+INFO    2023-04-07 14:54:37,751E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 81 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:54:37,753E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:54:37 >>>>>> 执行结束！
+INFO    2023-04-07 14:54:37,754E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:54:37 >>>>>> 开始执行：
+INFO    2023-04-07 14:54:37,837E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 78 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:54:37,839E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:54:37 >>>>>> 执行结束！
+INFO    2023-04-07 14:54:50,417E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:54:50 >>>>>> 开始执行：
+INFO    2023-04-07 14:54:50,517E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '$cache{token}', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 95 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:54:50,520E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:54:50 >>>>>> 执行结束！
+INFO    2023-04-07 14:54:50,522E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:54:50 >>>>>> 开始执行：
+INFO    2023-04-07 14:54:50,610E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 83 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:54:50,611E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:54:50 >>>>>> 执行结束！
+INFO    2023-04-07 14:54:50,613E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 14:54:50 >>>>>> 开始执行：
+INFO    2023-04-07 14:54:50,704E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 87 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 14:54:50,705E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 14:54:50 >>>>>> 执行结束！
+INFO    2023-04-07 15:09:18,068E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 15:09:17 >>>>>> 开始执行：
+INFO    2023-04-07 15:09:18,200E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '$cache{token}', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 126 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 15:09:18,202E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 15:09:17 >>>>>> 执行结束！
+INFO    2023-04-07 15:09:18,204E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 15:09:17 >>>>>> 开始执行：
+INFO    2023-04-07 15:09:18,290E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 83 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 15:09:18,292E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 15:09:17 >>>>>> 执行结束！
+INFO    2023-04-07 15:09:18,294E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 15:09:17 >>>>>> 开始执行：
+INFO    2023-04-07 15:09:18,378E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 80 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 15:09:18,380E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 15:09:17 >>>>>> 执行结束！
+INFO    2023-04-07 15:25:50,468E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 15:25:50 >>>>>> 开始执行：
+INFO    2023-04-07 15:25:50,606E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '$cache{token}', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 134 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 15:25:50,608E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 15:25:50 >>>>>> 执行结束！
+INFO    2023-04-07 15:25:50,611E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 15:25:50 >>>>>> 开始执行：
+INFO    2023-04-07 15:25:50,695E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 79 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 15:25:50,697E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 15:25:50 >>>>>> 执行结束！
+INFO    2023-04-07 15:25:50,698E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 15:25:50 >>>>>> 开始执行：
+INFO    2023-04-07 15:25:50,786E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 83 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 15:25:50,788E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 15:25:50 >>>>>> 执行结束！

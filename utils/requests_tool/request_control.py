@@ -4,6 +4,7 @@
 # 时间：2023/3/28
 # 功能：封装request请求
 """
+import ast
 
 import requests
 import random
@@ -14,12 +15,15 @@ from utils.logging_tools.log_decorator import log_decorator
 from config.setting import ensure_path_sep
 from requests_toolbelt import MultipartEncoder
 
+from utils.regular_control import cache_regular
+
 
 class RequestControl:
     """ 封装请求 """
 
     def __init__(self, yaml_case):
         self.__yaml_case = TestCase(**yaml_case)
+        print(self.__yaml_case.headers)
 
     @classmethod
     def check_headers_str_null(
@@ -111,7 +115,7 @@ class RequestControl:
             method: Text,
             **kwargs):
         """ 判断请求类型为json格式 """
-        _headers = self.__yaml_case.headers
+        _headers = self.check_headers_str_null(headers)
         _data = self.__yaml_case.data
         _url = self.__yaml_case.url
         res = requests.request(
@@ -132,7 +136,7 @@ class RequestControl:
             method: Text,
             **kwargs) -> object:
         """判断 requestType 为 None"""
-        _headers = self.__yaml_case.headers
+        _headers = self.check_headers_str_null(headers)
         _url = self.__yaml_case.url
         res = requests.request(
             method=method,
@@ -190,7 +194,7 @@ class RequestControl:
             url=yaml_data.url,
             data=multipart[0],
             params=multipart[1],
-            headers=str(_headers),
+            headers=ast.literal_eval(cache_regular(str(_headers))),
             verify=False,
             **kwargs
         )
@@ -207,12 +211,13 @@ class RequestControl:
         #     ast.literal_eval(cache_regular(str(data))),
         #     headers
         # )
+        _headers = self.check_headers_str_null(headers)
         _url = self.__yaml_case.url
         res = requests.request(
             method=method,
             url=_url,
             data=data,
-            headers=headers,
+            headers=_headers,
             verify=False,
             **kwargs)
 

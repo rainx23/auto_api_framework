@@ -11,6 +11,7 @@ query_college_01:
     detail: 真实大学-四川轻化工大学
     headers:
         user-agent: Chrome
+        Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
     requestType: data
     data:
