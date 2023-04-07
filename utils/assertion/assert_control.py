@@ -5,9 +5,17 @@
 """
 断言类型封装，支持json响应断言、数据库断言
 """
+import ast
+import json
+from typing import Text, Dict, Any, Union
 from jsonpath import jsonpath
-# from utils.other_tools.models import AssertMethod
-from utils.other_tools.exceptions import AssertTypeError
+from utils.other_tools.models import AssertMethod
+from utils.other_tools.models import load_module_functions
+from utils.logging_tools.log_control import ERROR, WARNING
+from utils.read_files_tools.regular_control import cache_regular
+from utils.assertion import assert_type
+from utils.other_tools.exceptions import JsonpathExtractionFailed, SqlNotFound, AssertTypeError
+from utils import config
 
 
 class AssertUtil:
@@ -48,6 +56,16 @@ class AssertUtil:
         return self.get_assert_data.get("AssertType")
 
     @property
+    def get_type(self):
+        assert 'type' in self.get_assert_data.keys(), (
+            " 断言数据: '%s' 中缺少 `type` 属性 " % self.get_assert_data
+        )
+
+        # 获取断言类型对应的枚举值
+        name = AssertMethod(self.get_assert_data.get("type")).name
+        return name
+
+    @property
     def get_message(self):
         """
         获取断言描述，如果未填写，则返回 `None`
@@ -55,9 +73,14 @@ class AssertUtil:
         """
         return self.get_assert_data.get("message", None)
 
-    # def _assert(self, check_value: Any, expect_value: Any, message: Text = ""):
-    #
-    #     self.functions_mapping()[self.get_type](check_value, expect_value, str(message))
+    @staticmethod
+    def functions_mapping():
+
+        return load_module_functions(assert_type)
+
+    def _assert(self, check_value: Any, expect_value: Any, message: Text = ""):
+
+        self.functions_mapping()[self.get_type](check_value, expect_value, str(message))
 
     @property
     def _assert_resp_data(self):
@@ -81,7 +104,8 @@ class AssertUtil:
 
     def assert_type_handle(self):
         if self.get_assert_type is None:
-            assert(self._assert_resp_data, self.get_value, self.get_message)
+            self._assert(self._assert_resp_data, self.get_value, self.get_message)
+
         else:
             raise AssertTypeError("断言失败，目前只支持数据库断言和响应断言")
 
@@ -90,6 +114,7 @@ class Assert(AssertUtil):
 
     def assert_data_list(self):
         assert_list = []
+
         for k, v in self.assert_data.items():
             if k == "status_code":
                 assert self.status_code == v, "响应状态码断言失败"
@@ -100,6 +125,7 @@ class Assert(AssertUtil):
 
     def assert_type_handle(self):
         for i in self.assert_data_list():
+
             self.assert_data = i
             super().assert_type_handle()
 

@@ -1,19 +1,21 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:06 CST 2023","123","cases","daxue","TestCaseDaXue","","","真实大学-四川轻化工大学",""
-"passed","Thu Apr 06 11:33:55 CST 2023","Thu Apr 06 11:33:55 CST 2023","94","test_case","test_query_college_info","TestQueryCollegeInfo","","","真实大学-厦门大学",""
-"passed","Thu Apr 06 16:48:24 CST 2023","Thu Apr 06 16:48:24 CST 2023","94","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","不存在-测试大学","
+"passed","Fri Apr 07 22:35:25 CST 2023","Fri Apr 07 22:35:25 CST 2023","69","test_case.UserManger","test_create_user","TestCreateUser","","","创建用户成功（全部参数）","
         :param :
         :return:
         "
-"passed","Thu Apr 06 16:48:24 CST 2023","Thu Apr 06 16:48:24 CST 2023","99","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","真实大学-四川轻化工大学","
+"passed","Fri Apr 07 22:35:25 CST 2023","Fri Apr 07 22:35:25 CST 2023","71","test_case.UserManger","test_create_user","TestCreateUser","","","创建用户成功（必填参数）","
         :param :
         :return:
         "
-"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:07 CST 2023","88","cases","daxue","TestCaseDaXue","","","不存在-测试大学",""
-"passed","Thu Apr 06 11:33:55 CST 2023","Thu Apr 06 11:33:55 CST 2023","84","test_case","test_query_college_info","TestQueryCollegeInfo","","","不存在-测试大学",""
-"passed","Thu Apr 06 11:33:55 CST 2023","Thu Apr 06 11:33:55 CST 2023","142","test_case","test_query_college_info","TestQueryCollegeInfo","","","真实大学-四川轻化工大学",""
-"passed","Tue Apr 04 16:48:06 CST 2023","Tue Apr 04 16:48:06 CST 2023","113","cases","daxue","TestCaseDaXue","","","真实大学-厦门大学",""
-"passed","Thu Apr 06 16:48:24 CST 2023","Thu Apr 06 16:48:24 CST 2023","90","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","真实大学-厦门大学","
+"passed","Fri Apr 07 22:35:25 CST 2023","Fri Apr 07 22:35:25 CST 2023","7","test_case.UserManger","test_create_user","TestCreateUser","","","创建已存在用户","
+        :param :
+        :return:
+        "
+"passed","Fri Apr 07 22:35:25 CST 2023","Fri Apr 07 22:35:25 CST 2023","68","test_case.UserManger","test_create_user","TestCreateUser","","","创建用户成功（必填+选填参数）","
+        :param :
+        :return:
+        "
+"passed","Fri Apr 07 22:35:25 CST 2023","Fri Apr 07 22:35:25 CST 2023","5","test_case.UserManger","test_create_user","TestCreateUser","","","用户名为空","
         :param :
         :return:
         "

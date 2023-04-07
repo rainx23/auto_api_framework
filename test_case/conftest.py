@@ -21,7 +21,7 @@ def clear_report():
     del_file(ensure_path_sep("\\report"))
 
 
-@pytest.fixture(scope="session", autouse=False)
+@pytest.fixture(scope="session", autouse=True)
 def work_login_init():
     """
     获取登录的token
@@ -39,5 +39,4 @@ def work_login_init():
     res = requests.post(url=url, data=json.dumps(data), verify=True, headers=headers).json()
     token = res['data']['token']
 
-    CacheHandler.update_cache(cache_name='Authorization', value=token)
-
+    CacheHandler.update_cache(cache_name='token', value=token)

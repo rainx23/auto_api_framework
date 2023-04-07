@@ -9,13 +9,13 @@ import ast
 import requests
 import random
 from utils.other_tools.models import TestCase, ResponseData, RequestType
-from typing import Dict, Text, Tuple
+from typing import Dict, Text, Tuple, Union
 from utils.allure_data.allure_tools import allure_step, allure_step_no, allure_attach
 from utils.logging_tools.log_decorator import log_decorator
 from config.setting import ensure_path_sep
 from requests_toolbelt import MultipartEncoder
 
-from utils.regular_control import cache_regular
+from utils.read_files_tools.regular_control import cache_regular
 
 
 class RequestControl:
@@ -49,6 +49,35 @@ class RequestControl:
             return round(res.elapsed.total_seconds() * 1000, 2)
         except AttributeError:
             return 0.00
+
+    @classmethod
+    def multipart_in_headers(
+            cls,
+            request_data: Dict,
+            header: Dict):
+        """ 判断处理header为 Content-Type: multipart/form-data"""
+        header = ast.literal_eval(cache_regular(str(header)))
+        request_data = ast.literal_eval(cache_regular(str(request_data)))
+
+        if header is None:
+            header = {"headers": None}
+        else:
+            # 将header中的int转换成str
+            for key, value in header.items():
+                if not isinstance(value, str):
+                    header[key] = str(value)
+            if "multipart/form-data" in str(header.values()):
+                # 判断请求参数不为空, 并且参数是字典类型
+                if request_data and isinstance(request_data, dict):
+                    # 当 Content-Type 为 "multipart/form-data"时，需要将数据类型转换成 str
+                    for key, value in request_data.items():
+                        if not isinstance(value, str):
+                            request_data[key] = str(value)
+
+                    request_data = MultipartEncoder(request_data)
+                    header['Content-Type'] = request_data.content_type
+
+        return request_data, header
 
     @classmethod
     def multipart_data(
@@ -122,7 +151,7 @@ class RequestControl:
             url=_url,
             json=_data,
             data={},
-            headers=_headers,
+            headers=ast.literal_eval(cache_regular(str(headers))),
             verify=False,
             params=None,
             **kwargs
@@ -206,21 +235,28 @@ class RequestControl:
             **kwargs):
         """判断 requestType 为 data 类型"""
         data = self.__yaml_case.data
-        # _data, _headers = self.multipart_in_headers(
-        #     ast.literal_eval(cache_regular(str(data))),
-        #     headers
-        # )
-        _headers = self.check_headers_str_null(headers)
+        _data, _headers = self.multipart_in_headers(
+            ast.literal_eval(cache_regular(str(data))),
+            headers
+        )
         _url = self.__yaml_case.url
         res = requests.request(
             method=method,
             url=_url,
-            data=data,
+            data=_data,
             headers=_headers,
             verify=False,
             **kwargs)
 
         return res
+
+    @classmethod
+    def _request_body_handler(cls, data: Dict, request_type: Text) -> Union[None, Dict]:
+        """处理请求参数 """
+        if request_type.upper() == 'PARAMS':
+            return None
+        else:
+            return data
 
     def request_type_for_export(self):
         pass
@@ -230,13 +266,16 @@ class RequestControl:
             res,
             yaml_data: "TestCase",
     ) -> "ResponseData":
+        data = ast.literal_eval(cache_regular(str(yaml_data.data)))
         _data = {
             "url": res.url,
             "is_run": None,
             "detail": yaml_data.detail,
             "response_data": res.json(),
             # 这个用于日志专用，判断如果是get请求，直接打印url
-            "request_body": None,
+            "request_body": self._request_body_handler(
+                data, yaml_data.requestType
+            ),
             "method": res.request.method,
             "sql_data": None,
             "yaml_data": yaml_data,
@@ -247,7 +286,7 @@ class RequestControl:
             "status_code": res.status_code,
             "teardown": None,
             "teardown_sql": None,
-            "body": None
+            "body": data
         }
         # 抽离出通用模块，判断 http_request 方法中的一些数据校验
         return ResponseData(**_data)

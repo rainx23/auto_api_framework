@@ -1,0 +1,13 @@
+INFO     G:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 22:23:45 >>>>>> 开始执行：
+INFO     G:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 创建已存在用户
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODA4Nzc0MjUsImV4cCI6MTY4MDk2MzgyNX0.6ddC-no_YYWQcEzHrAkzNMEj67DT5ezQ6hjtb4RfODw', 'Content-Length': '43'}
+请求内容: {'username': 'admin', 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '用户名已存在', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+=====================================================
+INFO     G:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 22:23:45 >>>>>> 执行结束！

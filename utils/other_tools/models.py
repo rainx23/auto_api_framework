@@ -17,6 +17,17 @@ class Method(Enum):
     OPTION = "OPTION"
 
 
+def load_module_functions(module) -> Dict[Text, Callable]:
+    """ 获取 module中方法的名称和所在的内存地址 """
+    module_functions = {}
+
+    for name, item in vars(module).items():
+        if isinstance(item, types.FunctionType):
+            module_functions[name] = item
+
+    return module_functions
+
+
 class RequestType(Enum):
     """
     request请求发送，请求参数的数据类型
@@ -58,7 +69,7 @@ class ResponseData(BaseModel):
     is_run: Union[None, bool, Text]
     detail: Text
     response_data: Any
-    request_body: None
+    request_body: Any
     method: Text
     sql_data: None
     yaml_data: "TestCase"
@@ -69,7 +80,7 @@ class ResponseData(BaseModel):
     status_code: int
     teardown: None
     teardown_sql: Union[None, List]
-    body: None
+    body: Any
 
 
 class Config(BaseModel):
@@ -78,6 +89,7 @@ class Config(BaseModel):
     tester_name: Text
     host: Text
     real_time_update_test_cases: bool = False
+
 
 @unique
 class AllureAttachmentType(Enum):
@@ -107,3 +119,24 @@ class AllureAttachmentType(Enum):
     WEBM = "webm"
 
     PDF = "pdf"
+
+
+@unique
+class AssertMethod(Enum):
+    """断言类型"""
+    equals = "=="
+    less_than = "lt"
+    less_than_or_equals = "le"
+    greater_than = "gt"
+    greater_than_or_equals = "ge"
+    not_equals = "not_eq"
+    string_equals = "str_eq"
+    length_equals = "len_eq"
+    length_greater_than = "len_gt"
+    length_greater_than_or_equals = 'len_ge'
+    length_less_than = "len_lt"
+    length_less_than_or_equals = 'len_le'
+    contains = "contains"
+    contained_by = 'contained_by'
+    startswith = 'startswith'
+    endswith = 'endswith'

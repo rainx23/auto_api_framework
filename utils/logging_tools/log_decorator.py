@@ -34,6 +34,7 @@ def log_decorator(switch: bool):
                                f"接口响应内容: {res.response_data}\n" \
                                f"接口响应时长: {res.res_time} ms\n" \
                                f"Http状态码: {res.status_code}\n" \
+                               f"断言结果: {res.status_code}\n" \
                                "====================================================="
 
                 # 判断正常打印的日志，控制台输出绿色
