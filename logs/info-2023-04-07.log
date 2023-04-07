@@ -310,3 +310,66 @@ INFO    2023-04-07 15:25:50,786E:\auto_api1_framework\logs\info-2023-04-07.log:l
 Http状态码: 200
 =====================================================
 INFO    2023-04-07 15:25:50,788E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 15:25:50 >>>>>> 执行结束！
+INFO    2023-04-07 16:54:56,911E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 16:54:56 >>>>>> 开始执行：
+INFO    2023-04-07 16:54:57,241E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 16:54:56 >>>>>> 执行结束！
+INFO    2023-04-07 16:54:57,243E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 16:54:56 >>>>>> 开始执行：
+INFO    2023-04-07 16:54:57,346E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 16:54:56 >>>>>> 执行结束！
+INFO    2023-04-07 16:54:57,348E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 16:54:56 >>>>>> 开始执行：
+INFO    2023-04-07 16:54:57,448E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 16:54:56 >>>>>> 执行结束！
+INFO    2023-04-07 16:54:57,449E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 16:54:56 >>>>>> 开始执行：
+INFO    2023-04-07 16:54:57,545E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 16:54:56 >>>>>> 执行结束！
+INFO    2023-04-07 17:09:46,222E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 17:09:46 >>>>>> 开始执行：
+INFO    2023-04-07 17:09:46,537E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 17:09:46 >>>>>> 执行结束！
+INFO    2023-04-07 17:09:46,539E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 17:09:46 >>>>>> 开始执行：
+INFO    2023-04-07 17:09:46,645E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 17:09:46 >>>>>> 执行结束！
+INFO    2023-04-07 17:09:46,646E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 17:09:46 >>>>>> 开始执行：
+INFO    2023-04-07 17:09:46,743E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 17:09:46 >>>>>> 执行结束！
+INFO    2023-04-07 17:09:46,744E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 17:09:46 >>>>>> 开始执行：
+INFO    2023-04-07 17:09:46,846E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 17:09:46 >>>>>> 执行结束！
+INFO    2023-04-07 17:12:59,056E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 17:12:58 >>>>>> 开始执行：
+INFO    2023-04-07 17:12:59,368E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 17:12:58 >>>>>> 执行结束！
+INFO    2023-04-07 17:12:59,370E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 17:12:58 >>>>>> 开始执行：
+INFO    2023-04-07 17:12:59,471E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 17:12:58 >>>>>> 执行结束！
+INFO    2023-04-07 17:12:59,473E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 17:12:58 >>>>>> 开始执行：
+INFO    2023-04-07 17:12:59,576E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 17:12:58 >>>>>> 执行结束！
+INFO    2023-04-07 17:12:59,578E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:26 2023-04-07 17:12:58 >>>>>> 开始执行：
+INFO    2023-04-07 17:12:59,673E:\auto_api1_framework\logs\info-2023-04-07.log:test_create_user.py:29 2023-04-07 17:12:58 >>>>>> 执行结束！
+INFO    2023-04-07 17:14:40,316E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 17:14:40 >>>>>> 开始执行：
+INFO    2023-04-07 17:14:40,416E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-四川轻化工大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '$cache{token}', 'Content-Length': '104', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '2181', 'name': '四川轻化工大学', 'code': '4151010622', 'department': '四川省', 'city': '自贡市', 'level': '本科', 'remark': ''}]}
+接口响应时长: 94 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 17:14:40,418E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 17:14:40 >>>>>> 执行结束！
+INFO    2023-04-07 17:14:40,424E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 17:14:40 >>>>>> 开始执行：
+INFO    2023-04-07 17:14:40,512E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 真实大学-厦门大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '77', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 1, 'info': '查询成功！', 'data': [{'id': '1124', 'name': '厦门大学', 'code': '4135010384', 'department': '教育部', 'city': '厦门市', 'level': '本科', 'remark': ''}, {'id': '1153', 'name': '厦门大学嘉庚学院', 'code': '4135013469', 'department': '福建省教育厅', 'city': '漳州市', 'level': '本科', 'remark': '民办'}]}
+接口响应时长: 84 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 17:14:40,514E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 17:14:40 >>>>>> 执行结束！
+INFO    2023-04-07 17:14:40,518E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:26 2023-04-07 17:14:40 >>>>>> 开始执行：
+INFO    2023-04-07 17:14:40,605E:\auto_api1_framework\logs\info-2023-04-07.log:log_decorator.py:41 
+======================================================
+用例标题: 不存在-测试大学
+请求路径: https://www.iamwawa.cn/home/daxue/ajax
+请求方式: POST
+请求头:   {'user-agent': 'Chrome', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '77', 'Content-Type': 'application/x-www-form-urlencoded'}
+请求内容: None
+接口响应内容: {'status': 0, 'info': '没有找到相关信息！'}
+接口响应时长: 83 ms
+Http状态码: 200
+=====================================================
+INFO    2023-04-07 17:14:40,607E:\auto_api1_framework\logs\info-2023-04-07.log:test_query_college_info.py:29 2023-04-07 17:14:40 >>>>>> 执行结束！

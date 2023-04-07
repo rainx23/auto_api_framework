@@ -190,14 +190,12 @@ class TestCaseAutomaticGeneration:
 
         for file in file_path:
             # 判断代理拦截的yaml文件，不生成test_case代码
+
             if 'proxy_data.yaml' not in file:
                 # 判断用例需要用的文件夹路径是否存在，不存在则创建
                 self.mk_dir(file)
                 yaml_case_process = GetYamlData(file).get_yaml_data()
                 self.case_ids(yaml_case_process)
-                print(self.get_case_path(file))
-                print(self.get_case_path(file)[0])
-                print(self.get_case_path(file)[1])
                 write_testcase_file(
                     allure_epic=self.allure_epic(case_data=yaml_case_process, file_path=file),
                     allure_feature=self.allure_feature(yaml_case_process, file_path=file),

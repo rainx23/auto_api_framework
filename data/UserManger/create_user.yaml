@@ -15,7 +15,7 @@ create_user_01:
     # 请求的数据，是 params 还是 json、或者 data, file
     requestType: json
     data:
-        username: "Rainx",
+        username: "Rainx"
         password: "admin123"
     assert:
         # 断言接口状态码
@@ -42,8 +42,8 @@ create_user_02:
     # 请求的数据，是 params 还是 json、或者 data, file
     requestType: json
     data:
-        username: "Rainx778",
-        password: "admin123@!",
+        username: "Rainx778"
+        password: "admin123@!"
         email: "yx123@163.com"
     assert:
         # 断言接口状态码
@@ -70,9 +70,9 @@ create_user_03:
     # 请求的数据，是 params 还是 json、或者 data, file
     requestType: json
     data:
-        username: "Rainx&11",
-        password: "789456abcd",
-        email: "yx123@163.com",
+        username: "Rainx&11"
+        password: "789456abcd"
+        email: "yx123@163.com"
         mobile: "13772008989"
     assert:
         # 断言接口状态码
@@ -99,7 +99,7 @@ create_user_04:
     # 请求的数据，是 params 还是 json、或者 data, file
     requestType: json
     data:
-        username: "admin",
+        username: "admin"
         password: "123456"
     assert:
         # 断言接口状态码

@@ -89,4 +89,4 @@ class CaseData(CaseDataCheck):
 
 
 if __name__ == '__main__':
-    print(CaseData('\\data\\query_college_info.yaml').get_yaml_data())
+    print(CaseData('\\data\\UserManger\\create_user.yaml').get_yaml_data())
