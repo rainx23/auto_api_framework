@@ -1,0 +1,40 @@
+# 公共参数
+case_common:
+  allureEpic: 商城平台接口
+  allureFeature: 用户管理
+  allureStory: 修改用户信息
+
+update_user_status_01:
+    host: ${{host()}}
+    url: /api/private/v1/users/$url_param{id}
+    method: PUT
+    detail: 修改用户信息
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: params
+    # 是否执行，空或者 true 都会执行
+    is_run: 
+    data: 
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: create_user_03
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.id
+            replace_key: $url_param
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "获取管理员列表成功"
+            AssertType:

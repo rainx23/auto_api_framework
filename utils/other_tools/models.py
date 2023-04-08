@@ -40,6 +40,30 @@ class RequestType(Enum):
     NONE = "NONE"
 
 
+@unique
+class DependentType(Enum):
+    """
+    数据依赖相关枚举
+    """
+    RESPONSE = 'response'
+    REQUEST = 'request'
+    SQL_DATA = 'sqlData'
+    CACHE = "cache"
+
+
+class DependentData(BaseModel):
+    dependent_type: Text
+    jsonpath: Text
+    set_cache: Optional[Text]
+    replace_key: Optional[Text]
+
+
+class DependentCaseData(BaseModel):
+    case_id: Text
+    # dependent_data: List[DependentData]
+    dependent_data: Union[None, List[DependentData]] = None
+
+
 class TestCaseEnum(Enum):
     """
     用例字段校验
@@ -49,8 +73,11 @@ class TestCaseEnum(Enum):
     METHOD = ("method", True)
     DETAIL = ("detail", True)
     HEADERS = ("headers", True)
+    IS_RUN = ("is_run", True)
     REQUEST_TYPE = ("requestType", True)
     DATA = ("data", True)
+    DE_CASE = ("dependence_case", True)
+    DE_CASE_DATA = ("dependence_case_data", False)
     ASSERT_DATA = ("assert", True)
 
 
@@ -59,6 +86,9 @@ class TestCase(BaseModel):
     method: Text
     detail: Text
     headers: Union[None, Dict, Text] = {}
+    is_run: Union[None, bool, Text] = None
+    dependence_case: Union[None, bool] = False
+    dependence_case_data: Optional[Union[None, List["DependentCaseData"], Text]] = None
     requestType: Text
     data: Union[None, Dict, Text] = {}
     assert_data: Union[Dict, Text]

@@ -269,7 +269,7 @@ class RequestControl:
         data = ast.literal_eval(cache_regular(str(yaml_data.data)))
         _data = {
             "url": res.url,
-            "is_run": None,
+            "is_run": yaml_data.is_run,
             "detail": yaml_data.detail,
             "response_data": res.json(),
             # 这个用于日志专用，判断如果是get请求，直接打印url
@@ -314,8 +314,9 @@ class RequestControl:
         allure_step("响应结果: ", res)
 
     @log_decorator(True)
-    def http_request(self, **kwargs):
-
+    def http_request(self, dependent_switch=True, **kwargs):
+        
+        from utils.requests_tool.dependent_case import DependentCase
         requests_type_mapping = {
             RequestType.JSON.value: self.request_type_for_json,
             RequestType.NONE.value: self.request_type_for_none,
@@ -324,6 +325,13 @@ class RequestControl:
             RequestType.DATA.value: self.request_type_for_data,
             RequestType.EXPORT.value: self.request_type_for_export
         }
+
+        is_run = ast.literal_eval(cache_regular(str(self.__yaml_case.is_run)))
+        # 判断用例是否执行
+        if is_run is True or is_run is None:
+            # 处理多业务逻辑
+            if dependent_switch is True:
+                DependentCase(self.__yaml_case).get_dependent_data()
 
         res = requests_type_mapping.get(self.__yaml_case.requestType)(
             headers=self.__yaml_case.headers,

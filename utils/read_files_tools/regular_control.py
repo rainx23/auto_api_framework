@@ -26,11 +26,32 @@ class Context:
         _data = random.randint(0, 5000)
         return _data
 
+    def custom_param(self, length=8,
+                     special_chars=True, digits=True, upper_case=True, lower_case=True):
+        """ 自定义生成内容（特殊字符、数字、大写字母、小写字母）"""
+        content = self.faker.password(length, special_chars, digits, upper_case, lower_case)
+        return content
+
+    def get_number(self) -> int:
+        """ 生成纯数字"""
+        _num = self.faker.random_number(6)
+        return _num
+
+    def get_char(self) -> str:
+        """ 生成纯字母"""
+        _char = self.faker.pystr(min_chars=None, max_chars=6)
+        return _char
+
     def get_username(self) -> str:
         """ 生成随机用户名 """
-        _str = self.faker.pystr()[0:4]
+        _str = self.faker.pystr(min_chars=None, max_chars=5)
         _num = self.faker.numerify()
         return _str + _num
+
+    def get_password(self, length=8) -> str:
+        """ 生成随机密码"""
+        password = self.faker.password(length)
+        return password
 
     def get_phone(self) -> int:
         """
@@ -41,35 +62,23 @@ class Context:
 
     def get_id_number(self) -> int:
         """
-
         :return: 随机生成身份证号码
         """
-
         id_number = self.faker.ssn()
         return id_number
 
-    def get_female_name(self) -> str:
+    def get_name(self) -> str:
         """
-
-        :return: 女生姓名
+        :return: 随机姓名
         """
-        female_name = self.faker.name_female()
-        return female_name
-
-    def get_male_name(self) -> str:
-        """
-
-        :return: 男生姓名
-        """
-        male_name = self.faker.name_male()
-        return male_name
+        _name = self.faker.name()
+        return _name
 
     def get_email(self) -> str:
         """
-
         :return: 生成邮箱
         """
-        email = self.faker.email()
+        email = self.faker.free_email()
         return email
 
     @classmethod
@@ -188,4 +197,5 @@ def regular(target):
 if __name__ == '__main__':
     a = "${{host()}} aaa"
     b = regular(a)
+
 

@@ -5,5 +5,17 @@
 
 from faker import Faker
 
-f = Faker()
-print(f.pystr()[0:5])
+f = Faker(locale='zh_CN')
+print(f.password(length=10,special_chars=False))
+print(f.pystr(min_chars=None, max_chars=5))
+
+def te(length=10,special_chars=True, digits=True, upper_case=True, lower_case=True):
+    f = Faker(locale='zh_CN')
+    print(f.password(length, special_chars, digits, upper_case, lower_case))
+
+
+te(length=4)
+
+
+url = "/api/private/v1/users/$url_param{id}"
+print(url.replace("$url_param{id}", "258"))

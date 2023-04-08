@@ -49,6 +49,16 @@ class CaseDataCheck:
         return host
 
     @property
+    def get_dependence_case_data(self):
+        _dep_data = self.case_data.get(TestCaseEnum.DE_CASE.value[0])
+        if _dep_data:
+            assert self.case_data.get(TestCaseEnum.DE_CASE_DATA.value[0]) is not None, (
+                f"程序中检测到您的 case_id 为 {self.case_id} 的用例存在依赖，但是 {_dep_data} 缺少依赖数据."
+                f"如已填写，请检查缩进是否正确， 用例路径: {self.file_path}"
+            )
+        return self.case_data.get(TestCaseEnum.DE_CASE_DATA.value[0])
+
+    @property
     def get_request_type(self) -> Text:
         return self.check_params_right(
             RequestType,
@@ -79,8 +89,11 @@ class CaseData(CaseDataCheck):
                     'method': self.get_method,
                     "detail": self.case_data.get(TestCaseEnum.DETAIL.value[0]),
                     'headers': self.case_data.get(TestCaseEnum.HEADERS.value[0]),
+                    'is_run': self.case_data.get(TestCaseEnum.IS_RUN.value[0]),
                     'requestType': self.get_request_type,
                     'data': self.case_data.get(TestCaseEnum.DATA.value[0]),
+                    'dependence_case': self.case_data.get(TestCaseEnum.DE_CASE.value[0]),
+                    'dependence_case_data': self.get_dependence_case_data,
                     "assert_data": self.assert_data,
                 }
                 case_list.append(TestCase(**case_date).dict())
@@ -89,4 +102,5 @@ class CaseData(CaseDataCheck):
 
 
 if __name__ == '__main__':
-    print(CaseData('\\data\\UserManger\\create_user.yaml').get_yaml_data())
+    c = CaseData('\\data\\UserManger\\update_user_status.yaml').get_yaml_data()
+    print(c)
