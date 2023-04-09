@@ -110,29 +110,29 @@ class DependentCase:
         @return:
         """
         # 判断依赖数据类型，依赖 sql中的数据
-        # if setup_sql is not None:
-        #     if config.mysql_db.switch:
-        #         setup_sql = ast.literal_eval(cache_regular(str(setup_sql)))
-        #         sql_data = SetUpMySQL().setup_sql_data(sql=setup_sql)
-        #         dependent_data = dependence_case_data.dependent_data
-        #         for i in dependent_data:
-        #             _jsonpath = i.jsonpath
-        #             jsonpath_data = self.jsonpath_data(obj=sql_data, expr=_jsonpath)
-        #             _set_value = self.set_cache_value(i)
-        #             _replace_key = self.replace_key(i)
-        #             if _set_value is not None:
-        #                 CacheHandler.update_cache(cache_name=_set_value, value=jsonpath_data[0])
-        #                 # Cache(_set_value).set_caches(jsonpath_data[0])
-        #             if _replace_key is not None:
-        #                 jsonpath_dates[_replace_key] = jsonpath_data[0]
-        #                 self.url_replace(
-        #                     replace_key=_replace_key,
-        #                     jsonpath_dates=jsonpath_dates,
-        #                     jsonpath_data=jsonpath_data,
-        #                 )
-        #     else:
-        #         WARNING.logger.warning("检查到数据库开关为关闭状态，请确认配置")
-        pass
+        if setup_sql is not None:
+            if config.mysql_db.switch:
+                pass
+                # setup_sql = ast.literal_eval(cache_regular(str(setup_sql)))
+                # sql_data = SetUpMySQL().setup_sql_data(sql=setup_sql)
+                # dependent_data = dependence_case_data.dependent_data
+                # for i in dependent_data:
+                #     _jsonpath = i.jsonpath
+                #     jsonpath_data = self.jsonpath_data(obj=sql_data, expr=_jsonpath)
+                #     _set_value = self.set_cache_value(i)
+                #     _replace_key = self.replace_key(i)
+                #     if _set_value is not None:
+                #         CacheHandler.update_cache(cache_name=_set_value, value=jsonpath_data[0])
+                #         # Cache(_set_value).set_caches(jsonpath_data[0])
+                #     if _replace_key is not None:
+                #         jsonpath_dates[_replace_key] = jsonpath_data[0]
+                #         self.url_replace(
+                #             replace_key=_replace_key,
+                #             jsonpath_dates=jsonpath_dates,
+                #             jsonpath_data=jsonpath_data,
+                #         )
+            else:
+                WARNING.logger.warning("检查到数据库开关为关闭状态，请确认配置")
 
     def dependent_handler(
             self,
@@ -180,11 +180,11 @@ class DependentCase:
                     _case_id = dependence_case_data.case_id
                     # 判断依赖数据为sql，case_id需要写成self，否则程序中无法获取case_id
                     if _case_id == 'self':
+                        pass
                         # self._dependent_type_for_sql(
                         #     setup_sql=_setup_sql,
                         #     dependence_case_data=dependence_case_data,
                         #     jsonpath_dates=jsonpath_dates)
-                        pass
                     else:
                         re_data = regular(str(self.get_cache(_case_id)))
                         re_data = ast.literal_eval(cache_regular(str(re_data)))
@@ -201,7 +201,8 @@ class DependentCase:
                                 # 判断依赖数据类型, 依赖 response 中的数据
                                 if i.dependent_type == DependentType.RESPONSE.value:
                                     self.dependent_handler(
-                                        data=json.loads(res.response_data),
+                                        # data=json.loads(res.response_data),
+                                        data=res.response_data,
                                         _jsonpath=_jsonpath,
                                         set_value=_set_value,
                                         replace_key=_replace_key,
@@ -227,6 +228,7 @@ class DependentCase:
                                     )
                 return jsonpath_dates
             except KeyError as exc:
+                # pass
                 raise ValueNotFoundError(
                     f"dependence_case_data依赖用例中，未找到 {exc} 参数，请检查是否填写"
                     f"如已填写，请检查是否存在yaml缩进问题"

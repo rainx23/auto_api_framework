@@ -8,6 +8,8 @@ import ast
 
 import requests
 import random
+
+from set_current_request_cache import SetCurrentRequestCache
 from utils.other_tools.models import TestCase, ResponseData, RequestType
 from typing import Dict, Text, Tuple, Union
 from utils.allure_data.allure_tools import allure_step, allure_step_no, allure_attach
@@ -148,7 +150,7 @@ class RequestControl:
         _url = self.__yaml_case.url
         res = requests.request(
             method=method,
-            url=_url,
+            url=cache_regular(_url),
             json=_data,
             data={},
             headers=ast.literal_eval(cache_regular(str(headers))),
@@ -168,9 +170,9 @@ class RequestControl:
         _url = self.__yaml_case.url
         res = requests.request(
             method=method,
-            url=_url,
+            url=cache_regular(_url),
             data=None,
-            headers=_headers,
+            headers=ast.literal_eval(cache_regular(str(headers))),
             verify=False,
             params=None,
             **kwargs
@@ -199,7 +201,7 @@ class RequestControl:
         res = requests.request(
             method=method,
             url=url,
-            headers=_headers,
+            headers=ast.literal_eval(cache_regular(str(headers))),
             verify=False,
             data={},
             params=None,
@@ -242,7 +244,7 @@ class RequestControl:
         _url = self.__yaml_case.url
         res = requests.request(
             method=method,
-            url=_url,
+            url=cache_regular(_url),
             data=_data,
             headers=_headers,
             verify=False,
@@ -352,5 +354,12 @@ class RequestControl:
             res_time=str(_res_data.res_time),
             res=_res_data.response_data
         )
+
+        # 将当前请求数据存入缓存中
+        # SetCurrentRequestCache(
+        #     current_request_set_cache=self.__yaml_case.current_request_set_cache,
+        #     request_data=self.__yaml_case.data,
+        #     response_data=res
+        # ).set_caches_main()
 
         return _res_data

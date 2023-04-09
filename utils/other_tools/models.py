@@ -90,7 +90,7 @@ class TestCase(BaseModel):
     dependence_case: Union[None, bool] = False
     dependence_case_data: Optional[Union[None, List["DependentCaseData"], Text]] = None
     requestType: Text
-    data: Union[None, Dict, Text] = {}
+    data: Any = None
     assert_data: Union[Dict, Text]
 
 

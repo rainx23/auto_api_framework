@@ -2,13 +2,13 @@
 case_common:
   allureEpic: 商城平台接口
   allureFeature: 用户管理
-  allureStory: 修改用户信息
+  allureStory: 删除单个用户
 
-update_user_status_01:
+delete_user_01:
     host: ${{host()}}
-    url: /api/private/v1/users/$cache{update_user_status_01_id}
-    method: PUT
-    detail: 修改用户信息
+    url: /api/private/v1/users/$cache{delete_user_01_id}
+    method: DELETE
+    detail: 删除用户成功
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
@@ -24,7 +24,7 @@ update_user_status_01:
         dependent_data:
           - dependent_type: response
             jsonpath: $.data.id
-            set_cache: update_user_status_01_id
+            set_cache: delete_user_01_id
     assert:
         # 断言接口状态码
         errorStatus:
@@ -36,5 +36,6 @@ update_user_status_01:
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "更新成功"
+            value: "删除成功"
             AssertType:
+    sql:

@@ -26,10 +26,10 @@ class Context:
         _data = random.randint(0, 5000)
         return _data
 
-    def custom_param(self, length=8,
-                     special_chars=True, digits=True, upper_case=True, lower_case=True):
-        """ 自定义生成内容（特殊字符、数字、大写字母、小写字母）"""
-        content = self.faker.password(length, special_chars, digits, upper_case, lower_case)
+    def custom_param(self):
+        """ 生成100为密码（特殊字符、数字、大写字母、小写字母）"""
+        content = self.faker.password(length=100, special_chars=True,
+                                      digits=True, upper_case=True, lower_case=True)
         return content
 
     def get_number(self) -> int:
@@ -195,7 +195,7 @@ def regular(target):
 
 
 if __name__ == '__main__':
-    a = "${{host()}} aaa"
+    a = "${{host()}}"
     b = regular(a)
-
+    # print(b)
 

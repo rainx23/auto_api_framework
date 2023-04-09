@@ -13,13 +13,13 @@ from utils.read_files_tools.regular_control import regular
 from utils.logging_tools.log_control import INFO
 
 
-TestData = CaseData("\\data\\Query\\query_college_info.yaml").get_yaml_data()
+TestData = CaseData("\\data\\UserManger\\delete_user.yaml").get_yaml_data()
 re_data = regular(str(TestData))
 
 
-@allure.epic("开发平台接口")
-@allure.feature("查询模块")
-class TestQueryCollegeInfo:
+@allure.epic("商城平台接口")
+@allure.feature("用户管理")
+class TestDeleteUser:
     time = GetTime().get_now_datetime()
 
     def setup(self):
@@ -28,9 +28,9 @@ class TestQueryCollegeInfo:
     def teardown(self):
         INFO.logger.info(self.time + " >>>>>> 执行结束！")
 
-    @allure.story("查询")
+    @allure.story("删除单个用户")
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
-    def test_query_college_info(self, in_data):
+    def test_delete_user(self, in_data):
         """
         :param :
         :return:
@@ -44,4 +44,4 @@ class TestQueryCollegeInfo:
 
 
 if __name__ == '__main__':
-    pytest.main(['test_query_college_info.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])
+    pytest.main(['test_delete_user.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])

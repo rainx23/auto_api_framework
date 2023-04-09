@@ -27,3 +27,4 @@ def get_all_files(file_path, yaml_data_switch=False) -> list:
             else:
                 filename.append(path)
     return filename
+
