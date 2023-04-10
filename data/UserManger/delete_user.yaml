@@ -42,7 +42,7 @@ delete_user_01:
 
 delete_user_02:
     host: ${{host()}}
-    url: /api/private/v1/users/{{get_unixtime()}}
+    url: /api/private/v1/users/${{get_unixtime()}}
     method: DELETE
     detail: 删除用户失败（不存在用户）
     headers:
@@ -61,12 +61,12 @@ delete_user_02:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 400
             AssertType:
         # 断言接口返回的msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "删除成功"
+            value: "删除失败"
             AssertType:
     sql:

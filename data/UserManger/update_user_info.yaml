@@ -41,9 +41,9 @@ update_user_status_01:
 
 update_user_status_02:
     host: ${{host()}}
-    url: /api/private/v1/users/$cache{update_user_info_01_id}
+    url: /api/private/v1/users/${{get_unixtime()}}
     method: PUT
-    detail: 修改用户信息失败
+    detail: 修改用户信息失败（不存在用户）
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
@@ -60,11 +60,11 @@ update_user_status_02:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 400
             AssertType:
         # 断言接口返回的msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "更新成功"
+            value: "更新失败"
             AssertType:

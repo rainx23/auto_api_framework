@@ -98,7 +98,7 @@ class Context:
         now_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         return now_time
 
-    def get_unixtime(self):
+    def get_unixtime(self) -> int:
         """ 生成时间戳 """
         unix_time = time.time()
         return int(unix_time)

@@ -51,13 +51,13 @@ get_user_data_list_02:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 400
             AssertType:
         # 断言接口返回的msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "pagenum 参数错误"
             AssertType:
 
 get_user_data_list_03:
@@ -79,13 +79,13 @@ get_user_data_list_03:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 400
             AssertType:
         # 断言接口返回的msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "pagesize 参数错误"
             AssertType:
 
 get_user_data_list_04:
@@ -135,13 +135,13 @@ get_user_data_list_05:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 400
             AssertType:
         # 断言接口返回的msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "pagenum 参数错误"
             AssertType:
 
 get_user_data_list_06:
@@ -163,13 +163,13 @@ get_user_data_list_06:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 400
             AssertType:
         # 断言接口返回的msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "pagenum 参数错误"
             AssertType:
 
 get_user_data_list_07:
@@ -189,11 +189,11 @@ get_user_data_list_07:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 400
             AssertType:
         # 断言接口返回的msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "pagenum 参数错误"
             AssertType:

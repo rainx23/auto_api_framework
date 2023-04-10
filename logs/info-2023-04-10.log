@@ -1,0 +1,924 @@
+INFO    2023-04-10 20:53:08,306G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:26 2023-04-10 20:53:08 >>>>>> 开始执行：
+INFO    2023-04-10 20:53:08,547G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（全部参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzExODgsImV4cCI6MTY4MTIxNzU4OH0.T8AmbRgCf5rHp5z9jMX_G3XIERctIjx4ANnBz8zRNFE', 'Content-Length': '105'}
+请求内容: {'username': 'iWmXM800', 'password': '!+sbZ5Gn', 'email': 'xiuying28@gmail.com', 'mobile': '14772101752'}
+接口响应内容: {'data': {'id': 963, 'username': 'iWmXM800', 'mobile': '14772101752', 'email': 'xiuying28@gmail.com', 'role_id': -1, 'create_time': 1681131188}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 71 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:53:08,558G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 删除用户成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users/963
+请求方式: DELETE
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzExODgsImV4cCI6MTY4MTIxNzU4OH0.T8AmbRgCf5rHp5z9jMX_G3XIERctIjx4ANnBz8zRNFE', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '删除成功', 'status': 200}}
+接口响应时长: 8 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:53:08,560G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:29 2023-04-10 20:53:08 >>>>>> 执行结束！
+INFO    2023-04-10 20:53:08,562G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:26 2023-04-10 20:53:08 >>>>>> 开始执行：
+INFO    2023-04-10 20:53:08,572G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 删除用户失败（不存在用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/users/%7B%7Bget_unixtime()%7D%7D
+请求方式: DELETE
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzExODgsImV4cCI6MTY4MTIxNzU4OH0.T8AmbRgCf5rHp5z9jMX_G3XIERctIjx4ANnBz8zRNFE', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'ID必须是数字', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:53:08,674G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:29 2023-04-10 20:53:08 >>>>>> 执行结束！
+INFO    2023-04-10 20:54:38,235G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:26 2023-04-10 20:54:38 >>>>>> 开始执行：
+INFO    2023-04-10 20:54:38,480G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（全部参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEyNzgsImV4cCI6MTY4MTIxNzY3OH0.-S8PiKDGGHqsD6dqutrCnpM5sNPfdEZfUBP2vF7BKTc', 'Content-Length': '100'}
+请求内容: {'username': 'AkYmC356', 'password': '#T4KpFvx', 'email': 'wuna@gmail.com', 'mobile': '15858330062'}
+接口响应内容: {'data': {'id': 964, 'username': 'AkYmC356', 'mobile': '15858330062', 'email': 'wuna@gmail.com', 'role_id': -1, 'create_time': 1681131278}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 81 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:54:38,488G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 删除用户成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users/964
+请求方式: DELETE
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEyNzgsImV4cCI6MTY4MTIxNzY3OH0.-S8PiKDGGHqsD6dqutrCnpM5sNPfdEZfUBP2vF7BKTc', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '删除成功', 'status': 200}}
+接口响应时长: 6 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:54:38,490G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:29 2023-04-10 20:54:38 >>>>>> 执行结束！
+INFO    2023-04-10 20:54:38,491G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:26 2023-04-10 20:54:38 >>>>>> 开始执行：
+INFO    2023-04-10 20:54:38,501G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 删除用户失败（不存在用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/users/1681131278
+请求方式: DELETE
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEyNzgsImV4cCI6MTY4MTIxNzY3OH0.-S8PiKDGGHqsD6dqutrCnpM5sNPfdEZfUBP2vF7BKTc', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '删除失败', 'status': 400}}
+接口响应时长: 4 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:54:38,574G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:29 2023-04-10 20:54:38 >>>>>> 执行结束！
+INFO    2023-04-10 20:54:52,943G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:26 2023-04-10 20:54:52 >>>>>> 开始执行：
+INFO    2023-04-10 20:54:53,192G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（全部参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEyOTIsImV4cCI6MTY4MTIxNzY5Mn0.zSu5fVR4emc-zNDI_BWHBYbsm5NmDBzyvNBsh5dbo6s', 'Content-Length': '104'}
+请求内容: {'username': 'SutCj533', 'password': '^$1d0Itc', 'email': 'kongyang@yahoo.com', 'mobile': '15342482347'}
+接口响应内容: {'data': {'id': 965, 'username': 'SutCj533', 'mobile': '15342482347', 'email': 'kongyang@yahoo.com', 'role_id': -1, 'create_time': 1681131293}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 86 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:54:53,200G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 删除用户成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users/965
+请求方式: DELETE
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEyOTIsImV4cCI6MTY4MTIxNzY5Mn0.zSu5fVR4emc-zNDI_BWHBYbsm5NmDBzyvNBsh5dbo6s', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '删除成功', 'status': 200}}
+接口响应时长: 5 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:54:53,201G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:29 2023-04-10 20:54:52 >>>>>> 执行结束！
+INFO    2023-04-10 20:54:53,203G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:26 2023-04-10 20:54:52 >>>>>> 开始执行：
+INFO    2023-04-10 20:54:53,211G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 删除用户失败（不存在用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/users/1681131292
+请求方式: DELETE
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEyOTIsImV4cCI6MTY4MTIxNzY5Mn0.zSu5fVR4emc-zNDI_BWHBYbsm5NmDBzyvNBsh5dbo6s', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '删除失败', 'status': 400}}
+接口响应时长: 4 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:54:53,283G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:29 2023-04-10 20:54:52 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:05,360G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:26 2023-04-10 20:55:05 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:05,614G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（全部参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMDUsImV4cCI6MTY4MTIxNzcwNX0.jjlfmlECdOA68doL3Yhr3xs84vx3T0xEccpAz8yh8NI', 'Content-Length': '105'}
+请求内容: {'username': 'pvvqi343', 'password': 'n%J3bILf', 'email': 'pengxia@hotmail.com', 'mobile': '18186676652'}
+接口响应内容: {'data': {'id': 966, 'username': 'pvvqi343', 'mobile': '18186676652', 'email': 'pengxia@hotmail.com', 'role_id': -1, 'create_time': 1681131305}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 93 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:05,623G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 删除用户成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users/966
+请求方式: DELETE
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMDUsImV4cCI6MTY4MTIxNzcwNX0.jjlfmlECdOA68doL3Yhr3xs84vx3T0xEccpAz8yh8NI', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '删除成功', 'status': 200}}
+接口响应时长: 7 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:05,624G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:29 2023-04-10 20:55:05 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:05,626G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:26 2023-04-10 20:55:05 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:05,631G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 删除用户失败（不存在用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/users/1681131305
+请求方式: DELETE
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMDUsImV4cCI6MTY4MTIxNzcwNX0.jjlfmlECdOA68doL3Yhr3xs84vx3T0xEccpAz8yh8NI', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '删除失败', 'status': 400}}
+接口响应时长: 3 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:05,632G:\auto_api1_framework\logs\info-2023-04-10.log:test_delete_user.py:29 2023-04-10 20:55:05 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:15,604G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:15,695G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（必填参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '48'}
+请求内容: {'username': 'wsUOh818', 'password': '*!09cZ+x'}
+接口响应内容: {'data': {'id': 967, 'username': 'wsUOh818', 'role_id': -1, 'create_time': 1681131315}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 87 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:15,697G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:15,698G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:15,788G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（必填+选填参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '77'}
+请求内容: {'username': 'DbaSi186', 'password': 'admin123@!', 'email': 'na78@gmail.com'}
+接口响应内容: {'data': {'id': 968, 'username': 'DbaSi186', 'email': 'na78@gmail.com', 'role_id': -1, 'create_time': 1681131315}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 88 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:15,790G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:15,792G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:15,883G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（全部参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '100'}
+请求内容: {'username': 'EIpoH255', 'password': '!2QOwd6z', 'email': 'xlai@gmail.com', 'mobile': '14542416081'}
+接口响应内容: {'data': {'id': 969, 'username': 'EIpoH255', 'mobile': '14542416081', 'email': 'xlai@gmail.com', 'role_id': -1, 'create_time': 1681131315}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 89 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:15,884G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:15,885G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:15,892G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建已存在用户
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '43'}
+请求内容: {'username': 'admin', 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '用户名已存在', 'status': 400}}
+接口响应时长: 3 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:15,892G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:15,894G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:15,898G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户名为空
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '38'}
+请求内容: {'username': '', 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '用户名不能为空', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:15,900G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:15,901G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:15,987G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户名纯数字
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '44'}
+请求内容: {'username': '375435', 'password': '123456'}
+接口响应内容: {'data': {'id': 970, 'username': '375435', 'role_id': -1, 'create_time': 1681131315}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 84 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:15,988G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:15,990G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,086G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户名纯字母
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '44'}
+请求内容: {'username': 'aeXuLa', 'password': '123456'}
+接口响应内容: {'data': {'id': 971, 'username': 'aeXuLa', 'role_id': -1, 'create_time': 1681131316}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 93 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,088G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,089G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,178G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户名包含中文、特殊字符
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '62'}
+请求内容: {'username': '吴凤英KjnVUg', 'password': '123456'}
+接口响应内容: {'data': {'id': 972, 'username': '吴凤英KjnVUg', 'role_id': -1, 'create_time': 1681131316}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 86 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,180G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,181G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,185G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 密码为空
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '40'}
+请求内容: {'username': 'auWZo085', 'password': ''}
+接口响应内容: {'data': None, 'meta': {'msg': '密码不能为空', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,187G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,188G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,271G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 密码为纯数字
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '46'}
+请求内容: {'username': 'gdsNc268', 'password': '135221'}
+接口响应内容: {'data': {'id': 973, 'username': 'gdsNc268', 'role_id': -1, 'create_time': 1681131316}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 80 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,272G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,274G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,355G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 密码为纯字母
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '46'}
+请求内容: {'username': 'nrygy400', 'password': 'vhkPFF'}
+接口响应内容: {'data': {'id': 974, 'username': 'nrygy400', 'role_id': -1, 'create_time': 1681131316}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 79 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,356G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,357G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,443G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 100位密码
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '141'}
+请求内容: {'username': 'IBwaJ196', 'password': 'nll!yUj6BCRC19cK*0C0iuQN$_I!S+o)IJ94K5p0(FjDT89t2K4io@wuV^h6DU)&KsKO#MHSYT!7VmRd73^BkWJnoOF54pDzFt$r)'}
+接口响应内容: {'data': {'id': 975, 'username': 'IBwaJ196', 'role_id': -1, 'create_time': 1681131316}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 83 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,444G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,445G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,530G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 多参：多abc
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '64'}
+请求内容: {'username': 'euzfT731', 'password': '(pem07Tw', 'abc': '85043'}
+接口响应内容: {'data': {'id': 976, 'username': 'euzfT731', 'role_id': -1, 'create_time': 1681131316}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 83 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,532G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,533G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,537G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 少参：缺少username
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '24'}
+请求内容: {'password': 'G0+1Oi@k'}
+接口响应内容: {'data': None, 'meta': {'msg': '用户名不能为空', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,538G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,540G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,543G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 没有参数
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '用户名不能为空', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,545G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:16,547G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:26 2023-04-10 20:55:15 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:16,550G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 错误参数：修改username为test
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMTUsImV4cCI6MTY4MTIxNzcxNX0.tsKgkBc81xyTE3c4q9I0lPR0JgaOctALCa-NzUSlpvI', 'Content-Length': '44'}
+请求内容: {'test': 'FGoDP396', 'password': 'C&8UIVt5'}
+接口响应内容: {'data': None, 'meta': {'msg': '用户名不能为空', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:16,551G:\auto_api1_framework\logs\info-2023-04-10.log:test_create_user.py:29 2023-04-10 20:55:15 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:24,561G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:55:24 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:24,575G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagenum=1&pagesize=20
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMjQsImV4cCI6MTY4MTIxNzcyNH0.__rwgw9DXdvpyl5MZe76ShkxLLxEeBLhGTHoeu8pMmQ'}
+请求内容: None
+接口响应内容: {'data': {'total': 465, 'pagenum': 1, 'users': [{'id': 500, 'role_name': '超级管理员', 'username': 'admin', 'create_time': 1486720211, 'mobile': '12345678', 'email': 'adsfad@qq.com', 'mg_state': True}, {'id': 502, 'role_name': '测试角色2', 'username': 'linken', 'create_time': 1486720211, 'mobile': '1213213123', 'email': 'asdf@qq.com', 'mg_state': False}, {'id': 508, 'role_name': '主管', 'username': 'asdf1', 'create_time': 1511853015, 'mobile': '123123', 'email': 'adfsa@qq.com', 'mg_state': True}, {'id': 509, 'role_name': 'test', 'username': 'asdf123', 'create_time': 1511853353, 'mobile': '1111', 'email': 'asdf@qq.com', 'mg_state': False}, {'id': 510, 'role_name': '超级管理员', 'username': 'Rainx', 'create_time': 1680874378, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 511, 'role_name': '超级管理员', 'username': 'Rainx778', 'create_time': 1680874378, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 512, 'role_name': '超级管理员', 'username': 'Rainx&11', 'create_time': 1680874379, 'mobile': '13772008989', 'email': 'yx123@163.com', 'mg_state': False}, {'id': 513, 'role_name': '超级管理员', 'username': 'EcAEUICEsuMrQfavLGwU', 'create_time': 1680876030, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 514, 'role_name': '超级管理员', 'username': 'rydjvAPmUYEfPPJkRpvJ', 'create_time': 1680876030, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 515, 'role_name': '超级管理员', 'username': 'VnHNPPVChlmewzuEXEik', 'create_time': 1680876030, 'mobile': '13075620618', 'email': 'junzhao@example.org', 'mg_state': False}, {'id': 516, 'role_name': '超级管理员', 'username': 'DjUgroBQQVJZnzIbiaIq371', 'create_time': 1680876575, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 517, 'role_name': '超级管理员', 'username': 'nosugTIaxxGwnzYKifiv172', 'create_time': 1680876575, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 518, 'role_name': '超级管理员', 'username': 'qHYzuDgTCBUjorlayZRi454', 'create_time': 1680876575, 'mobile': '13833909346', 'email': 'mingdai@example.net', 'mg_state': False}, {'id': 519, 'role_name': '超级管理员', 'username': 'paIo776', 'create_time': 1680876688, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 520, 'role_name': '超级管理员', 'username': 'IjeR086', 'create_time': 1680876688, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 521, 'role_name': '超级管理员', 'username': 'LEVP141', 'create_time': 1680876688, 'mobile': '18249493500', 'email': 'cfu@example.net', 'mg_state': False}, {'id': 522, 'role_name': '超级管理员', 'username': 'hVRq295', 'create_time': 1680876752, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 523, 'role_name': '超级管理员', 'username': 'KVSQ299', 'create_time': 1680876752, 'mobile': None, 'email': 'yancai@example.org', 'mg_state': False}, {'id': 524, 'role_name': '超级管理员', 'username': 'xqFD616', 'create_time': 1680876752, 'mobile': '13311116602', 'email': 'maofang@example.net', 'mg_state': False}, {'id': 525, 'role_name': '超级管理员', 'username': 'ynBw011', 'create_time': 1680877055, 'mobile': None, 'email': None, 'mg_state': False}]}, 'meta': {'msg': '获取管理员列表成功', 'status': 200}}
+接口响应时长: 10 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:24,578G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:55:24 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:24,579G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:55:24 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:24,584G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（pagenum为空）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagenum&pagesize=20
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMjQsImV4cCI6MTY4MTIxNzcyNH0.__rwgw9DXdvpyl5MZe76ShkxLLxEeBLhGTHoeu8pMmQ'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:24,656G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:55:24 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:24,661G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:55:24 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:24,666G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（pagesize为空）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagenum=1&pagesize
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMjQsImV4cCI6MTY4MTIxNzcyNH0.__rwgw9DXdvpyl5MZe76ShkxLLxEeBLhGTHoeu8pMmQ'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagesize 参数错误', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:24,673G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:55:24 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:24,675G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:55:24 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:24,683G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（多出abc参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagenum=1&pagesize=20&abc=100
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMjQsImV4cCI6MTY4MTIxNzcyNH0.__rwgw9DXdvpyl5MZe76ShkxLLxEeBLhGTHoeu8pMmQ'}
+请求内容: None
+接口响应内容: {'data': {'total': 465, 'pagenum': 1, 'users': [{'id': 500, 'role_name': '超级管理员', 'username': 'admin', 'create_time': 1486720211, 'mobile': '12345678', 'email': 'adsfad@qq.com', 'mg_state': True}, {'id': 502, 'role_name': '测试角色2', 'username': 'linken', 'create_time': 1486720211, 'mobile': '1213213123', 'email': 'asdf@qq.com', 'mg_state': False}, {'id': 508, 'role_name': '主管', 'username': 'asdf1', 'create_time': 1511853015, 'mobile': '123123', 'email': 'adfsa@qq.com', 'mg_state': True}, {'id': 509, 'role_name': 'test', 'username': 'asdf123', 'create_time': 1511853353, 'mobile': '1111', 'email': 'asdf@qq.com', 'mg_state': False}, {'id': 510, 'role_name': '超级管理员', 'username': 'Rainx', 'create_time': 1680874378, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 511, 'role_name': '超级管理员', 'username': 'Rainx778', 'create_time': 1680874378, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 512, 'role_name': '超级管理员', 'username': 'Rainx&11', 'create_time': 1680874379, 'mobile': '13772008989', 'email': 'yx123@163.com', 'mg_state': False}, {'id': 513, 'role_name': '超级管理员', 'username': 'EcAEUICEsuMrQfavLGwU', 'create_time': 1680876030, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 514, 'role_name': '超级管理员', 'username': 'rydjvAPmUYEfPPJkRpvJ', 'create_time': 1680876030, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 515, 'role_name': '超级管理员', 'username': 'VnHNPPVChlmewzuEXEik', 'create_time': 1680876030, 'mobile': '13075620618', 'email': 'junzhao@example.org', 'mg_state': False}, {'id': 516, 'role_name': '超级管理员', 'username': 'DjUgroBQQVJZnzIbiaIq371', 'create_time': 1680876575, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 517, 'role_name': '超级管理员', 'username': 'nosugTIaxxGwnzYKifiv172', 'create_time': 1680876575, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 518, 'role_name': '超级管理员', 'username': 'qHYzuDgTCBUjorlayZRi454', 'create_time': 1680876575, 'mobile': '13833909346', 'email': 'mingdai@example.net', 'mg_state': False}, {'id': 519, 'role_name': '超级管理员', 'username': 'paIo776', 'create_time': 1680876688, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 520, 'role_name': '超级管理员', 'username': 'IjeR086', 'create_time': 1680876688, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 521, 'role_name': '超级管理员', 'username': 'LEVP141', 'create_time': 1680876688, 'mobile': '18249493500', 'email': 'cfu@example.net', 'mg_state': False}, {'id': 522, 'role_name': '超级管理员', 'username': 'hVRq295', 'create_time': 1680876752, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 523, 'role_name': '超级管理员', 'username': 'KVSQ299', 'create_time': 1680876752, 'mobile': None, 'email': 'yancai@example.org', 'mg_state': False}, {'id': 524, 'role_name': '超级管理员', 'username': 'xqFD616', 'create_time': 1680876752, 'mobile': '13311116602', 'email': 'maofang@example.net', 'mg_state': False}, {'id': 525, 'role_name': '超级管理员', 'username': 'ynBw011', 'create_time': 1680877055, 'mobile': None, 'email': None, 'mg_state': False}]}, 'meta': {'msg': '获取管理员列表成功', 'status': 200}}
+接口响应时长: 5 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:24,688G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:55:24 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:24,690G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:55:24 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:24,694G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（缺少pagenum参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagesize=20
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMjQsImV4cCI6MTY4MTIxNzcyNH0.__rwgw9DXdvpyl5MZe76ShkxLLxEeBLhGTHoeu8pMmQ'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:24,700G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:55:24 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:24,703G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:55:24 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:24,709G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（修改pagenum参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?num=1&pagesize=20
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMjQsImV4cCI6MTY4MTIxNzcyNH0.__rwgw9DXdvpyl5MZe76ShkxLLxEeBLhGTHoeu8pMmQ'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:24,716G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:55:24 >>>>>> 执行结束！
+INFO    2023-04-10 20:55:24,718G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:55:24 >>>>>> 开始执行：
+INFO    2023-04-10 20:55:24,723G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（没有参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzEzMjQsImV4cCI6MTY4MTIxNzcyNH0.__rwgw9DXdvpyl5MZe76ShkxLLxEeBLhGTHoeu8pMmQ'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:55:24,730G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:55:24 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:21,467G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:57:21 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:21,476G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagenum=1&pagesize=20
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NDEsImV4cCI6MTY4MTIxNzg0MX0.G6NmxZsRJhN6WWTr31JkrtZ3XM5X6Vx6ZFsEC9SU3-A'}
+请求内容: None
+接口响应内容: {'data': {'total': 465, 'pagenum': 1, 'users': [{'id': 500, 'role_name': '超级管理员', 'username': 'admin', 'create_time': 1486720211, 'mobile': '12345678', 'email': 'adsfad@qq.com', 'mg_state': True}, {'id': 502, 'role_name': '测试角色2', 'username': 'linken', 'create_time': 1486720211, 'mobile': '1213213123', 'email': 'asdf@qq.com', 'mg_state': False}, {'id': 508, 'role_name': '主管', 'username': 'asdf1', 'create_time': 1511853015, 'mobile': '123123', 'email': 'adfsa@qq.com', 'mg_state': True}, {'id': 509, 'role_name': 'test', 'username': 'asdf123', 'create_time': 1511853353, 'mobile': '1111', 'email': 'asdf@qq.com', 'mg_state': False}, {'id': 510, 'role_name': '超级管理员', 'username': 'Rainx', 'create_time': 1680874378, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 511, 'role_name': '超级管理员', 'username': 'Rainx778', 'create_time': 1680874378, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 512, 'role_name': '超级管理员', 'username': 'Rainx&11', 'create_time': 1680874379, 'mobile': '13772008989', 'email': 'yx123@163.com', 'mg_state': False}, {'id': 513, 'role_name': '超级管理员', 'username': 'EcAEUICEsuMrQfavLGwU', 'create_time': 1680876030, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 514, 'role_name': '超级管理员', 'username': 'rydjvAPmUYEfPPJkRpvJ', 'create_time': 1680876030, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 515, 'role_name': '超级管理员', 'username': 'VnHNPPVChlmewzuEXEik', 'create_time': 1680876030, 'mobile': '13075620618', 'email': 'junzhao@example.org', 'mg_state': False}, {'id': 516, 'role_name': '超级管理员', 'username': 'DjUgroBQQVJZnzIbiaIq371', 'create_time': 1680876575, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 517, 'role_name': '超级管理员', 'username': 'nosugTIaxxGwnzYKifiv172', 'create_time': 1680876575, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 518, 'role_name': '超级管理员', 'username': 'qHYzuDgTCBUjorlayZRi454', 'create_time': 1680876575, 'mobile': '13833909346', 'email': 'mingdai@example.net', 'mg_state': False}, {'id': 519, 'role_name': '超级管理员', 'username': 'paIo776', 'create_time': 1680876688, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 520, 'role_name': '超级管理员', 'username': 'IjeR086', 'create_time': 1680876688, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 521, 'role_name': '超级管理员', 'username': 'LEVP141', 'create_time': 1680876688, 'mobile': '18249493500', 'email': 'cfu@example.net', 'mg_state': False}, {'id': 522, 'role_name': '超级管理员', 'username': 'hVRq295', 'create_time': 1680876752, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 523, 'role_name': '超级管理员', 'username': 'KVSQ299', 'create_time': 1680876752, 'mobile': None, 'email': 'yancai@example.org', 'mg_state': False}, {'id': 524, 'role_name': '超级管理员', 'username': 'xqFD616', 'create_time': 1680876752, 'mobile': '13311116602', 'email': 'maofang@example.net', 'mg_state': False}, {'id': 525, 'role_name': '超级管理员', 'username': 'ynBw011', 'create_time': 1680877055, 'mobile': None, 'email': None, 'mg_state': False}]}, 'meta': {'msg': '获取管理员列表成功', 'status': 200}}
+接口响应时长: 4 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:21,481G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:57:21 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:21,483G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:57:21 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:21,486G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（pagenum为空）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagenum&pagesize=20
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NDEsImV4cCI6MTY4MTIxNzg0MX0.G6NmxZsRJhN6WWTr31JkrtZ3XM5X6Vx6ZFsEC9SU3-A'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:21,488G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:57:21 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:21,488G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:57:21 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:21,493G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（pagesize为空）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagenum=1&pagesize
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NDEsImV4cCI6MTY4MTIxNzg0MX0.G6NmxZsRJhN6WWTr31JkrtZ3XM5X6Vx6ZFsEC9SU3-A'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagesize 参数错误', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:21,495G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:57:21 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:21,497G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:57:21 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:21,504G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（多出abc参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagenum=1&pagesize=20&abc=100
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NDEsImV4cCI6MTY4MTIxNzg0MX0.G6NmxZsRJhN6WWTr31JkrtZ3XM5X6Vx6ZFsEC9SU3-A'}
+请求内容: None
+接口响应内容: {'data': {'total': 465, 'pagenum': 1, 'users': [{'id': 500, 'role_name': '超级管理员', 'username': 'admin', 'create_time': 1486720211, 'mobile': '12345678', 'email': 'adsfad@qq.com', 'mg_state': True}, {'id': 502, 'role_name': '测试角色2', 'username': 'linken', 'create_time': 1486720211, 'mobile': '1213213123', 'email': 'asdf@qq.com', 'mg_state': False}, {'id': 508, 'role_name': '主管', 'username': 'asdf1', 'create_time': 1511853015, 'mobile': '123123', 'email': 'adfsa@qq.com', 'mg_state': True}, {'id': 509, 'role_name': 'test', 'username': 'asdf123', 'create_time': 1511853353, 'mobile': '1111', 'email': 'asdf@qq.com', 'mg_state': False}, {'id': 510, 'role_name': '超级管理员', 'username': 'Rainx', 'create_time': 1680874378, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 511, 'role_name': '超级管理员', 'username': 'Rainx778', 'create_time': 1680874378, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 512, 'role_name': '超级管理员', 'username': 'Rainx&11', 'create_time': 1680874379, 'mobile': '13772008989', 'email': 'yx123@163.com', 'mg_state': False}, {'id': 513, 'role_name': '超级管理员', 'username': 'EcAEUICEsuMrQfavLGwU', 'create_time': 1680876030, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 514, 'role_name': '超级管理员', 'username': 'rydjvAPmUYEfPPJkRpvJ', 'create_time': 1680876030, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 515, 'role_name': '超级管理员', 'username': 'VnHNPPVChlmewzuEXEik', 'create_time': 1680876030, 'mobile': '13075620618', 'email': 'junzhao@example.org', 'mg_state': False}, {'id': 516, 'role_name': '超级管理员', 'username': 'DjUgroBQQVJZnzIbiaIq371', 'create_time': 1680876575, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 517, 'role_name': '超级管理员', 'username': 'nosugTIaxxGwnzYKifiv172', 'create_time': 1680876575, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 518, 'role_name': '超级管理员', 'username': 'qHYzuDgTCBUjorlayZRi454', 'create_time': 1680876575, 'mobile': '13833909346', 'email': 'mingdai@example.net', 'mg_state': False}, {'id': 519, 'role_name': '超级管理员', 'username': 'paIo776', 'create_time': 1680876688, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 520, 'role_name': '超级管理员', 'username': 'IjeR086', 'create_time': 1680876688, 'mobile': None, 'email': 'yx123@163.com', 'mg_state': False}, {'id': 521, 'role_name': '超级管理员', 'username': 'LEVP141', 'create_time': 1680876688, 'mobile': '18249493500', 'email': 'cfu@example.net', 'mg_state': False}, {'id': 522, 'role_name': '超级管理员', 'username': 'hVRq295', 'create_time': 1680876752, 'mobile': None, 'email': None, 'mg_state': False}, {'id': 523, 'role_name': '超级管理员', 'username': 'KVSQ299', 'create_time': 1680876752, 'mobile': None, 'email': 'yancai@example.org', 'mg_state': False}, {'id': 524, 'role_name': '超级管理员', 'username': 'xqFD616', 'create_time': 1680876752, 'mobile': '13311116602', 'email': 'maofang@example.net', 'mg_state': False}, {'id': 525, 'role_name': '超级管理员', 'username': 'ynBw011', 'create_time': 1680877055, 'mobile': None, 'email': None, 'mg_state': False}]}, 'meta': {'msg': '获取管理员列表成功', 'status': 200}}
+接口响应时长: 5 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:21,506G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:57:21 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:21,508G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:57:21 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:21,512G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（缺少pagenum参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?pagesize=20
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NDEsImV4cCI6MTY4MTIxNzg0MX0.G6NmxZsRJhN6WWTr31JkrtZ3XM5X6Vx6ZFsEC9SU3-A'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:21,512G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:57:21 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:21,514G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:57:21 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:21,517G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（修改pagenum参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users?num=1&pagesize=20
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NDEsImV4cCI6MTY4MTIxNzg0MX0.G6NmxZsRJhN6WWTr31JkrtZ3XM5X6Vx6ZFsEC9SU3-A'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:21,518G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:57:21 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:21,520G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:26 2023-04-10 20:57:21 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:21,524G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 获取用户数据列表失败（没有参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NDEsImV4cCI6MTY4MTIxNzg0MX0.G6NmxZsRJhN6WWTr31JkrtZ3XM5X6Vx6ZFsEC9SU3-A'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}
+接口响应时长: 3 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:21,527G:\auto_api1_framework\logs\info-2023-04-10.log:test_get_user_data_list.py:29 2023-04-10 20:57:21 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:54,323G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:57:54 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:54,413G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录成功（已创建用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ', 'Content-Length': '43', 'Content-Type': 'application/json'}
+请求内容: {'username': 'admin', 'password': '123456'}
+接口响应内容: {'data': {'id': 500, 'rid': 0, 'username': 'admin', 'mobile': '12345678', 'email': 'adsfad@qq.com', 'token': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ'}, 'meta': {'msg': '登录成功', 'status': 200}}
+接口响应时长: 86 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:54,415G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:57:54 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:54,416G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:57:54 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:54,423G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（未创建用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ', 'Content-Length': '46', 'Content-Type': 'application/json'}
+请求内容: {'username': 'OUNmb849', 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '用户名不存在', 'status': 400}}
+接口响应时长: 5 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:54,495G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:57:54 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:54,497G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:57:54 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:54,502G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（用户名为空）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ', 'Content-Length': '40', 'Content-Type': 'application/json'}
+请求内容: {'username': None, 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:54,508G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:57:54 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:54,512G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:57:54 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:54,516G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（密码为空）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ', 'Content-Length': '39', 'Content-Type': 'application/json'}
+请求内容: {'username': 'admin', 'password': None}
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:54,523G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:57:54 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:54,525G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:57:54 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:54,530G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（缺少username参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ', 'Content-Length': '20', 'Content-Type': 'application/json'}
+请求内容: {'password': 123456}
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:54,536G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:57:54 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:54,538G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:57:54 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:54,543G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（没有参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:54,550G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:57:54 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:54,552G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:57:54 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:54,556G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（错误参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ', 'Content-Length': '42', 'Content-Type': 'application/json'}
+请求内容: {'name': 'ntSvQ837', 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:54,563G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:57:54 >>>>>> 执行结束！
+INFO    2023-04-10 20:57:54,565G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:57:54 >>>>>> 开始执行：
+INFO    2023-04-10 20:57:54,647G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（多abc参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ', 'Content-Length': '60', 'Content-Type': 'application/json'}
+请求内容: {'username': 'admin', 'password': '123456', 'abc': 'abc123'}
+接口响应内容: {'data': {'id': 500, 'rid': 0, 'username': 'admin', 'mobile': '12345678', 'email': 'adsfad@qq.com', 'token': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE0NzQsImV4cCI6MTY4MTIxNzg3NH0.piD1_KV4mupVOX8QE7OC3bGgVpDI3W4YVod2-uhgBkQ'}, 'meta': {'msg': '登录成功', 'status': 200}}
+接口响应时长: 79 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:57:54,649G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:57:54 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:03,794G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:59:03 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:03,882G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录成功（已创建用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI', 'Content-Length': '43', 'Content-Type': 'application/json'}
+请求内容: {'username': 'admin', 'password': '123456'}
+接口响应内容: {'data': {'id': 500, 'rid': 0, 'username': 'admin', 'mobile': '12345678', 'email': 'adsfad@qq.com', 'token': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI'}, 'meta': {'msg': '登录成功', 'status': 200}}
+接口响应时长: 83 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:03,883G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:59:03 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:03,884G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:59:03 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:03,892G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（未创建用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI', 'Content-Length': '46', 'Content-Type': 'application/json'}
+请求内容: {'username': 'sToNT962', 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '用户名不存在', 'status': 400}}
+接口响应时长: 4 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:03,893G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:59:03 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:03,894G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:59:03 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:03,897G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（用户名为空）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI', 'Content-Length': '40', 'Content-Type': 'application/json'}
+请求内容: {'username': None, 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:03,898G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:59:03 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:03,900G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:59:03 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:03,903G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（密码为空）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI', 'Content-Length': '39', 'Content-Type': 'application/json'}
+请求内容: {'username': 'admin', 'password': None}
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:03,905G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:59:03 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:03,906G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:59:03 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:03,910G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（缺少username参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI', 'Content-Length': '20', 'Content-Type': 'application/json'}
+请求内容: {'password': 123456}
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:03,912G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:59:03 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:03,913G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:59:03 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:03,916G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（没有参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 1 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:03,918G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:59:03 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:03,919G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:59:03 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:03,923G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（错误参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI', 'Content-Length': '42', 'Content-Type': 'application/json'}
+请求内容: {'name': 'DhIvM930', 'password': '123456'}
+接口响应内容: {'data': None, 'meta': {'msg': '参数错误', 'status': 400}}
+接口响应时长: 2 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:03,924G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:59:03 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:03,925G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:26 2023-04-10 20:59:03 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:04,008G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 用户登录失败（多abc参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDMsImV4cCI6MTY4MTIxNzk0M30.4vNkvQDcnkBCk7zNfksUHdbLktdJA-uQpZRMHtoGUmI', 'Content-Length': '60', 'Content-Type': 'application/json'}
+请求内容: {'username': 'admin', 'password': '123456', 'abc': 'abc123'}
+接口响应内容: {'data': {'id': 500, 'rid': 0, 'username': 'admin', 'mobile': '12345678', 'email': 'adsfad@qq.com', 'token': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NDQsImV4cCI6MTY4MTIxNzk0NH0.26DL96CKrKeCvdyoW4Ei7gtoveHRJ487t3sJ0ZeZvyE'}, 'meta': {'msg': '登录成功', 'status': 200}}
+接口响应时长: 80 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:04,010G:\auto_api1_framework\logs\info-2023-04-10.log:test_login_user.py:29 2023-04-10 20:59:03 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:18,432G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_info.py:26 2023-04-10 20:59:18 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:18,673G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（全部参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NTgsImV4cCI6MTY4MTIxNzk1OH0.Gp5z8e7wKX1uD3KkLqaKnB-9dMVfNiqbOpVzPQAjuZQ', 'Content-Length': '101'}
+请求内容: {'username': 'KbunJ242', 'password': '+l1M(yXq', 'email': 'wdong@yahoo.com', 'mobile': '18157376795'}
+接口响应内容: {'data': {'id': 977, 'username': 'KbunJ242', 'mobile': '18157376795', 'email': 'wdong@yahoo.com', 'role_id': -1, 'create_time': 1681131558}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 75 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:18,681G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 修改用户信息成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users/977
+请求方式: PUT
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NTgsImV4cCI6MTY4MTIxNzk1OH0.Gp5z8e7wKX1uD3KkLqaKnB-9dMVfNiqbOpVzPQAjuZQ', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': {'id': 977, 'username': 'KbunJ242', 'role_id': -1}, 'meta': {'msg': '更新成功', 'status': 200}}
+接口响应时长: 5 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:18,682G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_info.py:29 2023-04-10 20:59:18 >>>>>> 执行结束！
+INFO    2023-04-10 20:59:18,683G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_info.py:26 2023-04-10 20:59:18 >>>>>> 开始执行：
+INFO    2023-04-10 20:59:18,690G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 修改用户信息失败
+请求路径: http://127.0.0.1:8888/api/private/v1/users/977
+请求方式: PUT
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE1NTgsImV4cCI6MTY4MTIxNzk1OH0.Gp5z8e7wKX1uD3KkLqaKnB-9dMVfNiqbOpVzPQAjuZQ', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': {'id': 977, 'username': 'KbunJ242', 'role_id': -1}, 'meta': {'msg': '更新成功', 'status': 200}}
+接口响应时长: 3 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 20:59:18,691G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_info.py:29 2023-04-10 20:59:18 >>>>>> 执行结束！
+INFO    2023-04-10 21:00:27,433G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_info.py:26 2023-04-10 21:00:27 >>>>>> 开始执行：
+INFO    2023-04-10 21:00:27,677G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（全部参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE2MjcsImV4cCI6MTY4MTIxODAyN30.sTN1Jf8vH7r3FwlU6v8FI9pFU_wm0uF7G_hO0c2qQDA', 'Content-Length': '103'}
+请求内容: {'username': 'fqcwn933', 'password': 'cj+8alGe', 'email': 'achen@hotmail.com', 'mobile': '18194345041'}
+接口响应内容: {'data': {'id': 978, 'username': 'fqcwn933', 'mobile': '18194345041', 'email': 'achen@hotmail.com', 'role_id': -1, 'create_time': 1681131627}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 83 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 21:00:27,683G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 修改用户信息成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users/978
+请求方式: PUT
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE2MjcsImV4cCI6MTY4MTIxODAyN30.sTN1Jf8vH7r3FwlU6v8FI9pFU_wm0uF7G_hO0c2qQDA', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': {'id': 978, 'username': 'fqcwn933', 'role_id': -1}, 'meta': {'msg': '更新成功', 'status': 200}}
+接口响应时长: 4 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 21:00:27,684G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_info.py:29 2023-04-10 21:00:27 >>>>>> 执行结束！
+INFO    2023-04-10 21:00:27,686G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_info.py:26 2023-04-10 21:00:27 >>>>>> 开始执行：
+INFO    2023-04-10 21:00:27,693G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 修改用户信息失败（不存在用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/users/1681131627
+请求方式: PUT
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE2MjcsImV4cCI6MTY4MTIxODAyN30.sTN1Jf8vH7r3FwlU6v8FI9pFU_wm0uF7G_hO0c2qQDA', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '更新失败', 'status': 400}}
+接口响应时长: 3 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 21:00:27,766G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_info.py:29 2023-04-10 21:00:27 >>>>>> 执行结束！
+INFO    2023-04-10 21:00:59,382G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_status.py:26 2023-04-10 21:00:59 >>>>>> 开始执行：
+INFO    2023-04-10 21:00:59,629G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 创建用户成功（全部参数）
+请求路径: http://127.0.0.1:8888/api/private/v1/users
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE2NTksImV4cCI6MTY4MTIxODA1OX0.G-0OJFVbrvr-UDfoAB35qyXnsb9MKzeLWilgfWQfhWs', 'Content-Length': '102'}
+请求内容: {'username': 'XwCki852', 'password': 'il3!1TxU', 'email': 'ping23@gmail.com', 'mobile': '18146946514'}
+接口响应内容: {'data': {'id': 979, 'username': 'XwCki852', 'mobile': '18146946514', 'email': 'ping23@gmail.com', 'role_id': -1, 'create_time': 1681131659}, 'meta': {'msg': '创建成功', 'status': 201}}
+接口响应时长: 88 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 21:00:59,635G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 修改用户信息成功
+请求路径: http://127.0.0.1:8888/api/private/v1/users/979
+请求方式: PUT
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE2NTksImV4cCI6MTY4MTIxODA1OX0.G-0OJFVbrvr-UDfoAB35qyXnsb9MKzeLWilgfWQfhWs', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': {'id': 979, 'username': 'XwCki852', 'role_id': -1}, 'meta': {'msg': '更新成功', 'status': 200}}
+接口响应时长: 4 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 21:00:59,636G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_status.py:29 2023-04-10 21:00:59 >>>>>> 执行结束！
+INFO    2023-04-10 21:00:59,638G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_status.py:26 2023-04-10 21:00:59 >>>>>> 开始执行：
+INFO    2023-04-10 21:00:59,643G:\auto_api1_framework\logs\info-2023-04-10.log:log_decorator.py:42 
+======================================================
+用例标题: 修改用户信息失败（不存在用户）
+请求路径: http://127.0.0.1:8888/api/private/v1/users/1681131659
+请求方式: PUT
+请求头:   {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2ODExMzE2NTksImV4cCI6MTY4MTIxODA1OX0.G-0OJFVbrvr-UDfoAB35qyXnsb9MKzeLWilgfWQfhWs', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {'data': None, 'meta': {'msg': '更新失败', 'status': 400}}
+接口响应时长: 3 ms
+Http状态码: 200
+断言结果: 200
+=====================================================
+INFO    2023-04-10 21:00:59,645G:\auto_api1_framework\logs\info-2023-04-10.log:test_update_user_status.py:29 2023-04-10 21:00:59 >>>>>> 执行结束！
