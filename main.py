@@ -5,7 +5,7 @@
 
 from faker import Faker
 
-# f = Faker(locale='zh_CN')
+f = Faker(locale='zh_CN')
 # print(f.password(length=10,special_chars=False))
 # print(f.pystr(min_chars=None, max_chars=5))
 #
@@ -27,15 +27,29 @@ from faker import Faker
 # for key, value in _dependent_data.items():
 #     print(key)
 #     print(value)
-yaml_case = {'url': 'http://127.0.0.1:8888/api/private/v1/users/$url_params{id}', 'method': 'PUT', 'detail': '修改用户信息', 'headers': {'Authorization': '$cache{token}'}, 'is_run': True, 'dependence_case': True, 'dependence_case_data': [{'case_id': 'create_user_03', 'dependent_data': [{'dependent_type': 'response', 'jsonpath': '$.data.id', 'set_cache': None, 'replace_key': '$url_params{id}'}]}], 'requestType': 'NONE', 'data': None, 'assert_data': {'errorStatus': {'jsonpath': '$.meta.status', 'type': '==', 'value': 200, 'AssertType': None}, 'errorInfo': {'jsonpath': '$.meta.msg', 'type': '==', 'value': '更新成功', 'AssertType': None}}}
 
-print(yaml_case['url'])
-def pp():
-    exec('yaml_case[\'url\'] = \'http://127.0.0.1:8888/api/private/v1/users/938\'')
-pp()
-print(yaml_case['url'])
 
-# te = {'$url_params{id}': 862, '$.url': 'http://127.0.0.1:8888/api/private/v1/users/862'}
-# for key,value in te.items():
-#     print(key.split('.'))
-#     print("---")
+# _url = '/api/private/v1/users11'
+# _data = {'pagenum':'1','pagesize':'20'}
+# if _data is not None:
+#     # url 拼接的方式传参
+#     params_data = "?"
+#     for key, value in _data.items():
+#         if value is None or value == '':
+#             params_data += (key + "&")
+#         else:
+#             params_data += (key + "=" + str(value) + "&")
+#         print(params_data)
+#     url = _url + params_data[:-1]
+#     print(url)
+#
+#
+# print(_url[1:-1])
+
+# a = f.unix_time()
+# print(a)
+
+import time
+
+a = time.time()
+print(int(a))

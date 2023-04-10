@@ -13,7 +13,7 @@ from utils.read_files_tools.regular_control import regular
 from utils.logging_tools.log_control import INFO
 
 
-TestData = CaseData("\\data\\UserManger\\update_user_status.yaml").get_yaml_data()
+TestData = CaseData("\\data\\UserManger\\update_user_info.yaml").get_yaml_data()
 re_data = regular(str(TestData))
 
 

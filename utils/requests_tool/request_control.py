@@ -207,7 +207,6 @@ class RequestControl:
             params=None,
             **kwargs)
         return res
-        pass
 
     def request_type_for_file(
             self,

@@ -7,6 +7,8 @@ Desc : 自定义函数调用
 import re
 import datetime
 import random
+import time
+
 from faker import Faker
 from utils.logging_tools.log_control import INFO, ERROR
 from datetime import date, timedelta, datetime
@@ -95,6 +97,11 @@ class Context:
         """
         now_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         return now_time
+
+    def get_unixtime(self):
+        """ 生成时间戳 """
+        unix_time = time.time()
+        return int(unix_time)
 
     @classmethod
     def today_date(cls):

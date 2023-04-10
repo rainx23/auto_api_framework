@@ -6,9 +6,9 @@ case_common:
 
 update_user_status_01:
     host: ${{host()}}
-    url: /api/private/v1/users/$cache{update_user_status_01_id}
+    url: /api/private/v1/users/$cache{update_user_info_01_id}
     method: PUT
-    detail: 修改用户信息
+    detail: 修改用户信息成功
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
@@ -24,7 +24,37 @@ update_user_status_01:
         dependent_data:
           - dependent_type: response
             jsonpath: $.data.id
-            set_cache: update_user_status_01_id
+            set_cache: update_user_info_01_id
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新成功"
+            AssertType:
+
+update_user_status_02:
+    host: ${{host()}}
+    url: /api/private/v1/users/$cache{update_user_info_01_id}
+    method: PUT
+    detail: 修改用户信息失败
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
     assert:
         # 断言接口状态码
         errorStatus:

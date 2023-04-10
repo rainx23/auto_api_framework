@@ -228,7 +228,7 @@ create_user_08:
     host: ${{host()}}
     url: /api/private/v1/users
     method: POST
-    detail: 用户名包含汉字
+    detail: 用户名包含中文、特殊字符
     headers:
         Content-Type: application/json
         Authorization: $cache{token}

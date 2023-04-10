@@ -2,50 +2,25 @@
 case_common:
   allureEpic: 商城平台接口
   allureFeature: 用户管理
-  allureStory: 获取用户数据列表
+  allureStory: 用户登录
 
-get_user_data_list_01:
+login_user_01:
     host: ${{host()}}
-    url: /api/private/v1/users
-    method: GET
-    detail: 获取用户数据列表成功
+    url: /api/private/v1/login
+    method: POST
+    detail: 用户登录成功（已创建用户）
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
-    requestType: params
-    # 是否执行，空或者 true 都会执行
-    is_run: 
-    data:
-        pagenum: 1
-        pagesize: 20
-    assert:
-        # 断言接口状态码
-        errorStatus:
-            jsonpath: $.meta.status
-            type: ==
-            value: 200
-            AssertType:
-        # 断言接口返回的msg
-        errorInfo:
-            jsonpath: $.meta.msg
-            type: ==
-            value: "获取管理员列表成功"
-            AssertType:
-
-get_user_data_list_02:
-    host: ${{host()}}
-    url: /api/private/v1/users
-    method: GET
-    detail: 获取用户数据列表失败（pagenum为空）
-    headers:
-        Authorization: $cache{token}
-    # 请求的数据，是 params 还是 json、或者 data, file
-    requestType: params
+    requestType: json
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-        pagenum:
-        pagesize: 20
+      username: "admin"
+      password: "123456"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
     assert:
         # 断言接口状态码
         errorStatus:
@@ -57,23 +32,27 @@ get_user_data_list_02:
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "登录成功"
             AssertType:
+    sql:
 
-get_user_data_list_03:
+login_user_02:
     host: ${{host()}}
-    url: /api/private/v1/users
-    method: GET
-    detail: 获取用户数据列表失败（pagesize为空）
+    url: /api/private/v1/login
+    method: POST
+    detail: 用户登录失败（未创建用户）
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
-    requestType: params
+    requestType: json
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-        pagenum: 1
-        pagesize:
+      username: "${{get_username()}}"
+      password: "123456"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
     assert:
         # 断言接口状态码
         errorStatus:
@@ -85,24 +64,27 @@ get_user_data_list_03:
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "登录成功"
             AssertType:
+    sql:
 
-get_user_data_list_04:
+login_user_03:
     host: ${{host()}}
-    url: /api/private/v1/users
-    method: GET
-    detail: 获取用户数据列表失败（多出abc参数）
+    url: /api/private/v1/login
+    method: POST
+    detail: 用户登录失败（用户名为空）
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
-    requestType: params
+    requestType: json
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-        pagenum: 1
-        pagesize: 20
-        abc: 100
+      username:
+      password: "123456"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
     assert:
         # 断言接口状态码
         errorStatus:
@@ -114,22 +96,27 @@ get_user_data_list_04:
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "登录成功"
             AssertType:
+    sql:
 
-get_user_data_list_05:
+login_user_04:
     host: ${{host()}}
-    url: /api/private/v1/users
-    method: GET
-    detail: 获取用户数据列表失败（缺少pagenum参数）
+    url: /api/private/v1/login
+    method: POST
+    detail: 用户登录失败（密码为空）
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
-    requestType: params
+    requestType: json
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-        pagesize: 20
+      username: "admin"
+      password:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
     assert:
         # 断言接口状态码
         errorStatus:
@@ -141,23 +128,26 @@ get_user_data_list_05:
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "登录成功"
             AssertType:
+    sql:
 
-get_user_data_list_06:
+login_user_05:
     host: ${{host()}}
-    url: /api/private/v1/users
-    method: GET
-    detail: 获取用户数据列表失败（修改pagenum参数）
+    url: /api/private/v1/login
+    method: POST
+    detail: 用户登录失败（缺少username参数）
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
-    requestType: params
+    requestType: json
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-        num: 1
-        pagesize: 20
+      password: 123456
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
     assert:
         # 断言接口状态码
         errorStatus:
@@ -169,21 +159,25 @@ get_user_data_list_06:
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "登录成功"
             AssertType:
+    sql:
 
-get_user_data_list_07:
+login_user_06:
     host: ${{host()}}
-    url: /api/private/v1/users
-    method: GET
-    detail: 获取用户数据列表失败（没有参数）
+    url: /api/private/v1/login
+    method: POST
+    detail: 用户登录失败（没有参数）
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
-    requestType: params
+    requestType: json
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
     assert:
         # 断言接口状态码
         errorStatus:
@@ -195,5 +189,71 @@ get_user_data_list_07:
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "获取管理员列表成功"
+            value: "登录成功"
             AssertType:
+    sql:
+
+login_user_07:
+    host: ${{host()}}
+    url: /api/private/v1/login
+    method: POST
+    detail: 用户登录失败（错误参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      name: "${{get_username()}}"
+      password: "123456"
+  # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "登录成功"
+            AssertType:
+    sql:
+
+login_user_08:
+    host: ${{host()}}
+    url: /api/private/v1/login
+    method: POST
+    detail: 用户登录失败（多abc参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      username: "admin"
+      password: "123456"
+      abc: "abc123"
+  # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "登录成功"
+            AssertType:
+    sql:
