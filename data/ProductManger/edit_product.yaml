@@ -1,32 +1,32 @@
-# ¹«¹²²ÎÊı
+# å…¬å…±å‚æ•°
 case_common:
-  allureEpic: ÉÌ³ÇÆ½Ì¨½Ó¿Ú
-  allureFeature: ÉÌÆ·¹ÜÀí
-  allureStory: ±à¼­ÉÌÆ·
+  allureEpic: å•†åŸå¹³å°æ¥å£
+  allureFeature: å•†å“ç®¡ç†
+  allureStory: ç¼–è¾‘å•†å“
 
 edit_product_01:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·³É¹¦£¨È«²¿²ÎÊı£©
+    detail: ç¼–è¾‘å•†å“æˆåŠŸï¼ˆå…¨éƒ¨å‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "${{get_char()}}ÊÖ»ú¿Ç",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        goods_name: "${{get_char()}}æ‰‹æœºå£³"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -34,17 +34,17 @@ edit_product_01:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "åˆ›å»ºå•†å“æˆåŠŸ"
             AssertType:
     sql:
 
@@ -52,22 +52,22 @@ edit_product_02:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·³É¹¦£¨±ØÌî²ÎÊı£©
+    detail: ç¼–è¾‘å•†å“æˆåŠŸï¼ˆå¿…å¡«å‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "ÊÖ»ú¿Ç${{get_char()}}",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
+        goods_name: "æ‰‹æœºå£³${{get_char()}}"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
         goods_weight: "200"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -75,17 +75,17 @@ edit_product_02:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "åˆ›å»ºå•†å“æˆåŠŸ"
             AssertType:
     sql:
 
@@ -93,23 +93,23 @@ edit_product_03:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·³É¹¦£¨±ØÌî+Ñ¡Ìî²ÎÊı£©
+    detail: ç¼–è¾‘å•†å“æˆåŠŸï¼ˆå¿…å¡«+é€‰å¡«å‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "ÊÖ»ú¿Ç${{get_char()}}",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        goods_name: "æ‰‹æœºå£³${{get_char()}}"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -117,17 +117,17 @@ edit_product_03:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "åˆ›å»ºå•†å“æˆåŠŸ"
             AssertType:
     sql:
 
@@ -135,25 +135,25 @@ edit_product_04:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨ÉÌÆ·Ãû³ÆÒÑ´æÔÚ£©
+    detail: ç¼–è¾‘å•†å“å¤±è´¥ï¼ˆå•†å“åç§°å·²å­˜åœ¨ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "ÊÖ»ú¿Ç",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        goods_name: "æ‰‹æœºå£³"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -161,17 +161,17 @@ edit_product_04:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "å•†å“åç§°å·²å­˜åœ¨"
             AssertType:
     sql:
 
@@ -179,25 +179,25 @@ edit_product_05:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨ÉÌÆ·Ãû³ÆÎª¿Õ£©
+    detail: ç¼–è¾‘å•†å“å¤±è´¥ï¼ˆå•†å“åç§°ä¸ºç©ºï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        goods_name: ""
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -205,17 +205,17 @@ edit_product_05:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "å•†å“åç§°ä¸èƒ½ä¸ºç©º"
             AssertType:
     sql:
 
@@ -223,25 +223,25 @@ edit_product_06:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨ÉÌÆ·Ãû³ÆÎª´¿Êı×Ö£©
+    detail: ç¼–è¾‘å•†å“æˆåŠŸï¼ˆå•†å“åç§°ä¸ºçº¯æ•°å­—ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "${{get_number()}}",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        goods_name: "${{get_number()}}"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -249,17 +249,17 @@ edit_product_06:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "åˆ›å»ºå•†å“æˆåŠŸ"
             AssertType:
     sql:
 
@@ -267,25 +267,25 @@ edit_product_07:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨ÉÌÆ·Ãû³ÆÎª´¿×ÖÄ¸£©
+    detail: ç¼–è¾‘å•†å“æˆåŠŸï¼ˆå•†å“åç§°ä¸ºçº¯å­—æ¯ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "${{get_char()}}",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        goods_name: "${{get_char()}}"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -293,17 +293,17 @@ edit_product_07:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "åˆ›å»ºå•†å“æˆåŠŸ"
             AssertType:
     sql:
 
@@ -311,25 +311,25 @@ edit_product_08:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨ÉÌÆ·Ãû³Æ°üº¬ÌØÊâ×Ö·û¡¢ºº×Ö£©
+    detail: ç¼–è¾‘å•†å“æˆåŠŸï¼ˆå•†å“åç§°åŒ…å«ç‰¹æ®Šå­—ç¬¦ã€æ±‰å­—ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "${{get_special_char()}}${{get_username()}}",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        goods_name: "${{get_special_char()}}${{get_username()}}"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -337,17 +337,17 @@ edit_product_08:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "åˆ›å»ºå•†å“æˆåŠŸ"
             AssertType:
     sql:
 
@@ -355,24 +355,24 @@ edit_product_09:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨È±ÉÙgoods_price²ÎÊı£©
+    detail: ç¼–è¾‘å•†å“å¤±è´¥ï¼ˆç¼ºå°‘goods_priceå‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "${{get_char()}}ÊÖ»ú¿Ç",
-        goods_cat: "1,2,3",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        goods_name: "${{get_char()}}æ‰‹æœºå£³"
+        goods_cat: "1,2,3"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -380,17 +380,17 @@ edit_product_09:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "å•†å“ä»·æ ¼ä¸èƒ½ä¸ºç©º"
             AssertType:
     sql:
 
@@ -398,26 +398,26 @@ edit_product_10:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨¶à³öabc²ÎÊı£©
+    detail: ç¼–è¾‘å•†å“å¤±è´¥ï¼ˆå¤šå‡ºabcå‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        goods_name: "${{get_char()}}ÊÖ»ú¿Ç",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç",
+        goods_name: "${{get_char()}}æ‰‹æœºå£³"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
         abc: "111"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -425,17 +425,17 @@ edit_product_10:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "åˆ›å»ºå•†å“æˆåŠŸ"
             AssertType:
     sql:
 
@@ -443,25 +443,25 @@ edit_product_11:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨ĞŞ¸Ägoods_nameÎªabc²ÎÊı£©
+    detail: ç¼–è¾‘å•†å“å¤±è´¥ï¼ˆä¿®æ”¹goods_nameä¸ºabcå‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-        abc: "${{get_char()}}ÊÖ»ú¿Ç",
-        goods_cat: "1,2,3",
-        goods_price: "59.9",
-        goods_number: "300",
-        goods_weight: "200",
-        goods_introduce: "testÊÖ»ú¿Ç",
-        pics: "",
-        attr: "ÊÖ»ú¿Ç"
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+        abc: "${{get_char()}}æ‰‹æœºå£³"
+        goods_cat: "1,2,3"
+        goods_price: "59.9"
+        goods_number: "300"
+        goods_weight: "200"
+        goods_introduce: "testæ‰‹æœºå£³"
+        pics: ""
+        attr: "æ‰‹æœºå£³"
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -469,17 +469,17 @@ edit_product_11:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "å•†å“åç§°ä¸èƒ½ä¸ºç©º"
             AssertType:
     sql:
 
@@ -487,17 +487,17 @@ edit_product_12:
     host: ${{host()}}
     url: /api/private/v1/goods/$cache{goods_id}
     method: PUT
-    detail: ±à¼­ÉÌÆ·Ê§°Ü£¨Ã»ÓĞ²ÎÊı£©
+    detail: ç¼–è¾‘å•†å“å¤±è´¥ï¼ˆæ²¡æœ‰å‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
     dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
       - case_id: add_product_01
         dependent_data:
@@ -505,16 +505,16 @@ edit_product_12:
             jsonpath: $.data.goods_id
             set_cache: goods_id
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨ÉÌÆ·³É¹¦"
+            value: "å•†å“åç§°ä¸èƒ½ä¸ºç©º"
             AssertType:
     sql:

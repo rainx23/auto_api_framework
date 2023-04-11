@@ -13,13 +13,13 @@ from utils.read_files_tools.regular_control import regular
 from utils.logging_tools.log_control import INFO
 
 
-TestData = CaseData("\\data\\UserManger\\update_user_status.yaml").get_yaml_data()
+TestData = CaseData("\\data\\RoleManger\\role_empower.yaml").get_yaml_data()
 re_data = regular(str(TestData))
 
 
 @allure.epic("商城平台接口")
-@allure.feature("用户管理")
-class TestUpdateUserStatus:
+@allure.feature("角色管理")
+class TestRoleEmpower:
     time = GetTime().get_now_datetime()
 
     def setup(self):
@@ -28,9 +28,9 @@ class TestUpdateUserStatus:
     def teardown(self):
         INFO.logger.info(self.time + " >>>>>> 执行结束！")
 
-    @allure.story("修改用户状态")
+    @allure.story("角色授权")
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
-    def test_update_user_status(self, in_data):
+    def test_role_empower(self, in_data):
         """
         :param :
         :return:
@@ -44,4 +44,4 @@ class TestUpdateUserStatus:
 
 
 if __name__ == '__main__':
-    pytest.main(['test_update_user_status.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])
+    pytest.main(['test_role_empower.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])

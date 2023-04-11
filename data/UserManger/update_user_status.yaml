@@ -6,7 +6,7 @@ case_common:
 
 update_user_status_01:
     host: ${{host()}}
-    url: /api/private/v1/users/${{random_int()}}/state/false
+    url: /api/private/v1/users/$cache{id}/state/true
     method: PUT
     detail: 修改用户状态成功
     headers:
@@ -17,9 +17,22 @@ update_user_status_01:
     is_run: true
     data: 
     # 是否有依赖业务，为空或者false则表示没有
-    dependence_case:
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: create_user_03
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.id
+            set_cache: id
     # 依赖的数据
     assert:
+        # 断言接口返回state
+        errorInfo:
+            jsonpath: $.data.mg_state
+            type: ==
+            value: 1
+            AssertType:
         # 断言接口状态码
         errorStatus:
             jsonpath: $.meta.status
@@ -95,9 +108,9 @@ update_user_status_03:
 
 update_user_status_04:
     host: ${{host()}}
-    url: /api/private/v1/users/${{get_username()}}/state/false
+    url: /api/private/v1/users/state/false
     method: PUT
-    detail: 修改用户状态失败（id为中文）
+    detail: 修改用户状态失败（id不存在）
     headers:
         Authorization: $cache{token}
     # 请求的数据，是 params 还是 json、或者 data, file
@@ -114,11 +127,179 @@ update_user_status_04:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 400
+            value: 404
             AssertType:
         # 断言接口返回的msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "用户ID必须是数字"
+            value: "Not Found"
+            AssertType:
+            
+update_user_status_05:
+    host: ${{host()}}
+    url: /api/private/v1/users/$cache{id}/state
+    method: PUT
+    detail: 修改用户状态失败（state为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data: 
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: create_user_03
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.id
+            set_cache: id
+    # 依赖的数据
+    assert:
+        # 断言接口返回state
+        errorInfo:
+            jsonpath: $.data
+            type: ==
+            value: None
+            AssertType:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 404
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "Not Found"
+            AssertType:
+            
+update_user_status_06:
+    host: ${{host()}}
+    url: /api/private/v1/users/$cache{id}/state/${{get_number()}}
+    method: PUT
+    detail: 修改用户状态成功（state为纯数字）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data: 
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: create_user_03
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.id
+            set_cache: id
+    # 依赖的数据
+    assert:
+        # 断言接口返回state
+        errorInfo:
+            jsonpath: $.data
+            type: ==
+            value: 0
+            AssertType:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "设置状态成功"
+            AssertType:
+            
+update_user_status_07:
+    host: ${{host()}}
+    url: /api/private/v1/users/$cache{id}/state/${{get_char()}}
+    method: PUT
+    detail: 修改用户状态成功（state为纯字母）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data: 
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: create_user_03
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.id
+            set_cache: id
+    # 依赖的数据
+    assert:
+        # 断言接口返回state
+        errorInfo:
+            jsonpath: $.data
+            type: ==
+            value: 0
+            AssertType:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "设置状态成功"
+            AssertType:
+            
+update_user_status_08:
+    host: ${{host()}}
+    url: /api/private/v1/users/$cache{id}/state/${{get_special_char()}}
+    method: PUT
+    detail: 修改用户状态成功（state包含特殊字符）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data: 
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: create_user_03
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.id
+            set_cache: id
+    # 依赖的数据
+    assert:
+        # 断言接口返回state
+        errorInfo:
+            jsonpath: $.data
+            type: ==
+            value: 0
+            AssertType:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "设置状态成功"
             AssertType:

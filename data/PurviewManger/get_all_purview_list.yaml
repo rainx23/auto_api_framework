@@ -1,37 +1,37 @@
-# ¹«¹²²ÎÊı
+# å…¬å…±å‚æ•°
 case_common:
-  allureEpic: ÉÌ³ÇÆ½Ì¨½Ó¿Ú
-  allureFeature: È¨ÏŞ¹ÜÀí
-  allureStory: »ñÈ¡ËùÓĞÈ¨ÏŞÁĞ±í
+  allureEpic: å•†åŸå¹³å°æ¥å£
+  allureFeature: æƒé™ç®¡ç†
+  allureStory: è·å–æ‰€æœ‰æƒé™åˆ—è¡¨
 
 get_all_purview_list_01:
     host: ${{host()}}
     url: /api/private/v1/rights/list
     method: GET
-    detail: »ñÈ¡ËùÓĞÈ¨ÏŞÁĞ±íÕ¹Ê¾³É¹¦
+    detail: è·å–æ‰€æœ‰æƒé™åˆ—è¡¨å±•ç¤ºæˆåŠŸ
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: None
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "»ñÈ¡È¨ÏŞÁĞ±í³É¹¦"
+            value: "è·å–æƒé™åˆ—è¡¨æˆåŠŸ"
             AssertType:
     sql:
 
@@ -39,30 +39,30 @@ get_all_purview_list_02:
     host: ${{host()}}
     url: /api/private/v1/rights/tree
     method: GET
-    detail: »ñÈ¡ËùÓĞÈ¨ÏŞÊ÷×´Õ¹Ê¾³É¹¦
+    detail: è·å–æ‰€æœ‰æƒé™æ ‘çŠ¶å±•ç¤ºæˆåŠŸ
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: None
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 200
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "»ñÈ¡È¨ÏŞÁĞ±í³É¹¦"
+            value: "è·å–æƒé™åˆ—è¡¨æˆåŠŸ"
             AssertType:
     sql:
 
@@ -70,29 +70,29 @@ get_all_purview_list_03:
     host: ${{host()}}
     url: /api/private/v1/rights/${{get_char()}}
     method: GET
-    detail: »ñÈ¡ËùÓĞÈ¨ÏŞÁĞ±íÊ§°Ü
+    detail: è·å–æ‰€æœ‰æƒé™åˆ—è¡¨å¤±è´¥
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: None
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "»ñÈ¡È¨ÏŞÁĞ±í³É¹¦"
+            value: "æ˜¾ç¤ºç±»å‹å‚æ•°é”™è¯¯"
             AssertType:
     sql:

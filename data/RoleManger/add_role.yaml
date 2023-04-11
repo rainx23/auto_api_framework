@@ -1,38 +1,38 @@
-# ¹«¹²²ÎÊı
+# å…¬å…±å‚æ•°
 case_common:
-  allureEpic: ÉÌ³ÇÆ½Ì¨½Ó¿Ú
-  allureFeature: ½ÇÉ«¹ÜÀí
-  allureStory: Ìí¼Ó½ÇÉ«
+  allureEpic: å•†åŸå¹³å°æ¥å£
+  allureFeature: è§’è‰²ç®¡ç†
+  allureStory: æ·»åŠ è§’è‰²
 
 role_list_01:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«³É¹¦£¨±ØÌî²ÎÊı£©
+    detail: æ·»åŠ è§’è‰²æˆåŠŸï¼ˆå¿…å¡«å‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleName: ${{get_position()}}
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 201
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "åˆ›å»ºæˆåŠŸ"
             AssertType:
     sql:
 
@@ -40,32 +40,32 @@ role_list_02:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«³É¹¦£¨±ØÌî+Ñ¡Ìî²ÎÊı£©
+    detail: æ·»åŠ è§’è‰²æˆåŠŸï¼ˆå¿…å¡«+é€‰å¡«å‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleName: ${{get_position()}}
       roleDesc: ${{get_describe()}}
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 201
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "åˆ›å»ºæˆåŠŸ"
             AssertType:
     sql:
 
@@ -73,32 +73,32 @@ role_list_03:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«Ê§°Ü£¨½ÇÉ«Ãû³ÆÎª¿Õ£©
+    detail: æ·»åŠ è§’è‰²å¤±è´¥ï¼ˆè§’è‰²åç§°ä¸ºç©ºï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleName:
       roleDesc: ${{get_describe()}}
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "è§’è‰²åç§°ä¸èƒ½ä¸ºç©º"
             AssertType:
     sql:
 
@@ -106,32 +106,32 @@ role_list_04:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«Ê§°Ü£¨½ÇÉ«Ãû³Æ´¿Êı×Ö£©
+    detail: æ·»åŠ è§’è‰²å¤±è´¥ï¼ˆè§’è‰²åç§°çº¯æ•°å­—ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleName: ${{get_number()}}
       roleDesc: ${{get_describe()}}
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 201
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "åˆ›å»ºæˆåŠŸ"
             AssertType:
     sql:
 
@@ -139,32 +139,32 @@ role_list_05:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«Ê§°Ü£¨½ÇÉ«Ãû³Æ´¿×ÖÄ¸£©
+    detail: æ·»åŠ è§’è‰²å¤±è´¥ï¼ˆè§’è‰²åç§°çº¯å­—æ¯ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleName: ${{get_char()}}
       roleDesc: ${{get_describe()}}
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 201
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "åˆ›å»ºæˆåŠŸ"
             AssertType:
     sql:
 
@@ -172,32 +172,32 @@ role_list_06:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«Ê§°Ü£¨½ÇÉ«Ãû³Æ°üº¬ÌØÊâ×Ö·û¡¢ºº×Ö£©
+    detail: æ·»åŠ è§’è‰²å¤±è´¥ï¼ˆè§’è‰²åç§°åŒ…å«ç‰¹æ®Šå­—ç¬¦ã€æ±‰å­—ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleName: ${{get_special_char()}}${{get_name()}}
       roleDesc: ${{get_describe()}}
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 201
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "åˆ›å»ºæˆåŠŸ"
             AssertType:
     sql:
 
@@ -205,33 +205,33 @@ role_list_07:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«Ê§°Ü£¨¶à³öroleId²ÎÊı£©
+    detail: æ·»åŠ è§’è‰²å¤±è´¥ï¼ˆå¤šå‡ºroleIdå‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleName: ${{get_describe()}}
       roleDesc: ${{get_describe()}}
       roleId: 99
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 201
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "åˆ›å»ºæˆåŠŸ"
             AssertType:
     sql:
 
@@ -239,31 +239,31 @@ role_list_08:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«Ê§°Ü£¨È±ÉÙroleName²ÎÊı£©
+    detail: æ·»åŠ è§’è‰²å¤±è´¥ï¼ˆç¼ºå°‘roleNameå‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleDesc: ${{get_describe()}}
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "è§’è‰²åç§°ä¸èƒ½ä¸ºç©º"
             AssertType:
     sql:
 
@@ -271,31 +271,31 @@ role_list_09:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«Ê§°Ü£¨ĞŞ¸ÄroleName²ÎÊı£©
+    detail: æ·»åŠ è§’è‰²å¤±è´¥ï¼ˆä¿®æ”¹roleNameå‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
       roleName1: ${{get_describe()}}
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "è§’è‰²åç§°ä¸èƒ½ä¸ºç©º"
             AssertType:
     sql:
 
@@ -303,29 +303,29 @@ role_list_10:
     host: ${{host()}}
     url: /api/private/v1/roles
     method: POST
-    detail: Ìí¼Ó½ÇÉ«Ê§°Ü£¨Ã»ÓĞ²ÎÊı£©
+    detail: æ·»åŠ è§’è‰²å¤±è´¥ï¼ˆæ²¡æœ‰å‚æ•°ï¼‰
     headers:
         Authorization: $cache{token}
-    # ÇëÇóµÄÊı¾İ£¬ÊÇ params »¹ÊÇ json¡¢»òÕß data, file
+    # è¯·æ±‚çš„æ•°æ®ï¼Œæ˜¯ params è¿˜æ˜¯ jsonã€æˆ–è€… data, file
     requestType: json
-    # ÊÇ·ñÖ´ĞĞ£¬¿Õ»òÕß true ¶¼»áÖ´ĞĞ
+    # æ˜¯å¦æ‰§è¡Œï¼Œç©ºæˆ–è€… true éƒ½ä¼šæ‰§è¡Œ
     is_run: true
     data:
-    # ÊÇ·ñÓĞÒÀÀµÒµÎñ£¬Îª¿Õ»òÕßfalseÔò±íÊ¾Ã»ÓĞ
-    dependence_case: True
-    # ÒÀÀµµÄÊı¾İ
+    # æ˜¯å¦æœ‰ä¾èµ–ä¸šåŠ¡ï¼Œä¸ºç©ºæˆ–è€…falseåˆ™è¡¨ç¤ºæ²¡æœ‰
+    dependence_case:
+    # ä¾èµ–çš„æ•°æ®
     dependence_case_data:
     assert:
-        # ¶ÏÑÔ½Ó¿Ú×´Ì¬Âë
+        # æ–­è¨€æ¥å£çŠ¶æ€ç 
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 201
+            value: 400
             AssertType:
-        # ¶ÏÑÔ½Ó¿Ú·µ»ØµÄmsg
+        # æ–­è¨€æ¥å£è¿”å›çš„msg
         errorInfo:
             jsonpath: $.meta.msg
             type: ==
-            value: "´´½¨³É¹¦"
+            value: "è§’è‰²åç§°ä¸èƒ½ä¸ºç©º"
             AssertType:
     sql:
