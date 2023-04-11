@@ -1,0 +1,252 @@
+# 公共参数
+case_common:
+  allureEpic: 商城平台接口
+  allureFeature: 用户管理
+  allureStory: 分配用户角色
+
+assign_user_roles_01:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{random_int()}}/role
+    method: PUT
+    detail: 分配用户角色成功
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rid: 110
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "设置角色成功"
+            AssertType:
+
+assign_user_roles_02:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{get_char()}}/role
+    method: PUT
+    detail: 分配用户角色失败（id为字符串）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rid: 10
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "管理员ID不存在"
+            AssertType:
+
+assign_user_roles_03:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{get_special_char()}}/role
+    method: PUT
+    detail: 分配用户角色失败（id包含特殊字符）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rid: 10
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "管理员ID不存在"
+            AssertType:
+
+assign_user_roles_04:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{get_username()}}/role
+    method: PUT
+    detail: 分配用户角色失败（id为中文）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rid: 10
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "管理员ID不存在"
+            AssertType:
+
+assign_user_roles_05:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{random_int()}}/role
+    method: PUT
+    detail: 分配用户角色失败（rid为字符串）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rid: ${{get_char()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "管理员ID不存在"
+            AssertType:
+
+assign_user_roles_06:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{random_int()}}/role
+    method: PUT
+    detail: 分配用户角色失败（rid包含特殊字符）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rid: ${{get_special_char()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "管理员ID不存在"
+            AssertType:
+
+assign_user_roles_07:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{get_username()}}/role
+    method: PUT
+    detail: 分配用户角色失败（rid为中文）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rid: ${{get_special_char()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "管理员ID不存在"
+            AssertType:
+
+assign_user_roles_08:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{get_username()}}/role
+    method: PUT
+    detail: 分配用户角色失败（rid为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rid:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "管理员ID不存在"
+            AssertType:

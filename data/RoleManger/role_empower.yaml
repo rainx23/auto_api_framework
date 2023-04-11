@@ -1,0 +1,328 @@
+# 公共参数
+case_common:
+  allureEpic: 商城平台接口
+  allureFeature: 角色管理
+  allureStory: 角色授权
+
+role_empower_01:
+    host: ${{host()}}
+    url: /api/private/v1/roles/$cache{roleId}/rights
+    method: POST
+    detail: 角色授权成功
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rids: 10
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: role_list_02
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            set_cache: roleId
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新成功"
+            AssertType:
+    sql:
+    
+role_empower_02:
+    host: ${{host()}}
+    url: /api/private/v1/roles/${{get_unixtime()}}/rights
+    method: POST
+    detail: 角色授权失败（roleId不存在）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rids: 10
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新权限失败"
+            AssertType:
+    sql:
+
+role_empower_03:
+    host: ${{host()}}
+    url: /api/private/v1/roles/rights
+    method: POST
+    detail: 角色授权失败（未指定roleId）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rids: 10
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新权限失败"
+            AssertType:
+    sql:
+
+role_empower_04:
+    host: ${{host()}}
+    url: /api/private/v1/roles/$cache{roleId}/rights
+    method: POST
+    detail: 角色授权失败（rids为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rids:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: role_list_02
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            set_cache: roleId
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新成功"
+            AssertType:
+    sql:
+
+role_empower_05:
+    host: ${{host()}}
+    url: /api/private/v1/roles/$cache{roleId}/rights
+    method: POST
+    detail: 角色授权失败（rids纯数字）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rids: ${{get_number()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: role_list_02
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            set_cache: roleId
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新成功"
+            AssertType:
+    sql:
+
+role_empower_06:
+    host: ${{host()}}
+    url: /api/private/v1/roles/$cache{roleId}/rights
+    method: POST
+    detail: 角色授权失败（rids纯字母）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rids: ${{get_char()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: role_list_02
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            set_cache: roleId
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新成功"
+            AssertType:
+    sql:
+
+role_empower_07:
+    host: ${{host()}}
+    url: /api/private/v1/roles/$cache{roleId}/rights
+    method: POST
+    detail: 角色授权失败（rids包含特殊字符、汉字）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rids: ${{get_special_char()}}${{get_name()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: role_list_02
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            set_cache: roleId
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新成功"
+            AssertType:
+    sql:
+
+role_empower_08:
+    host: ${{host()}}
+    url: /api/private/v1/roles/$cache{roleId}/rights
+    method: POST
+    detail: 角色授权失败（多出id参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      rids: 10
+      id: 100
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: role_list_02
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            set_cache: roleId
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新成功"
+            AssertType:
+    sql:
+
+role_empower_09:
+    host: ${{host()}}
+    url: /api/private/v1/roles/$cache{roleId}/rights
+    method: POST
+    detail: 角色授权失败（缺少rids参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: role_list_02
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            set_cache: roleId
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "更新成功"
+            AssertType:
+    sql:

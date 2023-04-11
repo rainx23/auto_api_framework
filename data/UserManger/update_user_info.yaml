@@ -4,7 +4,7 @@ case_common:
   allureFeature: 用户管理
   allureStory: 修改用户信息
 
-update_user_status_01:
+update_user_info_01:
     host: ${{host()}}
     url: /api/private/v1/users/$cache{update_user_info_01_id}
     method: PUT
@@ -39,7 +39,7 @@ update_user_status_01:
             value: "更新成功"
             AssertType:
 
-update_user_status_02:
+update_user_info_02:
     host: ${{host()}}
     url: /api/private/v1/users/${{get_unixtime()}}
     method: PUT

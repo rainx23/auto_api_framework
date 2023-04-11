@@ -1,0 +1,124 @@
+# 公共参数
+case_common:
+  allureEpic: 商城平台接口
+  allureFeature: 用户管理
+  allureStory: 修改用户状态
+
+update_user_status_01:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{random_int()}}/state/false
+    method: PUT
+    detail: 修改用户状态成功
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data: 
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "设置状态成功"
+            AssertType:
+
+update_user_status_02:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{get_char()}}/state/false
+    method: PUT
+    detail: 修改用户状态失败（id为字符串）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "用户ID必须是数字"
+            AssertType:
+
+update_user_status_03:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{get_special_char()}}/state/false
+    method: PUT
+    detail: 修改用户状态失败（id包含特殊字符）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "用户ID必须是数字"
+            AssertType:
+
+update_user_status_04:
+    host: ${{host()}}
+    url: /api/private/v1/users/${{get_username()}}/state/false
+    method: PUT
+    detail: 修改用户状态失败（id为中文）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 400
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "用户ID必须是数字"
+            AssertType:

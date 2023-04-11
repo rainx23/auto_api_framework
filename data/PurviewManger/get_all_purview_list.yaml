@@ -1,0 +1,98 @@
+# 公共参数
+case_common:
+  allureEpic: 商城平台接口
+  allureFeature: 权限管理
+  allureStory: 获取所有权限列表
+
+get_all_purview_list_01:
+    host: ${{host()}}
+    url: /api/private/v1/rights/list
+    method: GET
+    detail: 获取所有权限列表展示成功
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "获取权限列表成功"
+            AssertType:
+    sql:
+
+get_all_purview_list_02:
+    host: ${{host()}}
+    url: /api/private/v1/rights/tree
+    method: GET
+    detail: 获取所有权限树状展示成功
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "获取权限列表成功"
+            AssertType:
+    sql:
+
+get_all_purview_list_03:
+    host: ${{host()}}
+    url: /api/private/v1/rights/${{get_char()}}
+    method: GET
+    detail: 获取所有权限列表失败
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "获取权限列表成功"
+            AssertType:
+    sql:

@@ -25,14 +25,30 @@ class Context:
         """
         :return: 随机数
         """
-        _data = random.randint(0, 5000)
+        _data = random.randint(200, 300)
         return _data
+
+    def get_position(self) -> str:
+        """ 随机职位 """
+        position = self.faker.job()
+        return position
+
+    def get_describe(self) -> str:
+        """ 随机描述 """
+        describe = self.faker.word()
+        return describe
 
     def custom_param(self):
         """ 生成100为密码（特殊字符、数字、大写字母、小写字母）"""
         content = self.faker.password(length=100, special_chars=True,
                                       digits=True, upper_case=True, lower_case=True)
         return content
+
+    def get_special_char(self):
+        """ 生成特殊字符 """
+        special_char = self.faker.password(length=5, special_chars=True,
+                                           digits=False, upper_case=False, lower_case=False)
+        return special_char
 
     def get_number(self) -> int:
         """ 生成纯数字"""

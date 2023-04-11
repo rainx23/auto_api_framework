@@ -1,0 +1,331 @@
+# 公共参数
+case_common:
+  allureEpic: 商城平台接口
+  allureFeature: 角色管理
+  allureStory: 删除角色指定权限
+
+role_list_01:
+    host: ${{host()}}
+    url: /api/private/v1/roles/{roleId}/rights/{rightId}
+    method: DELETE
+    detail: 删除角色指定权限成功
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleName: ${{get_position()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_02:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色成功（必填+选填参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleName: ${{get_position()}}
+      roleDesc: ${{get_describe()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_03:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色失败（角色名称为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleName:
+      roleDesc: ${{get_describe()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_04:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色失败（角色名称纯数字）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleName: ${{get_number()}}
+      roleDesc: ${{get_describe()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_05:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色失败（角色名称纯字母）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleName: ${{get_char()}}
+      roleDesc: ${{get_describe()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_06:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色失败（角色名称包含特殊字符、汉字）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleName: ${{get_special_char()}}${{get_name()}}
+      roleDesc: ${{get_describe()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_07:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色失败（多出roleId参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleName: ${{get_describe()}}
+      roleDesc: ${{get_describe()}}
+      roleId: 99
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_08:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色失败（缺少roleName参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleDesc: ${{get_describe()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_09:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色失败（修改roleName参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+      roleName1: ${{get_describe()}}
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:
+
+role_list_10:
+    host: ${{host()}}
+    url: /api/private/v1/roles
+    method: POST
+    detail: 添加角色失败（没有参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建成功"
+            AssertType:
+    sql:

@@ -1,0 +1,549 @@
+# 公共参数
+case_common:
+  allureEpic: 商城平台接口
+  allureFeature: 商品管理
+  allureStory: 添加商品
+
+add_product_01:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品成功
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "手机壳${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+
+add_product_02:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（name为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+
+add_product_03:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（cat为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "手机壳${{get_char()}}",
+        goods_cat: "",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_04:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（price为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "手机壳${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_price: "",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_05:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（number为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "手机壳${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_06:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（weight为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "手机壳${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_07:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（introduce为空）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "手机壳${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_08:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（商品名称纯数字）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "${{get_number()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_09:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（商品名称纯字母）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_10:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（商品名称包含特殊字符、汉字）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "${{get_special_char()}}${{get_username()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_11:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（缺少goods_price参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "手机壳${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_12:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（多出abc参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        goods_name: "手机壳${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳",
+        abc: "123"
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_13:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（修改goods_name为abc参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+        abc: "手机壳${{get_char()}}",
+        goods_cat: "1,2,3",
+        goods_price: "19.9",
+        goods_number: "200",
+        goods_weight: "100",
+        goods_introduce: "手机壳",
+        pics: "",
+        attr: "手机壳",
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
+    
+add_product_14:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: POST
+    detail: 添加商品失败（没有参数）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data: 
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    # 依赖的数据
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 201
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "创建商品成功"
+            AssertType:
+    sql:
