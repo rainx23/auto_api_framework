@@ -18,6 +18,10 @@ get_user_data_list_01:
     data:
         pagenum: 1
         pagesize: 20
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
     assert:
         # 断言接口状态码
         errorStatus:
@@ -46,6 +50,10 @@ get_user_data_list_02:
     data:
         pagenum:
         pagesize: 20
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
     assert:
         # 断言接口状态码
         errorStatus:
@@ -74,6 +82,10 @@ get_user_data_list_03:
     data:
         pagenum: 1
         pagesize:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
     assert:
         # 断言接口状态码
         errorStatus:
@@ -103,6 +115,10 @@ get_user_data_list_04:
         pagenum: 1
         pagesize: 20
         abc: 100
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
     assert:
         # 断言接口状态码
         errorStatus:
@@ -130,6 +146,10 @@ get_user_data_list_05:
     is_run:
     data:
         pagesize: 20
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
     assert:
         # 断言接口状态码
         errorStatus:
@@ -158,6 +178,10 @@ get_user_data_list_06:
     data:
         num: 1
         pagesize: 20
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
     assert:
         # 断言接口状态码
         errorStatus:
@@ -184,6 +208,10 @@ get_user_data_list_07:
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case:
+    # 依赖的数据
+    dependence_case_data:
     assert:
         # 断言接口状态码
         errorStatus:

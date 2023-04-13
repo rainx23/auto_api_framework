@@ -1,1 +1,0 @@
-"{'errorStatus': {'jsonpath': '$.meta.status', 'type': '==', 'value': 400, 'AssertType': None}, 'errorInfo': {'jsonpath': '$.meta.msg', 'type': '==', 'value': '用户名已存在', 'AssertType': None}}"

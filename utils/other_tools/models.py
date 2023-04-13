@@ -6,6 +6,27 @@ from dataclasses import dataclass
 from pydantic import BaseModel, Field
 
 
+class NotificationType(Enum):
+    """ 自动化通知方式 """
+    DEFAULT = '0'
+    DING_TALK = '1'
+    WECHAT = '2'
+    EMAIL = '3'
+    FEI_SHU = '4'
+
+
+@dataclass
+class TestMetrics:
+    """ 用例执行数据 """
+    passed: int
+    failed: int
+    broken: int
+    skipped: int
+    total: int
+    pass_rate: float
+    time: Text
+
+
 class Method(Enum):
     """ 请求方法数据类型 """
     GET = "GET"
@@ -113,12 +134,35 @@ class ResponseData(BaseModel):
     body: Any
 
 
+class DingTalk(BaseModel):
+    webhook: Union[Text, None]
+    secret: Union[Text, None]
+
+
+class Webhook(BaseModel):
+    webhook: Union[Text, None]
+
+
+class Email(BaseModel):
+    send_user: Union[Text, None]
+    email_host: Union[Text, None]
+    stamp_key: Union[Text, None]
+    # 收件人
+    send_list: Union[Text, None]
+
+
 class Config(BaseModel):
     project_name: Text
     env: Text
     tester_name: Text
     host: Text
     real_time_update_test_cases: bool = False
+    notification_type: Text = '0'
+    excel_report: bool
+    ding_talk: "DingTalk"
+    wechat: "Webhook"
+    email: "Email"
+    lark: "Webhook"
 
 
 @unique

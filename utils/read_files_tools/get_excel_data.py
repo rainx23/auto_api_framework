@@ -56,7 +56,7 @@ class GetExcelData:
 
 
 if __name__ == '__main__':
-    data = GetExcelData("\\data\\test_datas.xls", 'test').get_excel_data()
+    data = GetExcelData("\\test_datas.xls", 'test').get_excel_data()
     print(data)
 
 

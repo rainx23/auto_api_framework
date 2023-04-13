@@ -11,7 +11,7 @@ add_product_01:
     detail: 添加商品成功
     headers:
         Authorization: $cache{token}
-    # 请求的数据，是 params 还是 json、或者 data, file
+    # 请求的数据，是 params 还是 json、或者 data, file, none
     requestType: json
     # 是否执行，空或者 true 都会执行
     is_run: true

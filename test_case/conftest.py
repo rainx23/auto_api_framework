@@ -11,7 +11,7 @@ from config.setting import ensure_path_sep
 from utils.logging_tools.log_control import INFO, ERROR, WARNING
 from utils.other_tools.models import TestCase
 from utils.read_files_tools.clean_files import del_file
-from utils.allure_data.allure_tools import allure_step, allure_step_no
+from utils.other_tools.allure_data.allure_tools import allure_step, allure_step_no
 from utils.cache_process.cache_control import CacheHandler
 
 
@@ -40,3 +40,4 @@ def work_login_init():
     token = res['data']['token']
 
     CacheHandler.update_cache(cache_name='token', value=token)
+

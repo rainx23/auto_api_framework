@@ -28,22 +28,22 @@ update_user_status_01:
     # 依赖的数据
     assert:
         # 断言接口返回state
-        errorInfo:
+        errorInfo_1:
             jsonpath: $.data.mg_state
             type: ==
             value: 1
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo_2:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "设置状态成功"
             AssertType:
         # 断言接口状态码
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 200
-            AssertType:
-        # 断言接口返回的msg
-        errorInfo:
-            jsonpath: $.meta.msg
-            type: ==
-            value: "设置状态成功"
             AssertType:
 
 update_user_status_02:
@@ -160,10 +160,16 @@ update_user_status_05:
     # 依赖的数据
     assert:
         # 断言接口返回state
-        errorInfo:
+        errorInfo_1:
             jsonpath: $.data
             type: ==
             value: None
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo_2:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "Not Found"
             AssertType:
         # 断言接口状态码
         errorStatus:
@@ -171,13 +177,7 @@ update_user_status_05:
             type: ==
             value: 404
             AssertType:
-        # 断言接口返回的msg
-        errorInfo:
-            jsonpath: $.meta.msg
-            type: ==
-            value: "Not Found"
-            AssertType:
-            
+
 update_user_status_06:
     host: ${{host()}}
     url: /api/private/v1/users/$cache{id}/state/${{get_number()}}
@@ -202,24 +202,24 @@ update_user_status_06:
     # 依赖的数据
     assert:
         # 断言接口返回state
-        errorInfo:
+        errorInfo_1:
             jsonpath: $.data
             type: ==
             value: 0
             AssertType:
+        # 断言接口返回的msg
+        errorInfo_2:
+          jsonpath: $.meta.msg
+          type: ==
+          value: "设置状态成功"
+          AssertType:
         # 断言接口状态码
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 200
             AssertType:
-        # 断言接口返回的msg
-        errorInfo:
-            jsonpath: $.meta.msg
-            type: ==
-            value: "设置状态成功"
-            AssertType:
-            
+
 update_user_status_07:
     host: ${{host()}}
     url: /api/private/v1/users/$cache{id}/state/${{get_char()}}
@@ -244,22 +244,22 @@ update_user_status_07:
     # 依赖的数据
     assert:
         # 断言接口返回state
-        errorInfo:
+        errorInfo_1:
             jsonpath: $.data
             type: ==
             value: 0
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo_2:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "设置状态成功"
             AssertType:
         # 断言接口状态码
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 200
-            AssertType:
-        # 断言接口返回的msg
-        errorInfo:
-            jsonpath: $.meta.msg
-            type: ==
-            value: "设置状态成功"
             AssertType:
             
 update_user_status_08:
@@ -286,20 +286,20 @@ update_user_status_08:
     # 依赖的数据
     assert:
         # 断言接口返回state
-        errorInfo:
+        errorInfo_1:
             jsonpath: $.data
             type: ==
             value: 0
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo_2:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "设置状态成功"
             AssertType:
         # 断言接口状态码
         errorStatus:
             jsonpath: $.meta.status
             type: ==
             value: 200
-            AssertType:
-        # 断言接口返回的msg
-        errorInfo:
-            jsonpath: $.meta.msg
-            type: ==
-            value: "设置状态成功"
             AssertType:

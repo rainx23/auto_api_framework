@@ -1,8 +1,0 @@
-url: "/home/daxue/ajax"
-method: "POST"
-content_type: "application/x-www-form-urlencoded"
-req:
-  type: name
-  keyword: 厦门大学
-res:
-  status: 1

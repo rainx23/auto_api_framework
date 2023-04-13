@@ -12,8 +12,8 @@ from utils.read_files_tools.regular_control import regular
 
 
 class GetYamlData:
-    """ 获取 yaml 文件中的数据 """
 
+    """ 获取 yaml 文件中的数据 """
     def __init__(self, file_dir):
         self.file_dir = str(file_dir)
 
@@ -62,8 +62,8 @@ class GetYamlData:
 
 
 class GetCaseData(GetYamlData):
-    """ 获取测试用例中的数据 """
 
+    """ 获取测试用例中的数据 """
     def get_different_formats_yaml_data(self) -> list:
         """
         获取兼容不同格式的yaml数据

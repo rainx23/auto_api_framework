@@ -9,18 +9,10 @@ from faker import Faker
 
 f = Faker(locale='zh_CN')
 pp = f.bs()
-print(pp)
-print(pp[0:11])
-# print(f.password(length=10,special_chars=False))
-# print(f.pystr(min_chars=None, max_chars=5))
-#
-# def te(length=10,special_chars=True, digits=False, upper_case=False, lower_case=False):
-#     f = Faker(locale='zh_CN')
-#     print(f.password(length, special_chars, digits, upper_case, lower_case))
-# #
-# #
-# te(length=4)
 
-# print(random.randint(101,103))
+from typing import Text, List, Union
+from utils.other_tools.models import TestCaseEnum, TestCase
 
-print(time.time())
+t = {'host':"www.hhh.com"}
+print(list(TestCaseEnum._value2member_map_.keys()))
+print(t.get(TestCaseEnum.HOST.value[0]))

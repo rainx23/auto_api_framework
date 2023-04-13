@@ -1,0 +1,103 @@
+# 公共参数
+case_common:
+  allureEpic: 商城平台接口
+  allureFeature: 商品管理
+  allureStory: 查询指定ID的商品
+
+query_product_specified_id_01:
+    host: ${{host()}}
+    url: /api/private/v1/goods/$cache{goods_id}
+    method: GET
+    detail: 查询指定ID的商品成功
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: none
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+      - case_id: add_product_01
+        dependent_data:
+          - dependent_type: response
+            jsonpath: $.data.goods_id
+            set_cache: goods_id
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "获取成功"
+            AssertType:
+    sql:
+
+query_product_specified_id_02:
+    host: ${{host()}}
+    url: /api/private/v1/goods/${{get_unixtime()}}
+    method: GET
+    detail: 查询指定ID的商品失败（不存在id）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: none
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "获取成功"
+            AssertType:
+    sql:
+    
+query_product_specified_id_03:
+    host: ${{host()}}
+    url: /api/private/v1/goods
+    method: GET
+    detail: 查询指定ID的商品失败（未指定id）
+    headers:
+        Authorization: $cache{token}
+    # 请求的数据，是 params 还是 json、或者 data, file
+    requestType: none
+    # 是否执行，空或者 true 都会执行
+    is_run: true
+    data:
+    # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: 
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+        # 断言接口状态码
+        errorStatus:
+            jsonpath: $.meta.status
+            type: ==
+            value: 200
+            AssertType:
+        # 断言接口返回的msg
+        errorInfo:
+            jsonpath: $.meta.msg
+            type: ==
+            value: "获取成功"
+            AssertType:
+    sql:

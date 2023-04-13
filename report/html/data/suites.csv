@@ -1,0 +1,417 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_get_user_data_list","TestGetUserDataList","","","test_get_user_data_list[获取用户数据列表失败（多出abc参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色成功（必填+选填参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.PurviewManger","test_get_all_purview_list","TestGetAllPurviewList","","","test_get_all_purview_list[获取所有权限列表展示成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色失败（角色名称包含特殊字符、汉字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品成功（商品名称纯字母）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品失败（修改goods_name为abc参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_login_user","TestLoginUser","","","test_login_user[用户登录成功（已创建用户）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_delete_user","TestDeleteUser","","","test_delete_user[删除用户成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_login_user","TestLoginUser","","","test_login_user[用户登录失败（错误参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品成功（商品名称包含特殊字符、汉字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品失败（商品名称已存在）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（number为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_login_user","TestLoginUser","","","test_login_user[用户登录失败（密码为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[错误参数：修改username为test]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_get_user_data_list","TestGetUserDataList","","","test_get_user_data_list[获取用户数据列表失败（缺少pagenum参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:07 CST 2023","Wed Apr 12 10:59:07 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[用户名纯字母]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色成功（必填参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_assign_user_roles","TestAssignUserRoles","","","test_assign_user_roles[分配用户角色失败（id为字符串）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_update_user_info","TestUpdateUserInfo","","","test_update_user_info[修改用户信息失败（不存在用户）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:07 CST 2023","Wed Apr 12 10:59:07 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[100位密码]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_login_user","TestLoginUser","","","test_login_user[用户登录失败（多abc参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_update_user_status","TestUpdateUserStatus","","","test_update_user_status[修改用户状态失败（state为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（price为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_get_user_data_list","TestGetUserDataList","","","test_get_user_data_list[获取用户数据列表失败（pagenum为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_delete_user","TestDeleteUser","","","test_delete_user[删除用户失败（不存在用户）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.UserManger","test_assign_user_roles","TestAssignUserRoles","","","test_assign_user_roles[分配用户角色成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_update_user_status","TestUpdateUserStatus","","","test_update_user_status[修改用户状态成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[用户名纯数字]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色失败（多出roleId参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色失败（修改roleName参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（weight为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_assign_user_roles","TestAssignUserRoles","","","test_assign_user_roles[分配用户角色失败（id为中文）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品成功（商品名称纯数字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（没有参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[用户名为空]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权失败（缺少rids参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_update_user_status","TestUpdateUserStatus","","","test_update_user_status[修改用户状态失败（id包含特殊字符）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.PurviewManger","test_get_all_purview_list","TestGetAllPurviewList","","","test_get_all_purview_list[获取所有权限列表失败]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_assign_user_roles","TestAssignUserRoles","","","test_assign_user_roles[分配用户角色失败（id包含特殊字符）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品成功（全部参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_get_user_data_list","TestGetUserDataList","","","test_get_user_data_list[获取用户数据列表失败（pagesize为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.ProductManger","test_query_product_specified_id","TestQueryProductSpecifiedId","","","test_query_product_specified_id[查询指定ID的商品成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色失败（角色名称纯字母）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_delete_role_empower","TestDeleteRoleEmpower","","","test_delete_role_empower[删除角色指定权限成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","test_query_college_info[真实大学-厦门大学]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（introduce为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:11 CST 2023","Wed Apr 12 10:59:11 CST 2023","0","test_case.UserManger","test_update_user_status","TestUpdateUserStatus","","","test_update_user_status[修改用户状态成功（state为纯字母）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品成功（商品名称为纯字母）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（修改goods_name为abc参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:11 CST 2023","Wed Apr 12 10:59:11 CST 2023","0","test_case.UserManger","test_update_user_status","TestUpdateUserStatus","","","test_update_user_status[修改用户状态成功（state为纯数字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色失败（没有参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品成功（商品名称为纯数字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_update_user_status","TestUpdateUserStatus","","","test_update_user_status[修改用户状态失败（id为字符串）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品失败（商品名称为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:07 CST 2023","Wed Apr 12 10:59:07 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[密码为纯数字]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:58:59 CST 2023","Wed Apr 12 10:58:59 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（name为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:11 CST 2023","Wed Apr 12 10:59:11 CST 2023","0","test_case.UserManger","test_update_user_status","TestUpdateUserStatus","","","test_update_user_status[修改用户状态成功（state包含特殊字符）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_login_user","TestLoginUser","","","test_login_user[用户登录失败（缺少username参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:07 CST 2023","Wed Apr 12 10:59:07 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[用户名包含中文、特殊字符]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_get_user_data_list","TestGetUserDataList","","","test_get_user_data_list[获取用户数据列表失败（修改pagenum参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_login_user","TestLoginUser","","","test_login_user[用户登录失败（未创建用户）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权失败（roleId不存在）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色失败（缺少roleName参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权失败（rids为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_delete_role_empower","TestDeleteRoleEmpower","","","test_delete_role_empower[删除角色指定权限失败（角色id不存在）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品成功（多出abc参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品失败（缺少goods_price参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[少参：缺少username]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品失败（没有参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.PurviewManger","test_get_all_purview_list","TestGetAllPurviewList","","","test_get_all_purview_list[获取所有权限树状展示成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权成功（多出id参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:04 CST 2023","Wed Apr 12 10:59:04 CST 2023","0","test_case.RoleManger","test_delete_role_empower","TestDeleteRoleEmpower","","","test_delete_role_empower[删除角色指定权限失败（权限id不存在）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:07 CST 2023","Wed Apr 12 10:59:07 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[密码为纯字母]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.ProductManger","test_query_product_specified_id","TestQueryProductSpecifiedId","","","test_query_product_specified_id[查询指定ID的商品失败（不存在id）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权成功（rids包含特殊字符、汉字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品失败（多出abc参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_get_user_data_list","TestGetUserDataList","","","test_get_user_data_list[获取用户数据列表成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","test_query_college_info[真实大学-四川轻化工大学]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权成功（rids纯字母）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.Query","test_query_college_info","TestQueryCollegeInfo","","","test_query_college_info[不存在-测试大学]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[创建已存在用户]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_get_user_data_list","TestGetUserDataList","","","test_get_user_data_list[获取用户数据列表失败（没有参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[创建用户成功（全部参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品成功（商品名称包含特殊字符、汉字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_login_user","TestLoginUser","","","test_login_user[用户登录失败（没有参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（cat为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色失败（角色名称纯数字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[创建用户成功（必填+选填参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品成功（必填+选填参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:07 CST 2023","Wed Apr 12 10:59:07 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[密码为空]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:58:57 CST 2023","Wed Apr 12 10:58:57 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权失败（未指定roleId）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:05 CST 2023","Wed Apr 12 10:59:05 CST 2023","0","test_case.RoleManger","test_role_empower","TestRoleEmpower","","","test_role_empower[角色授权成功（rids纯数字）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_update_user_info","TestUpdateUserInfo","","","test_update_user_info[修改用户信息成功]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:07 CST 2023","Wed Apr 12 10:59:07 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[多参：多abc]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:08 CST 2023","Wed Apr 12 10:59:08 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[没有参数]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:02 CST 2023","Wed Apr 12 10:59:02 CST 2023","0","test_case.ProductManger","test_query_product_specified_id","TestQueryProductSpecifiedId","","","test_query_product_specified_id[查询指定ID的商品失败（未指定id）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:09 CST 2023","Wed Apr 12 10:59:09 CST 2023","0","test_case.UserManger","test_login_user","TestLoginUser","","","test_login_user[用户登录失败（用户名为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:06 CST 2023","Wed Apr 12 10:59:06 CST 2023","0","test_case.UserManger","test_create_user","TestCreateUser","","","test_create_user[创建用户成功（必填参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:03 CST 2023","Wed Apr 12 10:59:03 CST 2023","0","test_case.RoleManger","test_add_role","TestAddRole","","","test_add_role[添加角色失败（角色名称为空）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:10 CST 2023","Wed Apr 12 10:59:10 CST 2023","0","test_case.UserManger","test_update_user_status","TestUpdateUserStatus","","","test_update_user_status[修改用户状态失败（id不存在）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:01 CST 2023","Wed Apr 12 10:59:01 CST 2023","0","test_case.ProductManger","test_edit_product","TestEditProduct","","","test_edit_product[编辑商品成功（必填参数）]","
+        :param :
+        :return:
+        "
+"broken","Wed Apr 12 10:59:00 CST 2023","Wed Apr 12 10:59:00 CST 2023","0","test_case.ProductManger","test_add_product","TestAddProduct","","","test_add_product[添加商品失败（缺少goods_price参数）]","
+        :param :
+        :return:
+        "

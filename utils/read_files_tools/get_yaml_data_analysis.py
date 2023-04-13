@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-# @Time   : 2023/4/1
-# @Author : Rainx
+# @Time    : 2023/4/1
+# @Author  : Rainx
+# @Function: 校验用例内容
 """
 
 import os
@@ -18,12 +19,23 @@ class CaseDataCheck:
     """ 用例数据校验 """
     def __init__(self, file_path):
         self.file_path = ensure_path_sep(file_path)
-        # self.file_path = file_path
         if os.path.exists(self.file_path) is False:
-            raise FileNotFoundError("用例地址未找到")
+            raise FileNotFoundError(f"用例地址 {self.file_path} 未找到")
 
         self.case_data = None
         self.case_id = None
+
+    def _assert(self, attr: Text):
+        assert attr in self.case_data.keys(), (
+            f"用例ID为 {self.case_id} 的用例中缺少 {attr} 参数，请确认用例内容是否编写规范."
+            f"当前用例文件路径：{self.file_path}"
+        )
+
+    def check_params_exit(self):
+        # 映射获取枚举key [('host', True), ('url', True),....]
+        for enum in list(TestCaseEnum._value2member_map_.keys()):
+            if enum[1]:
+                self._assert(enum[0])
 
     def check_params_right(self, enum_name, attr):
         _member_names_ = enum_name._member_names_
@@ -34,17 +46,6 @@ class CaseDataCheck:
             f"当前用例文件路径：{self.file_path}"
         )
         return attr.upper()
-
-    def _assert(self, attr: Text):
-        assert attr in self.case_data.keys(), (
-            f"用例ID为 {self.case_id} 的用例中缺少 {attr} 参数，请确认用例内容是否编写规范."
-            f"当前用例文件路径：{self.file_path}"
-        )
-
-    def check_params_exit(self):
-        for enum in list(TestCaseEnum._value2member_map_.keys()):
-            if enum[1]:
-                self._assert(enum[0])
 
     @property
     def get_method(self) -> Text:
@@ -89,6 +90,7 @@ class CaseDataCheck:
 
 class CaseData(CaseDataCheck):
 
+    """ 返回用例数据内容 """
     def get_yaml_data(self, case_id_switch: Union[None, bool] = None):
         yaml_data = GetYamlData(self.file_path).get_yaml_data()
         case_list = []
@@ -97,14 +99,14 @@ class CaseData(CaseDataCheck):
             if key != 'case_common':
                 self.case_data = values
                 self.case_id = key
-                # super().check_params_exit()
+                super().check_params_exit()
                 case_date = {
                     'url': self.get_host,
                     'method': self.get_method,
                     "detail": self.case_data.get(TestCaseEnum.DETAIL.value[0]),
                     'headers': self.case_data.get(TestCaseEnum.HEADERS.value[0]),
                     'is_run': self.case_data.get(TestCaseEnum.IS_RUN.value[0]),
-                    'requestType': self.get_request_type,
+                    'requestType': super().get_request_type,
                     'data': self.case_data.get(TestCaseEnum.DATA.value[0]),
                     'dependence_case': self.case_data.get(TestCaseEnum.DE_CASE.value[0]),
                     'dependence_case_data': self.get_dependence_case_data,
@@ -131,5 +133,5 @@ class GetTestCase:
 
 
 if __name__ == '__main__':
-    c = CaseData('\\data\\UserManger\\update_user_info.yaml').get_yaml_data()
+    c = CaseData('\\data\\UserManger\\update_user_status.yaml').get_yaml_data()
     print(c)

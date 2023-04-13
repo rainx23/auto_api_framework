@@ -12,7 +12,7 @@ import random
 from set_current_request_cache import SetCurrentRequestCache
 from utils.other_tools.models import TestCase, ResponseData, RequestType
 from typing import Dict, Text, Tuple, Union
-from utils.allure_data.allure_tools import allure_step, allure_step_no, allure_attach
+from utils.other_tools.allure_data.allure_tools import allure_step, allure_step_no, allure_attach
 from utils.logging_tools.log_decorator import log_decorator
 from config.setting import ensure_path_sep
 from requests_toolbelt import MultipartEncoder
@@ -334,31 +334,32 @@ class RequestControl:
             if dependent_switch is True:
                 DependentCase(self.__yaml_case).get_dependent_data()
 
-        res = requests_type_mapping.get(self.__yaml_case.requestType)(
-            headers=self.__yaml_case.headers,
-            method=self.__yaml_case.method,
-            **kwargs
-        )
+            # 根据请求类型发送请求
+            res = requests_type_mapping.get(self.__yaml_case.requestType)(
+                headers=self.__yaml_case.headers,
+                method=self.__yaml_case.method,
+                **kwargs
+            )
 
-        _res_data = self._check_params(
-            res=res,
-            yaml_data=self.__yaml_case)
+            _res_data = self._check_params(
+                res=res,
+                yaml_data=self.__yaml_case)
 
-        self.api_allure_step(
-            url=_res_data.url,
-            headers=str(_res_data.headers),
-            method=_res_data.method,
-            data=str(_res_data.body),
-            assert_data=str(_res_data.assert_data),
-            res_time=str(_res_data.res_time),
-            res=_res_data.response_data
-        )
+            self.api_allure_step(
+                url=_res_data.url,
+                headers=str(_res_data.headers),
+                method=_res_data.method,
+                data=str(_res_data.body),
+                assert_data=str(_res_data.assert_data),
+                res_time=str(_res_data.res_time),
+                res=_res_data.response_data
+            )
 
-        # 将当前请求数据存入缓存中
-        # SetCurrentRequestCache(
-        #     current_request_set_cache=self.__yaml_case.current_request_set_cache,
-        #     request_data=self.__yaml_case.data,
-        #     response_data=res
-        # ).set_caches_main()
+            # 将当前请求数据存入缓存中
+            # SetCurrentRequestCache(
+            #     current_request_set_cache=self.__yaml_case.current_request_set_cache,
+            #     request_data=self.__yaml_case.data,
+            #     response_data=res
+            # ).set_caches_main()
 
-        return _res_data
+            return _res_data

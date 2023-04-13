@@ -48,11 +48,9 @@ def write_testcase_file(*, allure_epic, allure_feature, class_title,
 import allure
 import pytest
 from utils.read_files_tools.get_yaml_data_analysis import CaseData
-from utils.other_tools.get_time import GetTime
 from utils.requests_tool.request_control import RequestControl
 from utils.assertion.assert_control import Assert
 from utils.read_files_tools.regular_control import regular
-from utils.logging_tools.log_control import INFO
 
 
 TestData = CaseData("{yaml_path}").get_yaml_data()
@@ -62,13 +60,6 @@ re_data = regular(str(TestData))
 @allure.epic("{allure_epic}")
 @allure.feature("{allure_feature}")
 class Test{class_title}:
-    time = GetTime().get_now_datetime()
-
-    def setup(self):
-        INFO.logger.info(self.time + " >>>>>> 开始执行：")
-
-    def teardown(self):
-        INFO.logger.info(self.time + " >>>>>> 执行结束！")
 
     @allure.story("{allure_story}")
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
