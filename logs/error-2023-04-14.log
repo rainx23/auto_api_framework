@@ -1,0 +1,5 @@
+ERROR   2023-04-14 12:36:09,753E:\auto_api1_framework\logs\error-2023-04-14.log:get_excel_data.py:60 row_values() got an unexpected keyword argument 'values_only'
+ERROR   2023-04-14 13:38:37,877E:\auto_api1_framework\logs\error-2023-04-14.log:get_excel_data.py:55 replace() argument 2 must be str, not None
+ERROR   2023-04-14 14:04:20,612E:\auto_api1_framework\logs\error-2023-04-14.log:get_excel_data.py:60 name 'row' is not defined
+ERROR   2023-04-14 14:07:40,748E:\auto_api1_framework\logs\error-2023-04-14.log:get_excel_data.py:62 unhashable type: 'list'
+ERROR   2023-04-14 14:09:52,978E:\auto_api1_framework\logs\error-2023-04-14.log:get_excel_data.py:55 replace() argument 2 must be str, not None

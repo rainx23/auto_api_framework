@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # 作者：Rainx
 # 时间：2023/03/03
-# 功能：读取excel文件 封装
+# 功能：读取excel文件
 
 import xlrd
 from utils.logging_tools.log_control import INFO, ERROR, WARNING
@@ -33,19 +33,23 @@ class GetExcelData:
                 print(keys)
                 if isinstance(keys, str):
                     keys = self.table.row_values(0).replace('\n', ' ')
-                print(keys)
                 data_list = []
                 for row in range(1, self.row):
                     dict = {}
                     values = self.table.row_values(row)
+                    print(values)
                     for col in range(self.col):
-                        value = values[col]
-                        if isinstance(values[col], float):
-                            value = int(values[col])
-                            if float(value) != values[col]:
-                                value = values[col]
-                        if isinstance(values[col], str):
-                                value = values[col].replace('\n', ' ')
+                        if values[col] == '':
+                            value = 'None'
+                        else:
+                            value = values[col]
+                        print(value)
+                        # if isinstance(values[col], float):
+                        #     value = int(values[col])
+                        #     if float(value) != values[col]:
+                        #         value = values[col]
+                        # if isinstance(values[col], str):
+                        #         value = values[col].replace('\n', '')
                         dict[keys[col]] = value
                     data_list.append(dict)
 
@@ -56,7 +60,7 @@ class GetExcelData:
 
 
 if __name__ == '__main__':
-    data = GetExcelData("\\test_datas.xls", 'test').get_excel_data()
+    data = GetExcelData("\\test.xlsx", '创建用户').get_excel_data()
     print(data)
 
 

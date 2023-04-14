@@ -93,6 +93,7 @@ class CaseData(CaseDataCheck):
     """ 返回用例数据内容 """
     def get_yaml_data(self, case_id_switch: Union[None, bool] = None):
         yaml_data = GetYamlData(self.file_path).get_yaml_data()
+        print(yaml_data)
         case_list = []
         for key, values in yaml_data.items():
             # 公共配置中的数据，与用例数据不同，需要单独处理

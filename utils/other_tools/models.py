@@ -100,6 +100,7 @@ class TestCaseEnum(Enum):
     DE_CASE = ("dependence_case", True)
     DE_CASE_DATA = ("dependence_case_data", False)
     ASSERT_DATA = ("assert", True)
+    SLEEP = ("sleep", False)
 
 
 class TestCase(BaseModel):
@@ -113,6 +114,7 @@ class TestCase(BaseModel):
     requestType: Text
     data: Any = None
     assert_data: Union[Dict, Text]
+    sleep: Optional[Union[int, float]]
 
 
 class ResponseData(BaseModel):

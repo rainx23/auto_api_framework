@@ -5,7 +5,7 @@
 # 功能：封装request请求
 """
 import ast
-
+import time
 import requests
 import random
 
@@ -16,7 +16,7 @@ from utils.other_tools.allure_data.allure_tools import allure_step, allure_step_
 from utils.logging_tools.log_decorator import log_decorator
 from config.setting import ensure_path_sep
 from requests_toolbelt import MultipartEncoder
-
+from utils.logging_tools.run_time_decorator import execution_duration
 from utils.read_files_tools.regular_control import cache_regular
 
 
@@ -315,6 +315,7 @@ class RequestControl:
         allure_step("响应结果: ", res)
 
     @log_decorator(True)
+    @execution_duration(3000)
     def http_request(self, dependent_switch=True, **kwargs):
         
         from utils.requests_tool.dependent_case import DependentCase
@@ -340,6 +341,9 @@ class RequestControl:
                 method=self.__yaml_case.method,
                 **kwargs
             )
+
+            if self.__yaml_case.sleep is not None:
+                time.sleep(self.__yaml_case.sleep)
 
             _res_data = self._check_params(
                 res=res,
