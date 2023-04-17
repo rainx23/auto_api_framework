@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2022/4/2
+# @Time   : 2023/4/2
 # @Author : Rainx
 """
 断言类型封装，支持json响应断言、数据库断言

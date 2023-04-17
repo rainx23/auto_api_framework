@@ -85,6 +85,26 @@ class DependentCaseData(BaseModel):
     dependent_data: Union[None, List[DependentData]] = None
 
 
+class ParamPrepare(BaseModel):
+    dependent_type: Text
+    jsonpath: Text
+    set_cache: Text
+
+
+class SendRequest(BaseModel):
+    dependent_type: Text
+    jsonpath: Optional[Text]
+    cache_data: Optional[Text]
+    set_cache: Optional[Text]
+    replace_key: Optional[Text]
+
+
+class TearDown(BaseModel):
+    case_id: Text
+    param_prepare: Optional[List["ParamPrepare"]]
+    send_request: Optional[List["SendRequest"]]
+
+
 class TestCaseEnum(Enum):
     """
     用例字段校验
@@ -100,6 +120,9 @@ class TestCaseEnum(Enum):
     DE_CASE = ("dependence_case", True)
     DE_CASE_DATA = ("dependence_case_data", False)
     ASSERT_DATA = ("assert", True)
+    SETUP_SQL = ("setup_sql", False)
+    TEARDOWN = ("teardown", False)
+    TEARDOWN_SQL = ("teardown_sql", False)
     SLEEP = ("sleep", False)
 
 
@@ -114,6 +137,10 @@ class TestCase(BaseModel):
     requestType: Text
     data: Any = None
     assert_data: Union[Dict, Text]
+    setup_sql: List = None
+    status_code: Optional[int] = None
+    teardown_sql: Optional[List] = None
+    teardown: Union[List["TearDown"], None] = None
     sleep: Optional[Union[int, float]]
 
 

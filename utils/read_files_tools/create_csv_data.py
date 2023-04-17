@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # 作者：Rainx
 # 时间：2023/3/11
-# 功能：日志模块封装
+# 功能：造数据 csv
 
 import csv
 from faker import Faker

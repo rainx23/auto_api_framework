@@ -285,8 +285,8 @@ class RequestControl:
             "assert_data": yaml_data.assert_data,
             "res_time": self.response_elapsed_total_seconds(res),
             "status_code": res.status_code,
-            "teardown": None,
-            "teardown_sql": None,
+            "teardown": yaml_data.teardown,
+            "teardown_sql": yaml_data.teardown_sql,
             "body": data
         }
         # 抽离出通用模块，判断 http_request 方法中的一些数据校验

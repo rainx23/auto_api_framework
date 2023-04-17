@@ -34,6 +34,12 @@ create_user_01:
             type: ==
             value: "创建成功"
             AssertType:
+    teardown:
+      - case_id: delete_user_01
+        send_request:
+          - dependent_type: response
+            jsonpath: $.data.id
+            replace_key: $.data.id
             
 create_user_02:
     host: ${{host()}}
@@ -66,6 +72,12 @@ create_user_02:
             type: ==
             value: "创建成功"
             AssertType:
+    teardown:
+      - case_id: delete_user_01
+        send_request:
+          - dependent_type: response
+            jsonpath: $.data.id
+            replace_key: $.data.id
             
 create_user_03:
     host: ${{host()}}
@@ -99,6 +111,12 @@ create_user_03:
             type: ==
             value: "创建成功"
             AssertType:
+    teardown:
+      - case_id: delete_user_01
+        send_request:
+          - dependent_type: response
+            jsonpath: $.data.id
+            replace_key: $.data.id
      
 create_user_04:
     host: ${{host()}}
@@ -410,6 +428,12 @@ create_user_13:
             type: ==
             value: "创建成功"
             AssertType:
+    teardown:
+      - case_id: delete_user_01
+        send_request:
+          - dependent_type: response
+            jsonpath: $.data.id
+            replace_key: $.data.id
             
 create_user_14:
     host: ${{host()}}

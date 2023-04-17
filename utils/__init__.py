@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+# @Time   : 2022/4/2
+# @Author : Rainx
+"""
+读取配置文件
+"""
+
 from utils.read_files_tools.yaml_control import GetYamlData
 from config.setting import ensure_path_sep
 from utils.other_tools.models import Config
