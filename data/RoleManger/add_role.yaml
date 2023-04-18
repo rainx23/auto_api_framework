@@ -35,6 +35,12 @@ role_list_01:
             value: "创建成功"
             AssertType:
     sql:
+    teardown:
+      - case_id: delete_role_empower_01
+        send_request:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            replace_key: $.data.roleId
 
 role_list_02:
     host: ${{host()}}
@@ -68,6 +74,12 @@ role_list_02:
             value: "创建成功"
             AssertType:
     sql:
+    teardown:
+      - case_id: delete_role_empower_01
+        send_request:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            replace_key: $.data.roleId
 
 role_list_03:
     host: ${{host()}}
@@ -101,6 +113,12 @@ role_list_03:
             value: "角色名称不能为空"
             AssertType:
     sql:
+    teardown:
+      - case_id: delete_role_empower_01
+        send_request:
+          - dependent_type: response
+            jsonpath: $.data.roleId
+            replace_key: $.data.roleId
 
 role_list_04:
     host: ${{host()}}
