@@ -18,10 +18,9 @@ import time
 # print(t.get(TestCaseEnum.HOST.value[0]))
 import sys
 
-str = input().split(" ")
-print(str)
-output = ''
-for i in str[::-1]:
-    output += (i + ' ')
-print(output)
-print(output[:-1])
+
+list1 = [{'id': 'get_all_purview_list_01', 'host': '${{host()}}', 'url': '/api/private/v1/rights/list', 'method': 'GET', 'detail': '获取所有权限列表展示成功', 'headers': "{'Authorization': '$cache{token}'}", 'requestType': 'None', 'is_run': 'TRUE', 'data': 'None', 'dependence_case': 'None', 'dependence_case_data': 'None', 'assert': 'None', 'sql': 'None'}, {'id': 'get_all_purview_list_02', 'host': '${{host()}}', 'url': '/api/private/v1/rights/list', 'method': 'GET', 'detail': '获取所有权限列表展示成功', 'headers': 'Authorization: $cache{token}', 'requestType': 'None', 'is_run': 'TRUE', 'data': 'None', 'dependence_case': 'None', 'dependence_case_data': 'None', 'assert': 'None', 'sql': 'None'}, {'id': 'get_all_purview_list_03', 'host': '${{host()}}', 'url': '/api/private/v1/rights/list', 'method': 'GET', 'detail': '获取所有权限列表展示成功', 'headers': 'Authorization: $cache{token}', 'requestType': 'None', 'is_run': 'TRUE', 'data': 'None', 'dependence_case': 'None', 'dependence_case_data': 'None', 'assert': 'None', 'sql': 'None'}]
+dic = {}
+for i in range(len(list1)):
+    dic[list1[i]['id']] = list1[i]
+print(dic)

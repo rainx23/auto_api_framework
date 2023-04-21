@@ -1,0 +1,9 @@
+ERROR   2023-04-21 10:58:59,931E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:74 dict.values() takes no arguments (1 given)
+ERROR   2023-04-21 11:38:55,203E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:71 'id'
+ERROR   2023-04-21 11:42:35,655E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:74 list index out of range
+ERROR   2023-04-21 11:42:47,692E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:74 list index out of range
+ERROR   2023-04-21 11:58:47,610E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:71 unhashable type: 'list'
+ERROR   2023-04-21 11:59:07,166E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:72 unhashable type: 'list'
+ERROR   2023-04-21 11:59:31,943E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:72 unhashable type: 'list'
+ERROR   2023-04-21 11:59:46,955E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:72 unhashable type: 'list'
+ERROR   2023-04-21 11:59:57,523E:\auto_api1_framework\logs\error-2023-04-21.log:get_excel_data.py:72 unhashable type: 'list'

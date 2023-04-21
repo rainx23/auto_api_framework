@@ -132,7 +132,7 @@ class TestCase(BaseModel):
     detail: Text
     headers: Union[None, Dict, Text] = {}
     is_run: Union[None, bool, Text] = None
-    dependence_case: Union[None, bool] = False
+    dependence_case: Union[None, bool, Text] = False
     dependence_case_data: Optional[Union[None, List["DependentCaseData"], Text]] = None
     requestType: Text
     data: Any = None
