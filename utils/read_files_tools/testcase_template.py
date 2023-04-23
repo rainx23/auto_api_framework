@@ -43,8 +43,8 @@ def write_testcase_file(*, allure_epic, allure_feature, class_title,
         packages = 'from utils.read_files_tools.get_yaml_data_analysis import CaseData'
         testdata = f'TestData = CaseData("{yaml_path}").get_yaml_data()'
     elif config.case_mode == '2':
-        packages = 'from utils.read_files_tools.get_excel_data import CaseData'
-        testdata = f'TestData = CaseData("{yaml_path}").get_excel_data()'
+        packages = 'from utils.read_files_tools.get_excel_data import ExcelCaseData'
+        testdata = f'TestData = ExcelCaseData("{yaml_path}").get_excel_data()'
     page = f'''#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : {now}

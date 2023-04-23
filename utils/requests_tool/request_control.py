@@ -25,6 +25,7 @@ class RequestControl:
 
     def __init__(self, yaml_case):
         self.__yaml_case = TestCase(**yaml_case)
+        print(type(self.__yaml_case.headers))
 
     @classmethod
     def check_headers_str_null(

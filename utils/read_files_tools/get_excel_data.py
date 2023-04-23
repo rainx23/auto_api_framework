@@ -7,7 +7,7 @@ import xlrd
 import os
 from typing import Text, List, Union
 from utils.other_tools.models import TestCaseEnum, TestCase
-from config.setting import ensure_path_sep
+from config.setting import ensure_path_sep, root_path
 from utils.other_tools.models import Method, RequestType
 from utils.cache_process.cache_control import CacheHandler
 
@@ -135,12 +135,11 @@ class GetExcelData:
         return data_dict
 
 
-class CaseData(CaseDataCheck):
+class ExcelCaseData(CaseDataCheck):
 
     """ 返回用例数据内容 """
     def get_excel_data(self, case_id_switch: Union[None, bool] = None):
         yaml_data = GetExcelData(self.file_path).get_excel_data()
-        print(yaml_data)
         case_list = []
         for key, values in yaml_data.items():
             # 公共配置中的数据，与用例数据不同，需要单独处理
@@ -168,10 +167,22 @@ class CaseData(CaseDataCheck):
         return case_list
 
 
+class GetTestCase:
+
+    @staticmethod
+    def case_data(case_id_lists: List):
+        case_lists = []
+        for i in case_id_lists:
+            _data = CacheHandler.get_cache(i)
+            case_lists.append(_data)
+
+        return case_lists
+
+
 if __name__ == '__main__':
-    # data = GetExcelData("\\test.xlsx", '创建用户').get_excel_data()
-    # print(data)
-    data = CaseData("\\data\\UserManger\\update_user_status.xlsx").get_excel_data()
+    data = ExcelCaseData("\\data\\UserManger\\create_user.xlsx").get_excel_data()
     print(data)
+    # data = CaseData("\\data\\UserManger\\update_user_status.xlsx").get_excel_data()
+    # print(data)
 
 

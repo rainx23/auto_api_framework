@@ -1,3 +1,0 @@
-ERROR   2023-04-20 19:26:48,394E:\auto_api1_framework\logs\error-2023-04-20.log:get_excel_data.py:63 can only concatenate str (not "int") to str
-ERROR   2023-04-20 19:43:03,302E:\auto_api1_framework\logs\error-2023-04-20.log:get_excel_data.py:67 can only concatenate str (not "int") to str
-ERROR   2023-04-20 19:44:17,754E:\auto_api1_framework\logs\error-2023-04-20.log:get_excel_data.py:67 can only concatenate str (not "int") to str
