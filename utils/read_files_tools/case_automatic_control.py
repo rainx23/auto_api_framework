@@ -10,7 +10,9 @@ from config.setting import ensure_path_sep, root_path
 from utils.read_files_tools.get_all_files_path import get_all_files
 from utils.read_files_tools.testcase_template import write_testcase_file
 from utils.read_files_tools.yaml_control import GetYamlData
+from utils.read_files_tools.get_excel_data import GetExcelData
 from utils.other_tools.exceptions import ValueNotFoundError
+from utils import config
 
 
 class TestCaseAutomaticGeneration:
@@ -40,6 +42,8 @@ class TestCaseAutomaticGeneration:
             file_name = yaml_path.replace('.yaml', '.py')
         elif '.yml' in yaml_path:
             file_name = yaml_path.replace('.yml', '.py')
+        elif '.xlsx' in yaml_path:
+            file_name = yaml_path.replace('.xlsx', '.py')
         return file_name
 
     def get_case_path(self, file_path: Text) -> tuple:
@@ -194,18 +198,21 @@ class TestCaseAutomaticGeneration:
             if 'proxy_data.yaml' not in file:
                 # 判断用例需要用的文件夹路径是否存在，不存在则创建
                 self.mk_dir(file)
-                yaml_case_process = GetYamlData(file).get_yaml_data()
+                if config.case_mode == '1':
+                    yaml_case_process = GetYamlData(file).get_yaml_data()
+                elif config.case_mode == '2':
+                    yaml_case_process = GetExcelData(file).get_excel_data()
                 self.case_ids(yaml_case_process)
                 write_testcase_file(
-                    allure_epic=self.allure_epic(case_data=yaml_case_process, file_path=file),
-                    allure_feature=self.allure_feature(yaml_case_process, file_path=file),
-                    class_title=self.get_test_class_title(file),
-                    func_title=self.func_title(file),
-                    case_path=self.get_case_path(file)[0],
-                    yaml_path=self.get_yaml_path(file),
-                    file_name=self.get_case_path(file)[1],
-                    allure_story=self.allure_story(case_data=yaml_case_process, file_path=file)
-                    )
+                        allure_epic=self.allure_epic(case_data=yaml_case_process, file_path=file),
+                        allure_feature=self.allure_feature(yaml_case_process, file_path=file),
+                        class_title=self.get_test_class_title(file),
+                        func_title=self.func_title(file),
+                        case_path=self.get_case_path(file)[0],
+                        yaml_path=self.get_yaml_path(file),
+                        file_name=self.get_case_path(file)[1],
+                        allure_story=self.allure_story(case_data=yaml_case_process, file_path=file)
+                        )
 
 
 if __name__ == '__main__':

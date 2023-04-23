@@ -12,7 +12,7 @@ from warnings import filterwarnings
 import pymysql
 from typing import List, Union, Text, Dict
 from utils import config
-from utils.logging_tool.log_control import ERROR
+from utils.logging_tools.log_control import ERROR
 from utils.read_files_tools.regular_control import sql_regular
 from utils.read_files_tools.regular_control import cache_regular
 from utils.other_tools.exceptions import DataAcquisitionFailed, ValueTypeError

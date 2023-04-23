@@ -1,18 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2023-04-17 17:40:53
+# @Time   : 2023-04-23 18:30:07
 # @Author : Rainx
 
 import allure
 import pytest
-from utils.read_files_tools.get_yaml_data_analysis import CaseData
+from utils.read_files_tools.get_excel_data import CaseData
 from utils.requests_tool.request_control import RequestControl
 from utils.assertion.assert_control import Assert
 from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-TestData = CaseData("\\data\\UserManger\\update_user_status.yaml").get_yaml_data()
+TestData = CaseData("\\data\\UserManger\\update_user_status.xlsx").get_excel_data()
+print(TestData)
 re_data = regular(str(TestData))
 
 

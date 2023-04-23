@@ -2,10 +2,13 @@
 # -*- coding: utf-8 -*-
 # @Time   : 2023/4/8
 # @Author : Rainx
+
 from config.setting import ensure_path_sep, root_path
 from utils.read_files_tools.get_yaml_data_analysis import CaseData
 from utils.read_files_tools.get_all_files_path import get_all_files
 from utils.cache_process.cache_control import CacheHandler, _cache_config
+from utils import config
+from utils.read_files_tools.get_excel_data import GetExcelData
 
 
 def write_case_process():
@@ -16,10 +19,12 @@ def write_case_process():
 
     # 循环拿到所有存放用例的文件路径
     for i in get_all_files(file_path=ensure_path_sep("\\data"), yaml_data_switch=True):
-
         get_yaml_path = i[len(root_path()):].replace("\\", "\\\\")
         # 循环读取文件中的数据
-        case_process = CaseData(get_yaml_path).get_yaml_data(case_id_switch=True)
+        if config.case_mode == '1':
+            case_process = CaseData(get_yaml_path).get_yaml_data(case_id_switch=True)
+        elif config.case_mode == '2':
+            case_process = GetExcelData(get_yaml_path).get_excel_data(case_id_switch=True)
         if case_process is not None:
             # 转换数据类型
             for case in case_process:

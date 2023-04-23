@@ -4,13 +4,9 @@
 # 功能：读取excel文件
 
 import xlrd
-from utils.logging_tools.log_control import INFO, ERROR, WARNING
-from config.setting import ensure_path_sep
-
 import os
 from typing import Text, List, Union
 from utils.other_tools.models import TestCaseEnum, TestCase
-from utils.read_files_tools.yaml_control import GetYamlData
 from config.setting import ensure_path_sep
 from utils.other_tools.models import Method, RequestType
 from utils.cache_process.cache_control import CacheHandler
@@ -90,35 +86,26 @@ class CaseDataCheck:
 
 
 class GetExcelData:
-    def __init__(self, data_path, sheet_name='Sheet1'):
-        """
-        初始化方法
-        :param data_path:excel文件相对路径
-        :param sheet_name:excel访问的sheet名 默认为Sheet1
-        """
-        self.excel_path = ensure_path_sep(data_path)
-        self.workbook = xlrd.open_workbook(self.excel_path)
-        self.table = self.workbook.sheet_by_name(sheet_name=sheet_name)
+    def __init__(self, file_path):
+        self.workbook = xlrd.open_workbook(file_path)
+        self.table = self.workbook.sheets()[1]
         self.row = self.table.nrows     # 获取总行数
         self.col = self.table.ncols     # 获取总列数
         self.data_dict = {}
 
     @property
-    def get_common(self):
-        common_data = []
-        common_dict = {}
-        for i in self.table.row_values(1):
-            if i != '':
-                common_data.append(i)
-        n = 1
-        for i in range(0, 3):
-            common_dict[common_data[i * 2]] = common_data[n]
-            n += 2
-        return common_dict
+    def get_init(self):
+        tables = self.workbook.sheet_by_index(0)
+        rows = tables.nrows
+        init_dict = {}
+        for i in range(rows):
+            config_data = tables.row_values(i)
+            init_dict[config_data[0]] = config_data[1]
+        return init_dict
 
     @property
     def get_id(self):
-        ids = self.table.col_values(0)[2:]
+        ids = self.table.col_values(0)[1:]
         return ids
 
     def get_excel_data(self):
@@ -130,8 +117,8 @@ class GetExcelData:
         keys = self.table.row_values(0)[1:]    # 获取第一行作为key值
         if isinstance(keys, str):
             keys = self.table.row_values(0).replace('\n', ' ')
-        data_dict['case_common'] = self.get_common
-        for row in range(2, self.row):
+        data_dict['case_common'] = self.get_init
+        for row in range(1, self.row):
             row_dict = {}
             values = self.table.row_values(row)[1:]
             for col in range(self.col-1):
@@ -142,6 +129,7 @@ class GetExcelData:
                 row_dict[keys[col]] = value
 
             data_list.append(row_dict)
+
         for i in range(len(data_list)):
             data_dict[self.get_id[i]] = data_list[i]
         return data_dict
@@ -150,8 +138,9 @@ class GetExcelData:
 class CaseData(CaseDataCheck):
 
     """ 返回用例数据内容 """
-    def get_yaml_data(self, case_id_switch: Union[None, bool] = None):
-        yaml_data = GetExcelData("\\test.xlsx", '创建用户').get_excel_data()
+    def get_excel_data(self, case_id_switch: Union[None, bool] = None):
+        yaml_data = GetExcelData(self.file_path).get_excel_data()
+        print(yaml_data)
         case_list = []
         for key, values in yaml_data.items():
             # 公共配置中的数据，与用例数据不同，需要单独处理
@@ -182,7 +171,7 @@ class CaseData(CaseDataCheck):
 if __name__ == '__main__':
     # data = GetExcelData("\\test.xlsx", '创建用户').get_excel_data()
     # print(data)
-    data = CaseData("\\test.xlsx").get_yaml_data()
+    data = CaseData("\\data\\UserManger\\update_user_status.xlsx").get_excel_data()
     print(data)
 
 

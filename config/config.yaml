@@ -7,6 +7,9 @@ tester_name: Rainx
 #host: https://www.iamwawa.cn
 host: http://127.0.0.1:8888
 
+# 用例模式 1：yaml   2：xlsx
+case_mode: 1
+
 # 实时更新用例内容，False时，已生成的代码不会在做变更
 # 设置为True的时候，修改yaml文件的用例，代码中的内容会实时更新
 real_time_update_test_cases: True
@@ -21,6 +24,15 @@ excel_report: False
 ding_talk:
   webhook: https://oapi.dingtalk.com/robot/send?access_token=a59902a7e811f93ffe301d8326b07a2acc8aa2a864e7d61ee9fc076481ced2a6
   secret: SECdea6489dfcc3b9259da943c5ae38d3530696f2fa83ac72a9ee716e9511675b9b
+
+# 数据库相关配置
+mysql_db:
+  # 数据库开关
+  switch: False
+  host:
+  user:
+  password: ''
+  port: 3306
 
 # 企业微信通知的相关配置
 wechat:

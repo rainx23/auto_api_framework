@@ -7,6 +7,7 @@
 import os
 
 from config.setting import ensure_path_sep
+from utils import config
 
 
 def get_all_files(file_path, yaml_data_switch=False) -> list:
@@ -21,10 +22,11 @@ def get_all_files(file_path, yaml_data_switch=False) -> list:
     for root, dirs, files in os.walk(file_path):
         for _file_path in files:
             path = os.path.join(root, _file_path)
-            if yaml_data_switch:
+            # if yaml_data_switch:
+            if config.case_mode == '1':
                 if 'yaml' in path or '.yml' in path:
                     filename.append(path)
-            else:
-                filename.append(path)
+            elif config.case_mode == '2':
+                if 'xlsx' in path:
+                    filename.append(path)
     return filename
-

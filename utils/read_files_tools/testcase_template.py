@@ -39,7 +39,12 @@ def write_testcase_file(*, allure_epic, allure_feature, class_title,
     conf_data = GetYamlData(ensure_path_sep("\\config\\config.yaml")).get_yaml_data()
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     real_time_update_test_cases = conf_data['real_time_update_test_cases']
-
+    if config.case_mode == '1':
+        packages = 'from utils.read_files_tools.get_yaml_data_analysis import CaseData'
+        testdata = f'TestData = CaseData("{yaml_path}").get_yaml_data()'
+    elif config.case_mode == '2':
+        packages = 'from utils.read_files_tools.get_excel_data import CaseData'
+        testdata = f'TestData = CaseData("{yaml_path}").get_excel_data()'
     page = f'''#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : {now}
@@ -47,14 +52,14 @@ def write_testcase_file(*, allure_epic, allure_feature, class_title,
 
 import allure
 import pytest
-from utils.read_files_tools.get_yaml_data_analysis import CaseData
+{packages}
 from utils.requests_tool.request_control import RequestControl
 from utils.assertion.assert_control import Assert
 from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-TestData = CaseData("{yaml_path}").get_yaml_data()
+{testdata}
 re_data = regular(str(TestData))
 
 

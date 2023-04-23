@@ -180,13 +180,23 @@ class Email(BaseModel):
     send_list: Union[Text, None]
 
 
+class MySqlDB(BaseModel):
+    switch: bool = False
+    host: Union[Text, None] = None
+    user: Union[Text, None] = None
+    password: Union[Text, None] = None
+    port: Union[int, None] = 3306
+
+
 class Config(BaseModel):
     project_name: Text
     env: Text
     tester_name: Text
     host: Text
+    case_mode: Text
     real_time_update_test_cases: bool = False
     notification_type: Text = '0'
+    mysql_db: "MySqlDB"
     excel_report: bool
     ding_talk: "DingTalk"
     wechat: "Webhook"
