@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2023-04-24 10:46:51
+# @Time   : 2023-04-24 21:31:32
 # @Author : Rainx
 
 import allure
@@ -27,6 +27,7 @@ class TestUpdateUserStatus:
         :param :
         :return:
         """
+        print(in_data)
         allure.dynamic.title(in_data['detail'])
         res = RequestControl(in_data).http_request()
         TearDownHandler(res).teardown_handle()

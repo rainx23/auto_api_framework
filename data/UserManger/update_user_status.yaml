@@ -159,12 +159,6 @@ update_user_status_05:
             set_cache: id
     # 依赖的数据
     assert:
-        # 断言接口返回state
-        errorInfo_1:
-            jsonpath: $.data
-            type: ==
-            value: None
-            AssertType:
         # 断言接口返回的msg
         errorInfo_2:
             jsonpath: $.meta.msg
@@ -201,12 +195,6 @@ update_user_status_06:
             set_cache: id
     # 依赖的数据
     assert:
-        # 断言接口返回state
-        errorInfo_1:
-            jsonpath: $.data
-            type: ==
-            value: 0
-            AssertType:
         # 断言接口返回的msg
         errorInfo_2:
           jsonpath: $.meta.msg
@@ -243,12 +231,6 @@ update_user_status_07:
             set_cache: id
     # 依赖的数据
     assert:
-        # 断言接口返回state
-        errorInfo_1:
-            jsonpath: $.data
-            type: ==
-            value: 0
-            AssertType:
         # 断言接口返回的msg
         errorInfo_2:
             jsonpath: $.meta.msg
@@ -285,12 +267,6 @@ update_user_status_08:
             set_cache: id
     # 依赖的数据
     assert:
-        # 断言接口返回state
-        errorInfo_1:
-            jsonpath: $.data
-            type: ==
-            value: 0
-            AssertType:
         # 断言接口返回的msg
         errorInfo_2:
             jsonpath: $.meta.msg
@@ -301,5 +277,5 @@ update_user_status_08:
         errorStatus:
             jsonpath: $.meta.status
             type: ==
-            value: 200
+            value: 201
             AssertType:

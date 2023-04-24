@@ -64,11 +64,9 @@ class CaseDataCheck:
 
     @property
     def get_run(self) -> Text:
-        is_run = self.case_data.get(TestCaseEnum.IS_RUN.value[0])
-        if is_run == 'None' or is_run == '':
+        is_run = self.case_data.get(TestCaseEnum.IS_RUN.value[0]).upper()
+        if is_run == 'TRUE' or is_run == 'NONE' or is_run == '':
             return 'True'
-        else:
-            return 'False'
 
     @property
     def get_dependence_case_data(self):

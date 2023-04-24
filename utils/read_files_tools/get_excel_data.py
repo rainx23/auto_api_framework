@@ -50,6 +50,9 @@ class GetExcelData:
                     value = values[col]
                 row_dict[keys[col]] = value
             row_dict['headers'] = eval(row_dict['headers'])
+            if row_dict['dependence_case_data'] != 'None':
+                row_dict['dependence_case_data'] = eval(row_dict['dependence_case_data'])
+            # row_dict['dependence_case_data'] = eval(row_dict['dependence_case_data'])
             row_dict['data'] = eval(row_dict['data'])
             row_dict['assert'] = eval(row_dict['assert'])
             data_list.append(row_dict)
@@ -105,7 +108,7 @@ class GetTestCase:
 
 
 if __name__ == '__main__':
-    data = ExcelCaseData("\\data\\UserManger\\create_user.xlsx").get_excel_data()
+    data = ExcelCaseData("\\data\\UserManger\\update_user_status.xlsx").get_excel_data()
     print(data)
 
 
