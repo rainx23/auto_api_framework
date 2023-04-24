@@ -63,6 +63,14 @@ class CaseDataCheck:
         return host
 
     @property
+    def get_run(self) -> Text:
+        is_run = self.case_data.get(TestCaseEnum.IS_RUN.value[0])
+        if is_run == 'None' or is_run == '':
+            return 'True'
+        else:
+            return 'False'
+
+    @property
     def get_dependence_case_data(self):
         _dep_data = self.case_data.get(TestCaseEnum.DE_CASE.value[0])
         if _dep_data:
@@ -133,5 +141,5 @@ class GetTestCase:
 
 
 if __name__ == '__main__':
-    c = CaseData('\\data\\UserManger\\update_user_status.yaml').get_yaml_data()
+    c = CaseData('\\data\\UserManger\\assign_user_roles.yaml').get_yaml_data()
     print(c)

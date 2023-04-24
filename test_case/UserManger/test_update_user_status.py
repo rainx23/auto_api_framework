@@ -12,17 +12,17 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-TestData = CaseData("\\data\\UserManger\\create_user.yaml").get_yaml_data()
+TestData = CaseData("\\data\\UserManger\\update_user_status.yaml").get_yaml_data()
 re_data = regular(str(TestData))
 
 
 @allure.epic("商城平台接口")
 @allure.feature("用户管理")
-class TestCreateUser:
+class TestUpdateUserStatus:
 
-    @allure.story("创建用户")
+    @allure.story("修改用户状态")
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
-    def test_create_user(self, in_data):
+    def test_update_user_status(self, in_data):
         """
         :param :
         :return:
@@ -37,4 +37,4 @@ class TestCreateUser:
 
 
 if __name__ == '__main__':
-    pytest.main(['test_create_user.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])
+    pytest.main(['test_update_user_status.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])
