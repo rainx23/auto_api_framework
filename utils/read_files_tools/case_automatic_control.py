@@ -10,7 +10,7 @@ from config.setting import ensure_path_sep, root_path
 from utils.read_files_tools.get_all_files_path import get_all_files
 from utils.read_files_tools.testcase_template import write_testcase_file
 from utils.read_files_tools.yaml_control import GetYamlData
-from utils.read_files_tools.get_excel_data import GetExcelData
+from utils.read_files_tools.get_excel_data_analysis import GetExcelData
 from utils.other_tools.exceptions import ValueNotFoundError
 from utils import config
 
@@ -198,9 +198,9 @@ class TestCaseAutomaticGeneration:
             if 'proxy_data.yaml' not in file:
                 # 判断用例需要用的文件夹路径是否存在，不存在则创建
                 self.mk_dir(file)
-                if config.case_mode == '1':
+                if config.case_mode == '0' or config.case_mode is None:
                     yaml_case_process = GetYamlData(file).get_yaml_data()
-                elif config.case_mode == '2':
+                elif config.case_mode == '1':
                     yaml_case_process = GetExcelData(file).get_excel_data()
                 self.case_ids(yaml_case_process)
                 write_testcase_file(

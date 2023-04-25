@@ -23,10 +23,10 @@ def get_all_files(file_path, yaml_data_switch=False) -> list:
         for _file_path in files:
             path = os.path.join(root, _file_path)
             # if yaml_data_switch:
-            if config.case_mode == '1':
+            if config.case_mode == '0' or config.case_mode is None:
                 if 'yaml' in path or '.yml' in path:
                     filename.append(path)
-            elif config.case_mode == '2':
+            elif config.case_mode == '1':
                 if 'xlsx' in path:
                     filename.append(path)
     return filename

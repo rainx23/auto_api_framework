@@ -139,5 +139,6 @@ class GetTestCase:
 
 
 if __name__ == '__main__':
-    c = CaseData('\\data\\UserManger\\assign_user_roles.yaml').get_yaml_data()
+    c = CaseData('\\data\\UserManger\\update_user_status.yaml').get_yaml_data()
     print(c)
+

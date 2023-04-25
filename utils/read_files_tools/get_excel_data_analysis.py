@@ -1,7 +1,9 @@
 # -*- coding:utf-8 -*-
+"""
 # 作者：Rainx
 # 时间：2023/03/03
 # 功能：读取excel文件
+"""
 
 import xlrd
 from typing import Text, List, Union
@@ -16,7 +18,6 @@ class GetExcelData:
         self.table = self.workbook.sheets()[1]
         self.row = self.table.nrows     # 获取总行数
         self.col = self.table.ncols     # 获取总列数
-        self.data_dict = {}
 
     @property
     def get_init(self):
@@ -49,12 +50,13 @@ class GetExcelData:
                 else:
                     value = values[col]
                 row_dict[keys[col]] = value
-            row_dict['headers'] = eval(row_dict['headers'])
-            if row_dict['dependence_case_data'] != 'None':
-                row_dict['dependence_case_data'] = eval(row_dict['dependence_case_data'])
-            # row_dict['dependence_case_data'] = eval(row_dict['dependence_case_data'])
-            row_dict['data'] = eval(row_dict['data'])
-            row_dict['assert'] = eval(row_dict['assert'])
+            convert_list = ['headers', 'dependence_case_data', 'data', 'assert']
+            for keywords in convert_list:       # 处理格式转换
+                if keywords == 'dependence_case_data':
+                    if row_dict['dependence_case_data'] != 'None':
+                        row_dict[keywords] = eval(row_dict[keywords])
+                else:
+                    row_dict[keywords] = eval(row_dict[keywords])
             data_list.append(row_dict)
 
         for i in range(len(data_list)):
@@ -85,7 +87,7 @@ class ExcelCaseData(CaseDataCheck):
                     'data': self.case_data.get(TestCaseEnum.DATA.value[0]),
                     'dependence_case': self.case_data.get(TestCaseEnum.DE_CASE.value[0]),
                     'dependence_case_data': self.get_dependence_case_data,
-                    "assert_data": self.assert_data,
+                    "assert_data": self.assert_data
                 }
                 if case_id_switch is True:
                     case_list.append({key: TestCase(**case_date).dict()})
@@ -110,6 +112,7 @@ class GetTestCase:
 if __name__ == '__main__':
     data = ExcelCaseData("\\data\\UserManger\\update_user_status.xlsx").get_excel_data()
     print(data)
+
 
 
 

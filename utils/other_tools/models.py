@@ -158,7 +158,7 @@ class ResponseData(BaseModel):
     assert_data: Dict
     res_time: Union[None, int, float]
     status_code: int
-    teardown: None
+    teardown: List["TearDown"] = None
     teardown_sql: Union[None, List]
     body: Any
 
@@ -193,7 +193,7 @@ class Config(BaseModel):
     env: Text
     tester_name: Text
     host: Text
-    case_mode: Text
+    case_mode: Union[Text, None]
     real_time_update_test_cases: bool = False
     notification_type: Text = '0'
     mysql_db: "MySqlDB"
