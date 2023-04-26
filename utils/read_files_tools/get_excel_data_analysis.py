@@ -6,7 +6,7 @@
 """
 
 import xlrd
-from typing import Text, List, Union
+from typing import List, Union
 from utils.other_tools.models import TestCaseEnum, TestCase
 from utils.cache_process.cache_control import CacheHandler
 from utils.read_files_tools.get_yaml_data_analysis import CaseDataCheck
