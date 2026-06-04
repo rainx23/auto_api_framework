@@ -18,6 +18,7 @@ from jsonpath import jsonpath
 class Context:
     """ 正则替换 """
     def __init__(self):
+        # Faker 用来生成随机姓名、手机号、邮箱、字符串等测试数据。
         self.faker = Faker(locale='zh_CN')
 
     @classmethod
@@ -181,6 +182,7 @@ def cache_regular(value):
     :return:
     """
     # 正则获取 $cache{login_init}中的值 --> login_init
+    # 找出字符串里所有 $cache{xxx} 占位符，例如 headers 里的 $cache{token}。
     regular_dates = re.findall(r"\$cache\{(.*?)\}", value)
     # 拿到的是一个list，循环数据
     for regular_data in regular_dates:
@@ -196,6 +198,7 @@ def cache_regular(value):
             )
         try:
             # cache_data = Cache(regular_data).get_cache()
+            # 从内存缓存中取值，并把占位符替换成真实数据。
             cache_data = CacheHandler.get_cache(regular_data)
             # 使用sub方法，替换已经拿到的内容
             value = re.sub(pattern, str(cache_data), value)
@@ -211,6 +214,7 @@ def regular(target):
     :return: host
     """
     try:
+        # 匹配 yaml 中的动态函数写法，例如 ${{host()}}、${{get_username()}}。
         regular_pattern = r'\${{(.*?)}}'
         while re.findall(regular_pattern, target):
             key = re.search(regular_pattern, target).group(1)   # host()
@@ -225,6 +229,7 @@ def regular(target):
                 regular_int_pattern = r'\'\${{(.*?)}}\''
                 target = re.sub(regular_int_pattern, str(value_data), target, 1)
             else:
+                # 通过函数名反射调用 Context 里的方法，得到动态值。
                 func_name = key.split("(")[0]
                 value_name = key.split("(")[1][:-1]
                 if value_name == "":
@@ -246,4 +251,3 @@ if __name__ == '__main__':
     a = "${{host()}}"
     b = regular(a)
     # print(b)
-
