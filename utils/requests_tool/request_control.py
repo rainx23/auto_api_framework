@@ -24,6 +24,7 @@ class RequestControl:
     """ 封装请求 """
 
     def __init__(self, yaml_case):
+        # 每条 yaml 用例会被转换成 TestCase 对象，后面发请求都从这里取字段。
         self.__yaml_case = TestCase(**yaml_case)
 
     @classmethod
@@ -145,6 +146,7 @@ class RequestControl:
             method: Text,
             **kwargs):
         """ 判断请求类型为json格式 """
+        # requestType: json 时，请求体会通过 requests 的 json 参数发送。
         _headers = self.check_headers_str_null(headers)
         _data = self.__yaml_case.data
         _url = self.__yaml_case.url
@@ -166,6 +168,7 @@ class RequestControl:
             method: Text,
             **kwargs) -> object:
         """判断 requestType 为 None"""
+        # requestType: none 时，不发送请求体，通常用于无参数 GET/DELETE。
         _headers = self.check_headers_str_null(headers)
         _url = self.__yaml_case.url
         res = requests.request(
@@ -186,6 +189,7 @@ class RequestControl:
             **kwargs):
 
         """处理 requestType 为 params """
+        # requestType: params 时，把 data 拼到 URL 查询参数里，例如 ?page=1&size=10。
         _data = self.__yaml_case.data
         url = self.__yaml_case.url
         if _data is not None:
@@ -214,6 +218,7 @@ class RequestControl:
             headers,
             **kwargs):
         """处理 requestType 为 file 类型"""
+        # requestType: file 时，按 multipart/form-data 上传文件。
         multipart = self.upload_file()
         yaml_data = multipart[2]
         _headers = multipart[2].headers
@@ -235,6 +240,7 @@ class RequestControl:
             method: Text,
             **kwargs):
         """判断 requestType 为 data 类型"""
+        # requestType: data 时，请求体通过 form/data 方式发送。
         data = self.__yaml_case.data
         _data, _headers = self.multipart_in_headers(
             ast.literal_eval(cache_regular(str(data))),
@@ -319,6 +325,7 @@ class RequestControl:
     def http_request(self, dependent_switch=True, **kwargs):
         
         from utils.requests_tool.dependent_case import DependentCase
+        # yaml 里的 requestType 会映射到不同的请求发送方法。
         requests_type_mapping = {
             RequestType.JSON.value: self.request_type_for_json,
             RequestType.NONE.value: self.request_type_for_none,
@@ -332,10 +339,12 @@ class RequestControl:
         # 判断用例是否执行
         if is_run is True or is_run is None:
             # 处理多业务逻辑
+            # 如果用例配置了依赖，先执行依赖用例并把依赖数据替换到当前用例中。
             if dependent_switch is True:
                 DependentCase(self.__yaml_case).get_dependent_data()
 
             # 根据请求类型发送请求
+            # 根据 method、url、headers、data 等字段真正发起 HTTP 请求。
             res = requests_type_mapping.get(self.__yaml_case.requestType)(
                 headers=self.__yaml_case.headers,
                 method=self.__yaml_case.method,
@@ -349,6 +358,7 @@ class RequestControl:
                 res=res,
                 yaml_data=self.__yaml_case)
 
+            # 把请求和响应信息写入 Allure 步骤，方便报告里排查问题。
             self.api_allure_step(
                 url=_res_data.url,
                 headers=str(_res_data.headers),
