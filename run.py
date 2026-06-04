@@ -26,13 +26,16 @@ class Run:
             TestCaseAutomaticGeneration().get_case_automatic()
 
             # 定义PyTest运行参数
+            # 运行 pytest，并把 Allure 原始结果写入 ./report/tmp。
             pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning',
                          '--alluredir', './report/tmp', "--clean-alluredir"])
 
             # 执行用例，并生成测试报告
+            # 调用本机安装的 allure 命令，把原始结果生成 HTML 报告。
             os.system(r"allure generate ./report/tmp -o ./report/html --clean")
 
             allure_data = AllureFileClean().get_case_count()
+            # 根据 config.yaml 中的 notification_type 决定是否发送钉钉/企微/邮件/飞书通知。
             notification_mapping = {
                 NotificationType.DING_TALK.value: DingTalkSendMsg(allure_data).send_ding_notification,
                 NotificationType.WECHAT.value: WeChatSend(allure_data).send_wechat_notification,
