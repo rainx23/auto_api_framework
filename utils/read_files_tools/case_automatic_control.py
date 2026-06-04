@@ -21,11 +21,13 @@ class TestCaseAutomaticGeneration:
     @staticmethod
     def case_date_path() -> Text:
         """返回 yaml 用例文件路径"""
+        # data 目录存放接口用例数据，yaml/xlsx 都从这里读取。
         return ensure_path_sep("\\data")
 
     @staticmethod
     def case_path() -> Text:
         """ 存放用例代码路径"""
+        # test_case 目录存放 pytest 可执行的测试代码。
         return ensure_path_sep("\\test_case")
 
     def file_name(self, file: Text) -> Text:
@@ -34,6 +36,7 @@ class TestCaseAutomaticGeneration:
         :param file: yaml 文件路径
         :return:  示例： DateDemo.py
         """
+        # 根据 data 下的文件路径，推导出 test_case 下对应的 .py 文件名。
         i = len(self.case_date_path())
         yaml_path = file[i:]
         file_name = None
@@ -54,6 +57,7 @@ class TestCaseAutomaticGeneration:
         """
 
         # 这里通过“\\” 符号进行分割，提取出来文件名称
+        # 生成的 pytest 文件名必须以 test_ 开头，否则 pytest 默认不会收集。
         path = self.file_name(file_path).split(os.sep)
         # 判断生成的 testcase 文件名称，需要以test_ 开头
         case_name = path[-1] = path[-1].replace(path[-1], "test_" + path[-1])
@@ -67,6 +71,7 @@ class TestCaseAutomaticGeneration:
         :return: sup_apply_list --> SupApplyList
         """
         # 提取文件名称
+        # 把 add_product 这样的文件名转换成 AddProduct 这样的测试类名。
         _file_name = os.path.split(self.file_name(file_path))[1][:-3]
         _name = _file_name.split("_")
         _name_len = len(_name)
@@ -190,6 +195,7 @@ class TestCaseAutomaticGeneration:
 
     def get_case_automatic(self) -> None:
         """ 自动生成 测试代码"""
+        # 扫描 data 目录下所有 yaml/xlsx 文件，为每个数据文件生成一个 pytest 文件。
         file_path = get_all_files(file_path=ensure_path_sep("\\data"), yaml_data_switch=True)
 
         for file in file_path:
@@ -199,10 +205,13 @@ class TestCaseAutomaticGeneration:
                 # 判断用例需要用的文件夹路径是否存在，不存在则创建
                 self.mk_dir(file)
                 if config.case_mode == '0' or config.case_mode is None:
+                    # case_mode 为 0 或空时，按 yaml 格式读取用例。
                     yaml_case_process = GetYamlData(file).get_yaml_data()
                 elif config.case_mode == '1':
+                    # case_mode 为 1 时，按 xlsx 格式读取用例。
                     yaml_case_process = GetExcelData(file).get_excel_data()
                 self.case_ids(yaml_case_process)
+                # 把读取到的用例数据套入模板，写成 test_case 下的 pytest 代码。
                 write_testcase_file(
                         allure_epic=self.allure_epic(case_data=yaml_case_process, file_path=file),
                         allure_feature=self.allure_feature(yaml_case_process, file_path=file),
