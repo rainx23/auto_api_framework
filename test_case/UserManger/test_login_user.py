@@ -12,7 +12,9 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
+# 读取登录接口的 yaml 用例数据。
 TestData = CaseData("\\data\\UserManger\\login_user.yaml").get_yaml_data()
+# 把 yaml 里的动态表达式替换成真实值，例如 ${{host()}}、${{get_username()}}。
 re_data = regular(str(TestData))
 
 
@@ -21,6 +23,7 @@ re_data = regular(str(TestData))
 class TestLoginUser:
 
     @allure.story("用户登录")
+    # parametrize 会把 yaml 中的多条登录用例拆成多条 pytest 测试。
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
     def test_login_user(self, in_data):
         """
@@ -28,8 +31,11 @@ class TestLoginUser:
         :return:
         """
         allure.dynamic.title(in_data['detail'])
+        # 发送接口请求，得到统一封装后的响应对象。
         res = RequestControl(in_data).http_request()
+        # 如果用例配置了 teardown，这里会执行后置清理。
         TearDownHandler(res).teardown_handle()
+        # 根据 yaml 中的 assert 字段校验响应。
         Assert(assert_data=in_data['assert_data'],
                request_data=res.body,
                response_data=res.response_data,
