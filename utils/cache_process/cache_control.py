@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : 2022/3/28 15:28
-# @Author : 余少琪
+# @Author : 余少琦
 
 """
 缓存文件处理
@@ -80,10 +80,13 @@ class CacheHandler:
     @staticmethod
     def get_cache(cache_data):
         try:
+            # 从本次 Python 进程的内存字典里读取缓存值。
+            # 常见场景：读取登录后保存的 token。
             return _cache_config[cache_data]
         except KeyError:
             raise ValueNotFoundError(f"{cache_data}的缓存数据未找到，请检查是否将该数据存入缓存中")
 
     @staticmethod
     def update_cache(*, cache_name, value):
+        # 写入缓存。这里不会落盘，只在当前测试运行期间有效。
         _cache_config[cache_name] = value
