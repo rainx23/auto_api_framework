@@ -36,15 +36,18 @@ def write_testcase_file(*, allure_epic, allure_feature, class_title,
         :param case_ids: 用例ID
         :return:
         """
+    # 读取配置，决定生成出来的测试代码是否要实时覆盖更新。
     conf_data = GetYamlData(ensure_path_sep("\\config\\config.yaml")).get_yaml_data()
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     real_time_update_test_cases = conf_data['real_time_update_test_cases']
+    # 根据 case_mode 决定生成的测试文件从 yaml 还是 xlsx 读取数据。
     if config.case_mode == '0' or config.case_mode is None:
         packages = 'from utils.read_files_tools.get_yaml_data_analysis import CaseData'
         testdata = f'TestData = CaseData("{yaml_path}").get_yaml_data()'
     elif config.case_mode == '1':
         packages = 'from utils.read_files_tools.get_excel_data_analysis import ExcelCaseData'
         testdata = f'TestData = ExcelCaseData("{yaml_path}").get_excel_data()'
+    # page 是最终要写入 test_case/*.py 的完整 Python 代码模板。
     page = f'''#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : {now}
@@ -60,6 +63,7 @@ from utils.requests_tool.teardown_control import TearDownHandler
 
 
 {testdata}
+# 把 yaml/xlsx 中的动态表达式替换成真实值，例如 ${{{{host()}}}}。
 re_data = regular(str(TestData))
 
 
@@ -68,6 +72,7 @@ re_data = regular(str(TestData))
 class Test{class_title}:
 
     @allure.story("{allure_story}")
+    # pytest.mark.parametrize 会把一份 yaml/xlsx 数据拆成多条独立测试用例。
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
     def test_{func_title}(self, in_data):
         """
@@ -75,8 +80,11 @@ class Test{class_title}:
         :return:
         """
         allure.dynamic.title(in_data['detail'])
+        # 发送接口请求，返回统一封装后的响应对象。
         res = RequestControl(in_data).http_request()
+        # 如果 yaml 中配置了 teardown，这里会执行后置清理或补充请求。
         TearDownHandler(res).teardown_handle()
+        # 根据 yaml 的 assert 字段校验响应内容。
         Assert(assert_data=in_data['assert_data'],
                request_data=res.body,
                response_data=res.response_data,
