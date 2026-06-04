@@ -31,6 +31,7 @@ class DependentCase:
         :param case_id:
         :return: case_id_01
         """
+        # 依赖用例会先被缓存起来，这里通过 case_id 找到那条用例数据。
         _case_data = CacheHandler.get_cache(case_id)
         return _case_data
 
@@ -48,6 +49,7 @@ class DependentCase:
         对象: {"data": applyID} --> jsonpath提取方法: $.data.data.[0].applyId
         """
 
+        # 用 jsonpath 从响应、请求或其他对象中提取依赖字段。
         _jsonpath_data = jsonpath(obj, expr)
         # 判断是否正常提取到数据，如未提取到，则抛异常
         if _jsonpath_data is False:
@@ -166,6 +168,7 @@ class DependentCase:
         """
 
         # 获取用例中的dependent_type值，判断该用例是否需要执行依赖
+        # dependence_case 为 True 时，表示当前用例执行前需要先处理依赖数据。
         _dependent_type = self.__yaml_case.dependence_case
         # 获取依赖用例数据
         _dependence_case_dates = self.__yaml_case.dependence_case_data
@@ -188,6 +191,7 @@ class DependentCase:
                     else:
                         re_data = regular(str(self.get_cache(_case_id)))
                         re_data = ast.literal_eval(cache_regular(str(re_data)))
+                        # 先执行被依赖的用例，拿到它的请求/响应结果。
                         res = RequestControl(re_data).http_request()
                         if dependence_case_data.dependent_data is not None:
                             dependent_data = dependence_case_data.dependent_data
@@ -200,6 +204,7 @@ class DependentCase:
                                 _set_value = self.set_cache_value(i)
                                 # 判断依赖数据类型, 依赖 response 中的数据
                                 if i.dependent_type == DependentType.RESPONSE.value:
+                                    # 从依赖用例的响应中提取字段，写入缓存或替换当前用例数据。
                                     self.dependent_handler(
                                         # data=json.loads(res.response_data),
                                         data=res.response_data,
@@ -212,6 +217,7 @@ class DependentCase:
 
                                 # 判断依赖数据类型, 依赖 request 中的数据
                                 elif i.dependent_type == DependentType.REQUEST.value:
+                                    # 从依赖用例的请求参数中提取字段，写入缓存或替换当前用例数据。
                                     self.dependent_handler(
                                         data=res.body,
                                         _jsonpath=_jsonpath,
@@ -246,6 +252,7 @@ class DependentCase:
         jsonpath 和 依赖的数据,进行替换
         :return:
         """
+        # 对当前用例执行依赖处理，并得到需要替换到当前用例中的数据。
         _dependent_data = DependentCase(self.__yaml_case).is_dependent()
         _new_data = None
         # 判断有依赖
