@@ -21,6 +21,8 @@ from utils import config
 class AssertUtil:
 
     def __init__(self, assert_data, request_data, response_data, status_code):
+        # assert_data 来自 yaml 的 assert 字段。
+        # response_data 是接口返回值，request_data 是本次接口请求体。
         self.response_data = response_data
         self.assert_data = assert_data
         self.request_data = request_data
@@ -80,10 +82,12 @@ class AssertUtil:
 
     def _assert(self, check_value: Any, expect_value: Any, message: Text = ""):
 
+        # 根据 yaml 中的 type 字段选择具体断言函数，例如 ==、contains、len_eq。
         self.functions_mapping()[self.get_type](check_value, expect_value, str(message))
 
     @property
     def _assert_resp_data(self):
+        # 用 jsonpath 从接口响应中取实际值，例如 $.meta.status。
         resp_data = jsonpath(self.response_data, self.get_jsonpath)
         assert resp_data is not False, (
             f"jsonpath数据提取失败，提取对象: {self.response_data} , 当前语法: {self.get_jsonpath}"
@@ -94,6 +98,7 @@ class AssertUtil:
 
     @property
     def _assert_request_data(self):
+        # 预留能力：也可以用 jsonpath 从请求参数中取值做断言。
         req_data = jsonpath(self.request_data, self.get_jsonpath)
         assert req_data is not False, (
             f"jsonpath数据提取失败，提取对象: {self.request_data} , 当前语法: {self.get_jsonpath}"
@@ -113,6 +118,7 @@ class AssertUtil:
 class Assert(AssertUtil):
 
     def assert_data_list(self):
+        # yaml 的 assert 下面可以配置多个断言项，这里统一整理成列表逐个执行。
         assert_list = []
 
         for k, v in self.assert_data.items():
@@ -124,9 +130,9 @@ class Assert(AssertUtil):
         return assert_list
 
     def assert_type_handle(self):
+        # 遍历每一条断言配置，只要有一条失败，pytest 就会判定该用例失败。
         for i in self.assert_data_list():
 
             self.assert_data = i
             super().assert_type_handle()
-
 
