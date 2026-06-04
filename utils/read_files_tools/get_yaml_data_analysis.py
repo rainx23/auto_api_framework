@@ -33,6 +33,7 @@ class CaseDataCheck:
 
     def check_params_exit(self):
         # 映射获取枚举key [('host', True), ('url', True),....]
+        # 按 TestCaseEnum 中定义的字段，检查 yaml 用例是否缺少必填项。
         for enum in list(TestCaseEnum._value2member_map_.keys()):
             if enum[1]:
                 self._assert(enum[0])
@@ -56,6 +57,7 @@ class CaseDataCheck:
 
     @property
     def get_host(self) -> Text:
+        # yaml 中 host 和 url 分开写，这里会拼成最终请求地址。
         host = (
                 self.case_data.get(TestCaseEnum.HOST.value[0]) +
                 self.case_data.get(TestCaseEnum.URL.value[0])
@@ -64,6 +66,7 @@ class CaseDataCheck:
 
     @property
     def get_run(self) -> Text:
+        # is_run 为空、TRUE、NONE 时都认为该用例需要执行。
         is_run = self.case_data.get(TestCaseEnum.IS_RUN.value[0]).upper()
         if is_run == 'TRUE' or is_run == 'NONE' or is_run == '':
             return 'True'
@@ -98,10 +101,12 @@ class CaseData(CaseDataCheck):
 
     """ 返回用例数据内容 """
     def get_yaml_data(self, case_id_switch: Union[None, bool] = None):
+        # 读取一个 yaml 文件，并把每个用例块转换成框架内部统一的 TestCase 字典。
         yaml_data = GetYamlData(self.file_path).get_yaml_data()
         case_list = []
         for key, values in yaml_data.items():
             # 公共配置中的数据，与用例数据不同，需要单独处理
+            # case_common 是 Allure 报告公共信息，不是真正的测试用例。
             if key != 'case_common':
                 self.case_data = values
                 self.case_id = key
@@ -141,4 +146,3 @@ class GetTestCase:
 if __name__ == '__main__':
     c = CaseData('\\data\\UserManger\\update_user_status.yaml').get_yaml_data()
     print(c)
-
