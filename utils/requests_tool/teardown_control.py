@@ -96,6 +96,7 @@ class TearDownHandler:
         :return:
         """
         _replace_key = teardown_case_data.replace_key
+        # 从当前用例响应里提取后置请求需要的值。
         _response_dependent = jsonpath(
             obj=resp_data,
             expr=teardown_case_data.jsonpath
@@ -126,6 +127,7 @@ class TearDownHandler:
         """
         try:
             _request_set_value = teardown_case_data['set_value']
+            # 从当前用例请求参数里提取后置逻辑需要的值。
             _request_dependent = jsonpath(
                 obj=request_data,
                 expr=teardown_case_data['jsonpath']
@@ -258,6 +260,7 @@ class TearDownHandler:
         # _teardown_case = ast.literal_eval(Cache('case_process').get_cache())[_case_id]
         _teardown_case = CacheHandler.get_cache(_case_id)
         _param_prepare = data.param_prepare
+        # 先执行一个准备请求，再从它的响应中提取后续需要的参数。
         res = self.teardown_http_requests(_teardown_case)
         for i in _param_prepare:
             # 判断请求类型为自己,拿到当前case_id自己的响应
@@ -281,12 +284,14 @@ class TearDownHandler:
         @return:
         """
         # 拿到用例信息
+        # teardown 来自 yaml 的 teardown 字段，用于用例执行后的清理或补充请求。
         _teardown_data = self._res.teardown
         # 获取接口的响应内容
         _resp_data = self._res.response_data
         # 获取接口的请求参数
         _request_data = self._res.yaml_data.data
         # 判断如果没有 teardown
+        # 没有配置 teardown 时，直接跳过后置处理。
         if _teardown_data is not None:
             # 循环 teardown中的接口
             for _data in _teardown_data:
@@ -306,6 +311,7 @@ class TearDownHandler:
     def teardown_sql(self) -> None:
         """处理后置sql"""
 
+        # teardown_sql 用于执行后置 SQL，常见场景是清理测试数据。
         sql_data = self._res.teardown_sql
         _response_data = self._res.response_data
         if sql_data is not None:
